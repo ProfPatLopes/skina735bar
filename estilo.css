@@ -41,8 +41,7 @@ main {
 /* Menu vertical */
 .menu-vertical {
     width: 200px;
-    background-color: linear-gradient(180deg, #5a8d90 0%, #111 100%);
-    
+    background: linear-gradient(180deg, #5a8d90 0%, #111 100%);
     position: fixed;
     top: 0;
     left: -200px;
