@@ -73,14 +73,6 @@ main {
     padding: 20px;
 }
 
-.menu-vertical:hover {
+.menu-vertical.active {
     left: 0;
-}
-
-body:hover .menu-vertical {
-    left: -200px;
-}
-
-body:hover .menu-vertical:hover {
-    left: 0
 }
