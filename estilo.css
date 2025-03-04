@@ -71,6 +71,7 @@ main {
 .conteudo {
     flex-grow: 1;
     padding: 20px;
+    background-color:#5a8d90;
 }
 
 .menu-vertical.active {
