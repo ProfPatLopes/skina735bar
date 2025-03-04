@@ -42,3 +42,71 @@ body {
         flex: 0 0 32%;
     }
 }
+/* Estilo padrão */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu horizontal */
+.menu-horizontal {
+    background-color: #333;
+}
+
+.menu-horizontal ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-horizontal li {
+    flex: 1;
+}
+
+.menu-horizontal a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.menu-horizontal a:hover {
+    background-color: #111;
+}
+
+/* Layout principal */
+main {
+    display: flex;
+}
+
+/* Menu vertical */
+.menu-vertical {
+    width: 200px;
+    background-color: #333;
+}
+
+.menu-vertical ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-vertical a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.menu-vertical a:hover {
+    background-color: #111;
+}
+
+/* Conteúdo principal */
+.conteudo {
+    flex-grow: 1;
+    padding: 20px;
+}
