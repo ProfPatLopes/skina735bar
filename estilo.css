@@ -1,0 +1,44 @@
+/* Estilo padrão para dispositivos móveis */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    padding: 15px;
+}
+
+/* Layout de grade */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Estilo para dispositivos maiores */
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .col {
+        flex: 0 0 48%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+
+    .col {
+        flex: 0 0 32%;
+    }
+}
