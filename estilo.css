@@ -65,6 +65,7 @@ main {
 
 .menu-vertical a:hover {
     background-color: #111;
+    background: linear-gradient(180deg, #5a8d90 0%, #111 100%);
 }
 
 /* Conteúdo principal */
