@@ -1,6 +1,16 @@
 // Nome de usuário e senha fixos
-const fixedUsername = 'skina';
-const fixedPassword = 'admin';
+// Nome de usuário e senha fixos
+const fixedUsername = 'usuario';
+const fixedPassword = 'senha123';
+
+// Verificação de login ao carregar a página
+window.onload = function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn === 'false') {
+        document.getElementById('loginContainer').classList.remove('hidden');
+        document.body.classList.add('blur-background');
+    }
+}
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -11,7 +21,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if (username === fixedUsername && password === fixedPassword) {
         loginMessage.textContent = 'Login bem-sucedido!';
         loginMessage.style.color = 'green';
+        localStorage.setItem('isLoggedIn', 'true');
+        document.getElementById('loginContainer').classList.add('hidden');
+        document.body.classList.remove('blur-background');
     } else {
         loginMessage.textContent = 'Nome de usuário ou senha incorretos.';
-        loginMessage.style.color 
+        loginMessage.style.color = 'red';
     }
+});
