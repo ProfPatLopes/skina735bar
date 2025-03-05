@@ -1,7 +1,7 @@
 // Nome de usuário e senha fixos
 // Nome de usuário e senha fixos
-const fixedUsername = 'usuario';
-const fixedPassword = 'senha123';
+const fixedUsername = 'skina';
+const fixedPassword = 'admin';
 
 // Verificação de login ao carregar a página
 window.onload = function() {
