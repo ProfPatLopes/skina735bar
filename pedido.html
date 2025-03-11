@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pedido</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script2.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <img src="Logo.png" alt="Logo Skina 735 Bar" class="logo"> 
+        <h1>Formulário de Pedido</h1>
+        <form id="pedidoForm">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            
+            <div id="balcao_container">
+                <label for="balcao">
+                    <input type="checkbox" id="balcao" name="balcao" onclick="toggleMesa()">
+                    Marcar se for no balcão
+                </label>
+            </div>
+
+           
+            <div id="numero_mesa_field">
+                <label for="numero_mesa">Número da Mesa:</label>
+                <input type="number" id="numero_mesa" name="numero_mesa" min="1" oninput="toggleBalcao()">
+            </div>
+
+            
+            <label for="pedidos_bar">Pedidos Bar: </label><br>
+            <textarea id="pedidos_bar" name="pedidos_bar" rows="4" placeholder="Digite os pedidos de bebidas..."></textarea><br>
+
+            
+            <label for="pedidos_cozinha">Pedidos Cozinha: </label><br>
+            <textarea id="pedidos_cozinha" name="pedidos_cozinha" rows="4" placeholder="Digite os pedidos de comidas..."></textarea><br>
+
+           
+            <label for="pedidos_caixa">Pedidos Caixa: </label><br>
+            <textarea id="pedidos_caixa" name="pedidos_caixa" rows="4" placeholder="Digite os pedidos de petiscos..."></textarea><br>
+
+            
+            <input type="button" value="Enviar e Imprimir Pedido" onclick="imprimirPedido()">
+        </form>
+    </div>
+</body>
+</html>
