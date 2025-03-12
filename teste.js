@@ -1,4 +1,3 @@
-<script>
     const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
     function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
