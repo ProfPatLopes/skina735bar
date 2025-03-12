@@ -25,16 +25,19 @@
             <input type="checkbox" id="produto1" data-preco="10" onchange="atualizarTotal()">
             <label for="produto1">Produto 1 (R$10,00)</label>
             Quantidade: <input type="number" id="quantidade1" value="0" min="0" onchange="atualizarTotal()">
+            <span class="valor-produto" id="valorProduto1">R$0.00</span>
         </div>
         <div class="produto">
             <input type="checkbox" id="produto2" data-preco="20" onchange="atualizarTotal()">
             <label for="produto2">Produto 2 (R$20,00)</label>
             Quantidade: <input type="number" id="quantidade2" value="0" min="0" onchange="atualizarTotal()">
+            <span class="valor-produto" id="valorProduto2">R$0.00</span>
         </div>
         <div class="produto">
             <input type="checkbox" id="produto3" data-preco="15" onchange="atualizarTotal()">
             <label for="produto3">Produto 3 (R$15,00)</label>
             Quantidade: <input type="number" id="quantidade3" value="0" min="0" onchange="atualizarTotal()">
+            <span class="valor-produto" id="valorProduto2">R$0.00</span>
         </div>
     </form>
     <p class="total">Total: R$<span id="valorTotal">0.00</span></p>
