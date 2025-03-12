@@ -1,9 +1,9 @@
     const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
-    const listaProdutos = document.getElementById('listaProdutos');
-    //listaProdutos.innerHTML = '';
     function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
-        
+        const listaProdutos = document.getElementById('listaProdutos');
+    listaProdutos.innerHTML = '';
+    
 
         if (categoria && produtosPorCategoria[categoria]) {
             const produtos = produtosPorCategoria[categoria];
