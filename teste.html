@@ -41,25 +41,29 @@
         </div>
     </form>
     <p class="total">Total: R$<span id="valorTotal">0.00</span></p>
-
     <script>
         function atualizarTotal() {
             let total = 0;
             const produtos = document.querySelectorAll('.produto');
 
-            produtos.forEach(produto => {
+            produtos.forEach((produto, index) => {
                 const checkbox = produto.querySelector('input[type="checkbox"]');
                 const quantidade = produto.querySelector('input[type="number"]');
+                const valorProduto = produto.querySelector('.valor-produto');
 
                 if (checkbox.checked) {
                     const preco = parseFloat(checkbox.getAttribute('data-preco'));
                     const qtd = parseInt(quantidade.value) || 0;
-                    total += preco * qtd;
+                    const valor = preco * qtd;
+                    valorProduto.textContent = `R$${valor.toFixed(2)}`;
+                    total += valor;
+                } else {
+                    valorProduto.textContent = 'R$0.00';
                 }
             });
 
             document.getElementById('valorTotal').textContent = total.toFixed(2);
         }
-    </script>
-</body>
+        </script>
+    </body>
 </html>
