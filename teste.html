@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selector de Categorias com Valores</title>
+    <title>Formulário de Pedido</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            display: flex;
+            justify-content: space-between;
         }
-        .produtos {
-            margin-top: 20px;
+        .formulario {
+            width: 60%;
+        }
+        .painel {
+            width: 35%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: fit-content;
         }
         .produto {
             margin-bottom: 10px;
@@ -18,29 +26,43 @@
         .total {
             font-size: 1.2em;
             font-weight: bold;
-            margin-top: 20px;
         }
         .valor-produto {
             margin-left: 10px;
             font-weight: bold;
         }
+        .botao {
+            margin: 10px 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Selector de Categorias</h1>
-    <label for="categoria">Selecione uma categoria:</label>
-    <select id="categoria" onchange="exibirProdutos()">
-        <option value="">-- Escolha uma categoria --</option>
-        <option value="bebidas">Bebidas</option>
-        <option value="porcoes">Porções</option>
-        <option value="diversos">Diversos</option>
-    </select>
+    <div class="formulario">
+        <h1>Formulário de Pedido</h1>
+        <label for="categoria">Selecione uma categoria:</label>
+        <select id="categoria" onchange="exibirProdutos()">
+            <option value="">-- Escolha uma categoria --</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="porcoes">Porções</option>
+            <option value="diversos">Diversos</option>
+        </select>
 
-    <div class="produtos" id="listaProdutos">
-        <!-- Produtos serão exibidos aqui -->
+        <div class="produtos" id="listaProdutos">
+            <!-- Produtos serão exibidos aqui -->
+        </div>
+
+        <button class="botao" onclick="adicionarItens()">Adicionar</button>
+        <button class="botao" onclick="limparCampos()">Limpar</button>
+        <button class="botao" onclick="window.print()">Imprimir</button>
+
+        <p class="total">Total Geral: R$<span id="valorTotal">0.00</span></p>
     </div>
 
-    <p class="total">Total Geral: R$<span id="valorTotal">0.00</span></p>
+    <div class="painel" id="painelPedidos">
+        <h2>Itens do Pedido</h2>
+        <ul id="itensPedido"></ul>
+        <p class="total">Total da Compra: R$<span id="totalCompra">0.00</span></p>
+    </div>
 
     <script>
         const produtosPorCategoria = {
@@ -80,14 +102,14 @@
                     listaProdutos.innerHTML += produtoHTML;
                 });
             }
-            atualizarTotal(); // Atualizar o total ao mudar de categoria
+            atualizarTotal();
         }
 
         function atualizarTotal() {
             let total = 0;
             const produtos = document.querySelectorAll('.produto');
 
-            produtos.forEach((produto, index) => {
+            produtos.forEach(produto => {
                 const checkbox = produto.querySelector('input[type="checkbox"]');
                 const quantidade = produto.querySelector('input[type="number"]');
                 const valorProduto = produto.querySelector('.valor-produto');
@@ -105,6 +127,38 @@
 
             document.getElementById('valorTotal').textContent = total.toFixed(2);
         }
+
+        function adicionarItens() {
+            const produtos = document.querySelectorAll('.produto');
+            const painel = document.getElementById('itensPedido');
+            let totalCompra = 0;
+            painel.innerHTML = '';
+
+            produtos.forEach(produto => {
+                const checkbox = produto.querySelector('input[type="checkbox"]');
+                const quantidade = produto.querySelector('input[type="number"]');
+                const nome = produto.querySelector('label').textContent;
+                if (checkbox.checked && quantidade.value > 0) {
+                    const preco = parseFloat(checkbox.getAttribute('data-preco'));
+                    const qtd = parseInt(quantidade.value) || 0;
+                    const valor = preco * qtd;
+                    totalCompra += valor;
+
+                    painel.innerHTML += `<li>${nome} - Quantidade: ${qtd} - Valor: R$${valor.toFixed(2)}</li>`;
+                }
+            });
+
+            document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
+        }
+
+        function limparCampos() {
+            document.getElementById('categoria').value = '';
+            document.getElementById('listaProdutos').innerHTML = '';
+            document.getElementById('itensPedido').innerHTML = '';
+            document.getElementById('valorTotal').textContent = '0.00';
+            document.getElementById('totalCompra').textContent = '0.00';
+        }
     </script>
 </body>
 </html>
+
