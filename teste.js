@@ -1,8 +1,9 @@
     const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
+    const listaProdutos = document.getElementById('listaProdutos');
+    //listaProdutos.innerHTML = '';
     function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
-        const listaProdutos = document.getElementById('listaProdutos');
-        //listaProdutos.innerHTML = '';
+        
 
         if (categoria && produtosPorCategoria[categoria]) {
             const produtos = produtosPorCategoria[categoria];
@@ -56,7 +57,7 @@
 
     function atualizarPainel() {
         const painel = document.getElementById('itensPedido');
-        painel.innerHTML = '';
+        //painel.innerHTML = '';
         produtosSelecionados.forEach(item => {
             painel.innerHTML += `<li>${item.nome} - Quantidade: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         });
