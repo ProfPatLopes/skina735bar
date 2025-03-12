@@ -1,0 +1,30 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .formulario {
+            width: 60%;
+        }
+        .painel {
+            width: 35%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: fit-content;
+        }
+        .produto {
+            margin-bottom: 10px;
+        }
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .valor-produto {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .botao {
+            margin: 10px 5px;
+        }
+    
