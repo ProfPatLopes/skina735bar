@@ -138,8 +138,7 @@
         function adicionarItens() {
             const produtos = document.querySelectorAll('.produto');
             const painel = document.getElementById('itensPedido');
-            let totalCompra = 0;
-            painel.innerHTML = '';
+            
 
             produtos.forEach(produto => {
                 const checkbox = produto.querySelector('input[type="checkbox"]');
@@ -159,6 +158,8 @@
         }
 
         function limparCampos() {
+            let totalCompra = 0;
+            painel.innerHTML = '';
             document.getElementById('categoria').value = '';
             document.getElementById('listaProdutos').innerHTML = '';
             document.getElementById('itensPedido').innerHTML = '';
