@@ -2,7 +2,7 @@
     function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
         const listaProdutos = document.getElementById('listaProdutos');
-        listaProdutos.innerHTML = '';
+        //listaProdutos.innerHTML = '';
 
         if (categoria && produtosPorCategoria[categoria]) {
             const produtos = produtosPorCategoria[categoria];
