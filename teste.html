@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Pedido</title>
+    <title>Selector de Categorias com Valores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+        }
+        .produtos {
+            margin-top: 20px;
         }
         .produto {
             margin-bottom: 10px;
@@ -15,33 +18,71 @@
         .total {
             font-size: 1.2em;
             font-weight: bold;
+            margin-top: 20px;
+        }
+        .valor-produto {
+            margin-left: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Formulário de Pedido</h1>
-    <form id="formularioPedido">
-        <div class="produto">
-            <input type="checkbox" id="produto1" data-preco="10" onchange="atualizarTotal()">
-            <label for="produto1">Produto 1 (R$10,00)</label>
-            Quantidade: <input type="number" id="quantidade1" value="0" min="0" onchange="atualizarTotal()">
-            <span class="valor-produto" id="valorProduto1">R$0.00</span>
-        </div>
-        <div class="produto">
-            <input type="checkbox" id="produto2" data-preco="20" onchange="atualizarTotal()">
-            <label for="produto2">Produto 2 (R$20,00)</label>
-            Quantidade: <input type="number" id="quantidade2" value="0" min="0" onchange="atualizarTotal()">
-            <span class="valor-produto" id="valorProduto2">R$0.00</span>
-        </div>
-        <div class="produto">
-            <input type="checkbox" id="produto3" data-preco="15" onchange="atualizarTotal()">
-            <label for="produto3">Produto 3 (R$15,00)</label>
-            Quantidade: <input type="number" id="quantidade3" value="0" min="0" onchange="atualizarTotal()">
-            <span class="valor-produto" id="valorProduto2">R$0.00</span>
-        </div>
-    </form>
-    <p class="total">Total: R$<span id="valorTotal">0.00</span></p>
+    <h1>Selector de Categorias</h1>
+    <label for="categoria">Selecione uma categoria:</label>
+    <select id="categoria" onchange="exibirProdutos()">
+        <option value="">-- Escolha uma categoria --</option>
+        <option value="bebidas">Bebidas</option>
+        <option value="porcoes">Porções</option>
+        <option value="diversos">Diversos</option>
+    </select>
+
+    <div class="produtos" id="listaProdutos">
+        <!-- Produtos serão exibidos aqui -->
+    </div>
+
+    <p class="total">Total Geral: R$<span id="valorTotal">0.00</span></p>
+
     <script>
+        const produtosPorCategoria = {
+            bebidas: [
+                { nome: 'Coca-Cola', preco: 5 },
+                { nome: 'Suco de Laranja', preco: 8 },
+                { nome: 'Água Mineral', preco: 3 }
+            ],
+            porcoes: [
+                { nome: 'Batata Frita', preco: 12 },
+                { nome: 'Frango à Passarinho', preco: 15 },
+                { nome: 'Aneis de Cebola', preco: 10 }
+            ],
+            diversos: [
+                { nome: 'Pipoca', preco: 6 },
+                { nome: 'Amendoim', preco: 4 },
+                { nome: 'Chocolate', preco: 8 }
+            ]
+        };
+
+        function exibirProdutos() {
+            const categoria = document.getElementById('categoria').value;
+            const listaProdutos = document.getElementById('listaProdutos');
+            listaProdutos.innerHTML = '';
+
+            if (categoria && produtosPorCategoria[categoria]) {
+                const produtos = produtosPorCategoria[categoria];
+                produtos.forEach((produto, index) => {
+                    const produtoHTML = `
+                        <div class="produto">
+                            <input type="checkbox" id="produto${index}" data-preco="${produto.preco}" onchange="atualizarTotal()">
+                            <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
+                            Quantidade: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
+                            <span class="valor-produto" id="valorProduto${index}">R$0.00</span>
+                        </div>
+                    `;
+                    listaProdutos.innerHTML += produtoHTML;
+                });
+            }
+            atualizarTotal(); // Atualizar o total ao mudar de categoria
+        }
+
         function atualizarTotal() {
             let total = 0;
             const produtos = document.querySelectorAll('.produto');
@@ -64,6 +105,6 @@
 
             document.getElementById('valorTotal').textContent = total.toFixed(2);
         }
-        </script>
-    </body>
+    </script>
+</body>
 </html>
