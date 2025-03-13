@@ -2,9 +2,7 @@
     function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
         const listaProdutos = document.getElementById('listaProdutos');
-    listaProdutos.innerHTML = '';
-    
-
+        listaProdutos.innerHTML = '';
         if (categoria && produtosPorCategoria[categoria]) {
             const produtos = produtosPorCategoria[categoria];
             produtos.forEach((produto, index) => {
@@ -63,17 +61,8 @@
         });
     }
 
-    function limparCampos() {
-        document.getElementById('categoria').value = '';
-        document.getElementById('listaProdutos').innerHTML = '';
-        document.getElementById('itensPedido').innerHTML = '';
-        document.getElementById('valorTotal').textContent = '0.00';
-        document.getElementById('totalCompra').textContent = '0.00';
-        produtosSelecionados.length = 0; // Limpa os produtos selecionados
-    }
-
-
-        const produtosPorCategoria = {
+    
+    const produtosPorCategoria = {
             bebidas: [
                 { nome: 'Coca-Cola', preco: 5 },
                 { nome: 'Suco de Laranja', preco: 8 },
@@ -89,9 +78,9 @@
                 { nome: 'Amendoim', preco: 4 },
                 { nome: 'Chocolate', preco: 8 }
             ]
-        };
+    };
 
-        function exibirProdutos() {
+    function exibirProdutos() {
             const categoria = document.getElementById('categoria').value;
             const listaProdutos = document.getElementById('listaProdutos');
             listaProdutos.innerHTML = '';
@@ -111,9 +100,9 @@
                 });
             }
             atualizarTotal();
-        }
+    }
 
-        function atualizarTotal() {
+    function atualizarTotal() {
             let total = 0;
             const produtos = document.querySelectorAll('.produto');
 
@@ -134,9 +123,9 @@
             });
 
             document.getElementById('valorTotal').textContent = total.toFixed(2);
-        }
+    }
 
-        function adicionarItens() {
+    function adicionarItens() {
             const produtos = document.querySelectorAll('.produto');
             const painel = document.getElementById('itensPedido');
             
@@ -156,9 +145,9 @@
             });
 
             document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
-        }
+    }
 
-        function limparCampos() {
+    function limparCampos() {
             let totalCompra = 0;
             painel.innerHTML = '';
             document.getElementById('categoria').value = '';
@@ -166,4 +155,4 @@
             document.getElementById('itensPedido').innerHTML = '';
             document.getElementById('valorTotal').textContent = '0.00';
             document.getElementById('totalCompra').textContent = '0.00';
-        }
+    }

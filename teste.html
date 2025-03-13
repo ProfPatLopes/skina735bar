@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="teste.js"></script>
-    <title>Formulário de Pedido</title>
+    <title>Comanda</title>
     <link rel="stylesheet" href="teste.css">
 </head>
 <body>
     <div class="formulario">
-        <h1>Formulário de Pedido</h1>
-        <label for="categoria">Selecione uma categoria:</label>
+        <h1>Produtos</h1>
+        <label for="categoria">Categoria:</label>
         <select id="categoria" onchange="exibirProdutos()">
             <option value="">-- Escolha uma categoria --</option>
             <option value="bebidas">Bebidas</option>
@@ -25,13 +25,13 @@
         <button class="botao" onclick="limparCampos()">Limpar</button>
         <button class="botao" onclick="window.print()">Imprimir</button>
 
-        <p class="total">Total Geral: R$<span id="valorTotal">0.00</span></p>
+        <p class="total">Sub-Total: R$<span id="valorTotal">0.00</span></p>
     </div>
 
     <div class="painel" id="painelPedidos">
         <h2>Itens do Pedido</h2>
         <ul id="itensPedido"></ul>
-        <p class="total">Total da Compra: R$<span id="totalCompra">0.00</span></p>
+        <p class="total">Total: R$<span id="totalCompra">0.00</span></p>
     </div>
 </body>
 </html>
