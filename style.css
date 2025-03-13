@@ -34,9 +34,9 @@ body {
     margin: 0 auto 15px auto;
 }
 .logo-pedido {
-    width: 50%;  /* Logo menor */
+    width: 15%;  /* Logo menor */
     display: block;
-    margin: 0 auto 15px auto;
+    
 }
 /* Título */
 h1 {
