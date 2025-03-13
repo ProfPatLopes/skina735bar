@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="teste.css">
 </head>
 <body>
+    <div class="informacoes-cliente">
+        <h2>Informações do Cliente</h2>
+        <label for="nomeCliente">Nome do Cliente:</label>
+        <input type="text" id="nomeCliente" placeholder="Digite o nome do cliente">
+    
+        <label for="tipoPedido">Tipo de Pedido:</label>
+        <select id="tipoPedido" onchange="habilitarNumeroMesa()">
+            <option value="balcao">Balcão</option>
+            <option value="mesa">Mesa</option>
+        </select>
+    
+        <div id="campoMesa" style="display: none;">
+            <label for="numeroMesa">Número da Mesa:</label>
+            <input type="number" id="numeroMesa" min="1" placeholder="Digite o número da mesa">
+        </div>
+    
+        <p>Data do Pedido: <span id="dataPedido"></span></p>
+    </div>
+    
     <div class="formulario">
         <h1>Produtos</h1>
         <label for="categoria">Categoria:</label>
@@ -25,6 +44,8 @@
         <button class="botao" onclick="adicionarItens()">Atualizar</button>
         <button class="botao" onclick="limparCampos()">Limpar</button>
         <button class="botao" onclick="window.print()">Imprimir</button>
+        <button class="botao" onclick="imprimirPedido()">Imprimir Pedido</button>
+
 
         
     </div>

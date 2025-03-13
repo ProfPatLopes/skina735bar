@@ -1,3 +1,50 @@
+// Exibe o campo da mesa se "Mesa" for selecionado
+function habilitarNumeroMesa() {
+    const tipoPedido = document.getElementById('tipoPedido').value;
+    const campoMesa = document.getElementById('campoMesa');
+    campoMesa.style.display = tipoPedido === 'mesa' ? 'block' : 'none';
+}
+
+// Configurar a data do pedido
+document.getElementById('dataPedido').textContent = new Date().toLocaleString();
+
+function imprimirPedido() {
+    const nomeCliente = document.getElementById('nomeCliente').value;
+    const tipoPedido = document.getElementById('tipoPedido').value;
+    const numeroMesa = document.getElementById('numeroMesa').value;
+    const painel = document.getElementById('itensPedido');
+    const totalCompra = document.getElementById('totalCompra').textContent;
+
+    // Validação básica
+    if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
+        alert('Por favor, preencha todas as informações necessárias.');
+        return;
+    }
+
+    let detalhesPedido = `
+        Nome do Cliente: ${nomeCliente}\n
+        Tipo de Pedido: ${tipoPedido}\n
+    `;
+
+    if (tipoPedido === 'mesa') {
+        detalhesPedido += `Número da Mesa: ${numeroMesa}\n`;
+    }
+
+    detalhesPedido += `Data do Pedido: ${new Date().toLocaleString()}\n\n`;
+
+    // Adiciona os itens do pedido
+    const itens = Array.from(painel.querySelectorAll('li'))
+        .map(item => item.textContent)
+        .join('\n');
+
+    detalhesPedido += `Itens do Pedido:\n${itens}\n\nTotal: R$${totalCompra}`;
+
+    // Imprime o pedido
+    const novaJanela = window.open('', '_blank');
+    novaJanela.document.write(`<pre>${detalhesPedido}</pre>`);
+    novaJanela.print();
+    novaJanela.close();
+}
 
     const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
     function exibirProdutos() {

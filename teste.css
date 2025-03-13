@@ -1,4 +1,8 @@
-        body {
+.informacoes-cliente {
+    margin-bottom: 20px;
+}
+
+body {
             font-family: Arial, sans-serif;
             margin: 20px;
             display: flex;
