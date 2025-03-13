@@ -103,7 +103,7 @@
     }
 
     function atualizarTotal() {
-            let total;//=0
+            let total=0;
             const produtos = document.querySelectorAll('.produto');
 
             produtos.forEach(produto => {
