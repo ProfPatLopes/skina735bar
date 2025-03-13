@@ -1,5 +1,5 @@
 
-            const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
+    const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
     function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
         const listaProdutos = document.getElementById('listaProdutos');
@@ -103,7 +103,7 @@
                             <input type="checkbox" id="produto${index}" data-preco="${produto.preco}" onchange="atualizarTotal()">
                             <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
                             Quantidade: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
-                            <span class="valor-produto" id="valorProduto${index}">R$0.00</span>
+                            
                         </div>
                     `;
                     listaProdutos.innerHTML += produtoHTML;
@@ -111,7 +111,7 @@
             }
             atualizarTotal();
     }
-
+//<span class="valor-produto" id="valorProduto${index}">R$0.00</span>
     function atualizarTotal() {
         let total = 0;
         const produtos = document.querySelectorAll('.produto');
