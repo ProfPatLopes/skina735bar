@@ -177,29 +177,38 @@
             const qtd = parseInt(quantidade.value) || 0;
             const valor = preco * qtd;
 
-            // Verifica se o item já está no painel lateral
+            // Verifica se o item já está no array
             const itemExistente = produtosSelecionados.find(item => item.nome === nome);
 
             if (itemExistente) {
-                // Atualiza quantidade e valor
+                // Atualiza a quantidade e o valor
                 itemExistente.qtd = qtd;
                 itemExistente.valor = valor;
             } else {
                 // Adiciona o item caso não exista
                 produtosSelecionados.push({ nome, qtd, valor });
             }
+        } else {
+            // Remove o item se o checkbox for desmarcado
+            const index = produtosSelecionados.findIndex(item => item.nome === nome);
+            if (index !== -1) {
+                produtosSelecionados.splice(index, 1);
+            }
         }
     });
 
     // Atualiza o painel e o total
     const painel = document.getElementById('itensPedido');
-    painel.innerHTML = ''; // Limpa para evitar duplicações
+    painel.innerHTML = ''; // Limpa o painel para evitar duplicações
     produtosSelecionados.forEach(item => {
         painel.innerHTML += `<li>${item.nome} - Quantidade: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         totalCompra += item.valor;
     });
+
+    // Atualiza o valor total da compra
     document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
 }
+
 
 
     function limparCampos() {
