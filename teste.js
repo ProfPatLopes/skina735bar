@@ -149,6 +149,7 @@
     }
 
     function limparCampos() {
+            const painel = document.getElementById('itensPedido');
             let totalCompra = 0;
             painel.innerHTML = '';
             document.getElementById('categoria').value = '';
