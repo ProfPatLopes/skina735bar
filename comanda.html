@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <script src="comanda.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <img src="Logo.png" alt="Logo Skina 735 Bar" class="logo"> 
+        <h1>Pedido</h1>
+        <form id="pedidoForm">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            <div id="balcao_container">
+                <label for="balcao">
+                    <input type="checkbox" id="balcao" name="balcao" onclick="toggleMesa()">
+                    Marcar se for no balcão
+                </label>
+            </div>
+            <div id="numero_mesa_field">
+                <label for="numero_mesa">Número da Mesa:</label>
+                <input type="number" id="numero_mesa" name="numero_mesa" min="1" oninput="toggleBalcao()">
+            </div>
+            <label>------> PRODUTOS <------ </label>
+            <div class="formulario">
+                <h1>Produtos</h1>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" onchange="exibirProdutos()">
+                    <option value="">-- Escolha uma categoria --</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="porcoes">Porções</option>
+                    <option value="diversos">Diversos</option>
+                </select>
+                <div class="produtos" id="listaProdutos">
+                    <!-- Produtos serão exibidos aqui -->
+                </div>
+        
+            </div>
+
+        </br>
+            <input type="button" value="Atualizar" onclick="adicionarItens()">
+            <input type="button" value="Cancelar" onclick="limparCampos()">
+            <input type="button" value="Imprimir Pedido" onclick="imprimirPedido()">
+        </form>
+        <div class="painel" id="painelPedidos">
+            <h2>Itens do Pedido</h2>
+            <ul id="itensPedido"></ul>
+            <p class="total">Total: R$<span id="totalCompra">0.00</span></p>
+        </div>
+    </div>
+</body>
+</html>
