@@ -123,6 +123,7 @@
             });
 
             document.getElementById('valorTotal').textContent = total.toFixed(2);
+            document.getElementById('totalCompra').textContent = total.toFixed(2);
     }
 
     function adicionarItens() {
