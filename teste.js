@@ -15,39 +15,82 @@ function imprimirPedido() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
 
-    // Validação básica
+    // Validação para garantir que os campos necessários estão preenchidos
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
-        alert('Por favor, preencha todas as informações necessárias.');
+        alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
 
+    // Dados iniciais do pedido
     let detalhesPedido = `
-        Nome do Cliente: ${nomeCliente}\n
-        Tipo de Pedido: ${tipoPedido}\n
+        <h2>Detalhes do Pedido</h2>
+        <p><strong>Nome do Cliente:</strong> ${nomeCliente}</p>
+        <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
+        <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
+        <hr>
+        <h3>Itens do Pedido</h3>
+        <ul>
     `;
 
-    if (tipoPedido === 'mesa') {
-        detalhesPedido += `Número da Mesa: ${numeroMesa}\n`;
+    // Adiciona os itens do painel
+    const itens = Array.from(painel.querySelectorAll('li'));
+    if (itens.length > 0) {
+        itens.forEach(item => {
+            detalhesPedido += `<li>${item.textContent}</li>`;
+        });
+    } else {
+        detalhesPedido += `<li>Nenhum item selecionado.</li>`;
     }
 
-    detalhesPedido += `Data do Pedido: ${new Date().toLocaleString()}\n\n`;
+    // Finaliza com o total
+    detalhesPedido += `
+        </ul>
+        <hr>
+        <p><strong>Total:</strong> R$${totalCompra}</p>
+    `;
 
-    // Adiciona os itens do pedido
-    const itens = Array.from(painel.querySelectorAll('li'))
-        .map(item => item.textContent)
-        .join('\n');
-
-    detalhesPedido += `Itens do Pedido:\n${itens}\n\nTotal: R$${totalCompra}`;
-
-    // Imprime o pedido
+    // Abre uma nova janela para impressão
     const novaJanela = window.open('', '_blank');
-    novaJanela.document.write(`<pre>${detalhesPedido}</pre>`);
+    novaJanela.document.write(`
+        <html>
+            <head>
+                <title>Imprimir Pedido</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                    }
+                    h2, h3 {
+                        text-align: center;
+                    }
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                    }
+                    li {
+                        margin-bottom: 5px;
+                    }
+                    hr {
+                        margin: 20px 0;
+                    }
+                    p {
+                        font-size: 1.1em;
+                        margin-bottom: 10px;
+                    }
+                </style>
+            </head>
+            <body>
+                ${detalhesPedido}
+            </body>
+        </html>
+    `);
     novaJanela.print();
     novaJanela.close();
 }
 
-    const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
-    function exibirProdutos() {
+
+const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
+function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
         const listaProdutos = document.getElementById('listaProdutos');
         listaProdutos.innerHTML = '';
@@ -110,16 +153,16 @@ function imprimirPedido() {
 }
 
 
-    function atualizarPainel() {
+function atualizarPainel() {
         const painel = document.getElementById('itensPedido');
         //painel.innerHTML = '';
         produtosSelecionados.forEach(item => {
             painel.innerHTML += `<li>${item.nome} - Quantidade: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         });
-    }
+}
 
     
-    const produtosPorCategoria = {
+const produtosPorCategoria = {
             bebidas: [
                 { nome: 'Coca-Cola', preco: 5 },
                 { nome: 'Suco de Laranja', preco: 8 },
@@ -135,9 +178,9 @@ function imprimirPedido() {
                 { nome: 'Amendoim', preco: 4 },
                 { nome: 'Chocolate', preco: 8 }
             ]
-    };
+};
 
-    function exibirProdutos() {
+function exibirProdutos() {
             const categoria = document.getElementById('categoria').value;
             const listaProdutos = document.getElementById('listaProdutos');
             listaProdutos.innerHTML = '';
@@ -155,9 +198,9 @@ function imprimirPedido() {
                 });
             }
             atualizarTotal();
-    }
+}
 
-    function atualizarTotal() {
+function atualizarTotal() {
         let total = 0;
         const produtos = document.querySelectorAll('.produto');
     
@@ -172,9 +215,9 @@ function imprimirPedido() {
         });
     
         //document.getElementById('valorTotal').textContent = total.toFixed(2);
-    }
+}
 
-    function adicionarItens() {
+function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
     let totalCompra = 0;
 
@@ -222,12 +265,12 @@ function imprimirPedido() {
 
 
 
-    function limparCampos() {
+function limparCampos() {
         const painel = document.getElementById('itensPedido');
         painel.innerHTML = '';
         document.getElementById('categoria').value = '';
         document.getElementById('listaProdutos').innerHTML = '';
         document.getElementById('totalCompra').textContent = '0.00';
         produtosSelecionados.length = 0; // Reseta o array de produtos selecionados
-    }
+}
     
