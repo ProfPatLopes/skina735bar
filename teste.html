@@ -24,7 +24,7 @@
         <button class="botao" onclick="limparCampos()">Limpar</button>
         <button class="botao" onclick="window.print()">Imprimir</button>
 
-        <p class="total">Sub-Total: R$<span id="valorTotal">0.00</span></p>
+        
     </div>
 
     <div class="painel" id="painelPedidos">
@@ -160,7 +160,7 @@
             }
         });
     
-        document.getElementById('valorTotal').textContent = total.toFixed(2);
+        //document.getElementById('valorTotal').textContent = total.toFixed(2);
     }
 
     function adicionarItens() {
@@ -216,7 +216,7 @@
         painel.innerHTML = '';
         document.getElementById('categoria').value = '';
         document.getElementById('listaProdutos').innerHTML = '';
-        document.getElementById('valorTotal').textContent = '0.00';
+        //document.getElementById('valorTotal').textContent = '0.00';
         document.getElementById('totalCompra').textContent = '0.00';
         produtosSelecionados.length = 0; // Reseta o array de produtos selecionados
     }
