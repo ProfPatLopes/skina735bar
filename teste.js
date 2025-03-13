@@ -1,94 +1,3 @@
-// Exibe o campo da mesa se "Mesa" for selecionado
-function habilitarNumeroMesa() {
-    const tipoPedido = document.getElementById('tipoPedido').value;
-    const campoMesa = document.getElementById('campoMesa');
-    campoMesa.style.display = tipoPedido === 'mesa' ? 'block' : 'none';
-}
-
-// Configurar a data do pedido
-document.getElementById('dataPedido').textContent = new Date().toLocaleString();
-
-function imprimirPedido() {
-    const nomeCliente = document.getElementById('nomeCliente').value;
-    const tipoPedido = document.getElementById('tipoPedido').value;
-    const numeroMesa = document.getElementById('numeroMesa').value;
-    const painel = document.getElementById('itensPedido');
-    const totalCompra = document.getElementById('totalCompra').textContent;
-
-    // Validação para garantir que os campos necessários estão preenchidos
-    if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
-        alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
-        return;
-    }
-
-    // Dados iniciais do pedido
-    let detalhesPedido = `
-        <h2>Detalhes do Pedido</h2>
-        <p><strong>Nome do Cliente:</strong> ${nomeCliente}</p>
-        <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
-        <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
-        <hr>
-        <h3>Itens do Pedido</h3>
-        <ul>
-    `;
-
-    // Adiciona os itens do painel
-    const itens = Array.from(painel.querySelectorAll('li'));
-    if (itens.length > 0) {
-        itens.forEach(item => {
-            detalhesPedido += `<li>${item.textContent}</li>`;
-        });
-    } else {
-        detalhesPedido += `<li>Nenhum item selecionado.</li>`;
-    }
-
-    // Finaliza com o total
-    detalhesPedido += `
-        </ul>
-        <hr>
-        <p><strong>Total:</strong> R$${totalCompra}</p>
-    `;
-
-    // Abre uma nova janela para impressão
-    const novaJanela = window.open('', '_blank');
-    novaJanela.document.write(`
-        <html>
-            <head>
-                <title>Imprimir Pedido</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
-                    }
-                    h2, h3 {
-                        text-align: center;
-                    }
-                    ul {
-                        list-style-type: none;
-                        padding: 0;
-                    }
-                    li {
-                        margin-bottom: 5px;
-                    }
-                    hr {
-                        margin: 20px 0;
-                    }
-                    p {
-                        font-size: 1.1em;
-                        margin-bottom: 10px;
-                    }
-                </style>
-            </head>
-            <body>
-                ${detalhesPedido}
-            </body>
-        </html>
-    `);
-    novaJanela.print();
-    novaJanela.close();
-}
-
-
 const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
 function exibirProdutos() {
         const categoria = document.getElementById('categoria').value;
@@ -272,5 +181,94 @@ function limparCampos() {
         document.getElementById('listaProdutos').innerHTML = '';
         document.getElementById('totalCompra').textContent = '0.00';
         produtosSelecionados.length = 0; // Reseta o array de produtos selecionados
+}
+// Exibe o campo da mesa se "Mesa" for selecionado
+function habilitarNumeroMesa() {
+    const tipoPedido = document.getElementById('tipoPedido').value;
+    const campoMesa = document.getElementById('campoMesa');
+    campoMesa.style.display = tipoPedido === 'mesa' ? 'block' : 'none';
+}
+
+// Configurar a data do pedido
+document.getElementById('dataPedido').textContent = new Date().toLocaleString();
+
+function imprimirPedido() {
+    const nomeCliente = document.getElementById('nomeCliente').value;
+    const tipoPedido = document.getElementById('tipoPedido').value;
+    const numeroMesa = document.getElementById('numeroMesa').value;
+    const painel = document.getElementById('itensPedido');
+    const totalCompra = document.getElementById('totalCompra').textContent;
+
+    // Validação para garantir que os campos necessários estão preenchidos
+    if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
+        alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
+        return;
+    }
+
+    // Dados iniciais do pedido
+    let detalhesPedido = `
+        <h2>Detalhes do Pedido</h2>
+        <p><strong>Nome do Cliente:</strong> ${nomeCliente}</p>
+        <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
+        <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
+        <hr>
+        <h3>Itens do Pedido</h3>
+        <ul>
+    `;
+
+    // Adiciona os itens do painel
+    const itens = Array.from(painel.querySelectorAll('li'));
+    if (itens.length > 0) {
+        itens.forEach(item => {
+            detalhesPedido += `<li>${item.textContent}</li>`;
+        });
+    } else {
+        detalhesPedido += `<li>Nenhum item selecionado.</li>`;
+    }
+
+    // Finaliza com o total
+    detalhesPedido += `
+        </ul>
+        <hr>
+        <p><strong>Total:</strong> R$${totalCompra}</p>
+    `;
+
+    // Abre uma nova janela para impressão
+    const novaJanela = window.open('', '_blank');
+    novaJanela.document.write(`
+        <html>
+            <head>
+                <title>Imprimir Pedido</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                    }
+                    h2, h3 {
+                        text-align: center;
+                    }
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                    }
+                    li {
+                        margin-bottom: 5px;
+                    }
+                    hr {
+                        margin: 20px 0;
+                    }
+                    p {
+                        font-size: 1.1em;
+                        margin-bottom: 10px;
+                    }
+                </style>
+            </head>
+            <body>
+                ${detalhesPedido}
+            </body>
+        </html>
+    `);
+    novaJanela.print();
+    novaJanela.close();
 }
     
