@@ -1,25 +1,5 @@
 const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
-function exibirProdutos() {
-        const categoria = document.getElementById('categoria').value;
-        const listaProdutos = document.getElementById('listaProdutos');
-        listaProdutos.innerHTML = '';
-        if (categoria && produtosPorCategoria[categoria]) {
-            const produtos = produtosPorCategoria[categoria];
-            produtos.forEach((produto, index) => {
-                const produtoHTML = `
-                    <div class="produto">
-                        <input type="checkbox" id="produto${categoria}${index}" data-preco="${produto.preco}" onchange="atualizarTotal()">
-                        <label for="produto${categoria}${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
-                        Quantidade: <input type="number" id="quantidade${categoria}${index}" value="0" min="0" onchange="atualizarTotal()">
-                        
-                    </div>
-                `;
-                listaProdutos.innerHTML += produtoHTML;
-            });
-        }
-    }
-
-    function adicionarItens() {
+function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
     const painel = document.getElementById('itensPedido');
     painel.innerHTML = ''; // Limpa o painel antes de atualizar os itens
