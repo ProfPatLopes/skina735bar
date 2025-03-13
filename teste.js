@@ -55,7 +55,7 @@
 
     function atualizarPainel() {
         const painel = document.getElementById('itensPedido');
-        //painel.innerHTML = '';
+        painel.innerHTML = '';
         produtosSelecionados.forEach(item => {
             painel.innerHTML += `<li>${item.nome} - Quantidade: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         });
@@ -103,7 +103,7 @@
     }
 
     function atualizarTotal() {
-            let total;
+            let total;//=0
             const produtos = document.querySelectorAll('.produto');
 
             produtos.forEach(produto => {
