@@ -103,7 +103,7 @@
     }
 
     function atualizarTotal() {
-            let total = 0;
+            let total;
             const produtos = document.querySelectorAll('.produto');
 
             produtos.forEach(produto => {
@@ -123,7 +123,7 @@
             });
 
             document.getElementById('valorTotal').textContent = total.toFixed(2);
-            document.getElementById('totalCompra').textContent = total.toFixed(2);
+            
     }
 
     function adicionarItens() {
