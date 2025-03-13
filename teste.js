@@ -20,36 +20,16 @@
     }
 
     function adicionarItens() {
-        const produtos = document.querySelectorAll('.produto');
         const painel = document.getElementById('itensPedido');
-        let totalCompra = parseFloat(document.getElementById('totalCompra').textContent) || 0;
-
-        produtos.forEach(produto => {
-            const checkbox = produto.querySelector('input[type="checkbox"]');
-            const quantidade = produto.querySelector('input[type="number"]');
-            const nome = produto.querySelector('label').textContent;
-
-            if (checkbox.checked && quantidade.value > 0) {
-                const preco = parseFloat(checkbox.getAttribute('data-preco'));
-                const qtd = parseInt(quantidade.value) || 0;
-                const valor = preco * qtd;
-
-                // Verificar se o produto já foi adicionado
-                const itemExistente = produtosSelecionados.find(item => item.nome === nome);
-
-                if (!itemExistente) {
-                    produtosSelecionados.push({ nome, qtd, valor });
-                    painel.innerHTML += `<li>${nome} - Quantidade: ${qtd} - Valor: R$${valor.toFixed(2)}</li>`;
-                } else {
-                    itemExistente.qtd += qtd;
-                    itemExistente.valor += valor;
-                    atualizarPainel();
-                }
-
-                totalCompra += valor;
-            }
+        painel.innerHTML = ''; // Limpa o painel antes de adicionar os itens
+        
+        let totalCompra = 0; // Inicializa o total de compra
+        
+        produtosSelecionados.forEach(item => {
+            painel.innerHTML += `<li>${item.nome} - Quantidade: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+            totalCompra += item.valor;
         });
-
+        
         document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
     }
 
@@ -103,27 +83,20 @@
     }
 
     function atualizarTotal() {
-            let total=0;
-            const produtos = document.querySelectorAll('.produto');
-
-            produtos.forEach(produto => {
-                const checkbox = produto.querySelector('input[type="checkbox"]');
-                const quantidade = produto.querySelector('input[type="number"]');
-                const valorProduto = produto.querySelector('.valor-produto');
-
-                if (checkbox.checked) {
-                    const preco = parseFloat(checkbox.getAttribute('data-preco'));
-                    const qtd = parseInt(quantidade.value) || 0;
-                    const valor = preco * qtd;
-                    valorProduto.textContent = `R$${valor.toFixed(2)}`;
-                    total += valor;
-                } else {
-                    valorProduto.textContent = 'R$0.00';
-                }
-            });
-
-            document.getElementById('valorTotal').textContent = total.toFixed(2);
-            
+        let total = 0;
+        const produtos = document.querySelectorAll('.produto');
+    
+        produtos.forEach(produto => {
+            const checkbox = produto.querySelector('input[type="checkbox"]');
+            const quantidade = produto.querySelector('input[type="number"]');
+            if (checkbox.checked && quantidade.value > 0) {
+                const preco = parseFloat(checkbox.getAttribute('data-preco'));
+                const valor = preco * quantidade.value;
+                total += valor;
+            }
+        });
+    
+        document.getElementById('valorTotal').textContent = total.toFixed(2);
     }
 
     function adicionarItens() {
@@ -149,12 +122,11 @@
     }
 
     function limparCampos() {
-            const painel = document.getElementById('itensPedido');
-            let totalCompra = 0;
-            painel.innerHTML = '';
-            document.getElementById('categoria').value = '';
-            document.getElementById('listaProdutos').innerHTML = '';
-            document.getElementById('itensPedido').innerHTML = '';
-            document.getElementById('valorTotal').textContent = '0.00';
-            document.getElementById('totalCompra').textContent = '0.00';
+        const painel = document.getElementById('itensPedido');
+        painel.innerHTML = '';
+        document.getElementById('categoria').value = '';
+        document.getElementById('listaProdutos').innerHTML = '';
+        document.getElementById('valorTotal').textContent = '0.00';
+        document.getElementById('totalCompra').textContent = '0.00';
+        produtosSelecionados.length = 0; // Reseta o array de produtos selecionados
     }
