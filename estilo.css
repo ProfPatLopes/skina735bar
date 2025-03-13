@@ -1,3 +1,56 @@
+/* Configuração padrão para telas maiores */
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Ajustes para telas menores (como smartphones) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Empilhar elementos verticalmente */
+        margin: 10px;
+    }
+
+    .formulario, .painel {
+        width: 100%; /* Cada um ocupa 100% da largura */
+        margin-bottom: 20px; /* Espaço entre os blocos */
+    }
+
+    .formulario {
+        padding: 10px;
+    }
+
+    .painel {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .mensagem-inicial {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .produto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .total {
+        font-size: 1em;
+    }
+
+    .botao {
+        width: 100%; /* Botões ocupam toda a largura */
+        margin: 5px 0; /* Espaço entre os botões */
+        padding: 10px;
+    }
+}
+
 /* login */
 .login-container {
     margin: 20px;
