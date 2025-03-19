@@ -1,5 +1,5 @@
 const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
-function adicionarItens1() {
+function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
     const painel = document.getElementById('itensPedido');
     painel.innerHTML = ''; // Limpa o painel antes de atualizar os itens
@@ -107,59 +107,6 @@ function atualizarTotal() {
         //document.getElementById('valorTotal').textContent = total.toFixed(2);
 }
 
-function adicionarItens() {
-    const nome = checkbox.getAttribute('data-produto'); // Agora captura corretamente o nome
-    const preco = parseFloat(checkbox.getAttribute('data-preco')); // Agora captura o preço
-
-    const produtos = document.querySelectorAll('.produto');
-    let totalCompra = 0;
-
-    produtos.forEach(produto => {
-        const checkbox = produto.querySelector('input[type="checkbox"]');
-        const quantidade = produto.querySelector('input[type="number"]');
-        const nome = produto.querySelector('label').textContent;
-
-        if (checkbox.checked && quantidade.value > 0) {
-            const preco = parseFloat(checkbox.getAttribute('data-preco'));
-            const qtd = parseInt(quantidade.value) || 0;
-            const valor = preco * qtd;
-
-            // Verifica se o item já está no array
-            const itemExistente = produtosSelecionados.find(item => item.nome === nome);
-
-            if (itemExistente) {
-                // Atualiza a quantidade e o valor
-                itemExistente.qtd = qtd;
-                itemExistente.valor = valor;
-            } else {
-                // Adiciona o item caso não exista
-                produtosSelecionados.push({ nome, qtd, valor });
-            }
-        } else {
-            // Remove o item se o checkbox for desmarcado
-            const index = produtosSelecionados.findIndex(item => item.nome === nome);
-            if (index !== -1) {
-                produtosSelecionados.splice(index, 1);
-            }
-        }
-    });
-
-    // Atualiza o painel e o total
-    
-    const painel = document.getElementById('itensPedido');
-    painel.innerHTML = ''; // Limpa o painel para evitar duplicações
-    produtosSelecionados.forEach(item => {
-        painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
-        totalCompra += item.valor;
-    });
-    
-    
-    // Atualiza o valor total da compra
-    document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
-}
-
-
-
 function limparCampos() {
         const painel = document.getElementById('itensPedido');
         painel.innerHTML = '';
@@ -213,11 +160,15 @@ function imprimirPedido() {
     const itens = Array.from(painel.querySelectorAll('li'));
     if (itens.length > 0) {
         itens.forEach(item => {
-            const produto = item.getAttribute('data-produto');
-            const quantidade = item.getAttribute('data-qtd');
-            const valorUnitario = item.getAttribute('data-valor');
+            const produto = item.getAttribute('item.nome');
+            const quantidade = item.getAttribute('item.qtd');
+            const valorUnitario = item.getAttribute('item.valor');
             const valorTotal = (quantidade * valorUnitario).toFixed(2);
-
+//
+//produtosSelecionados.forEach(item => {
+  //  painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+//});
+//
             detalhesPedido += `
                 <tr>
                     <td>${produto}</td>
