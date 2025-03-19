@@ -1,5 +1,5 @@
 const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
-function adicionarItens() {
+function adicionarItens1() {
     const produtos = document.querySelectorAll('.produto');
     const painel = document.getElementById('itensPedido');
     painel.innerHTML = ''; // Limpa o painel antes de atualizar os itens
@@ -192,7 +192,7 @@ function imprimirPedido() {
 
     let detalhesPedido = `
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
-            <img src="Logo.png"  style="display: block; margin: 0 auto; width: 25%;" />
+            <img src="Logo.png"  style="display: block; margin: 0 auto; width: 25%;">
             <h2 style="text-align: center; font-size: 14px;">Pedido</h2>
             <p><strong>Cliente:</strong> ${nomeCliente}</p>
             <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
