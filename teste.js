@@ -103,8 +103,8 @@ function atualizarTotal() {
                 total += valor;
             }
         });
-    
-        //document.getElementById('valorTotal').textContent = total.toFixed(2);
+    // aqui
+        document.getElementById('valorTotal').textContent = total.toFixed(2);
 }
 
 function limparCampos() {
