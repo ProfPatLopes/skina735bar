@@ -187,10 +187,10 @@ function imprimirPedido() {
 
     // Dados iniciais do pedido
     let detalhesPedido = `
-        <h2>Detalhes do Pedido</h2>
-        <p><strong>Nome do Cliente:</strong> ${nomeCliente}</p>
-        <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
-        <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
+        <img src="Logo.png" class="logo"/img>
+        <h2>Pedido</h2>
+        <strong>Cliente:</strong> ${nomeCliente}<strong>Data:</strong> ${new Date().toLocaleString()}
+        <strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
         <hr>
         <h3>Itens do Pedido</h3>
         <ul>
