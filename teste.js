@@ -4,7 +4,7 @@ function adicionarItens() {
     const painel = document.getElementById('itensPedido');
     painel.innerHTML = ''; // Limpa o painel antes de atualizar os itens
 
-    let totalCompra = 0;
+    // aqui let totalCompra = 0;
 
     produtos.forEach(produto => {
         const checkbox = produto.querySelector('input[type="checkbox"]');
