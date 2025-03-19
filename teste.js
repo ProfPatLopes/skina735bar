@@ -166,7 +166,7 @@ function imprimirPedido() {
             const quantidade = item.qtd;
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
-
+            
             detalhesPedido += `
                 <tr>
                     <td>${produto}</td>
@@ -174,6 +174,7 @@ function imprimirPedido() {
                     <td style="text-align: right;">${valorUnitario.toFixed(2)}</td>
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
+                
             `;
         });
     } else {
