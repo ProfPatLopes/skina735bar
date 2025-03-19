@@ -33,6 +33,9 @@ body {
     display: block;
     margin: 0 auto 15px auto;
 }
+input[type="number"] {
+    width: 25%; /* Ajuste para o tamanho desejado */
+}
 .logo_comanda {
     width: 15%;  /* Logo menor */
     display: block;
