@@ -78,12 +78,13 @@ function exibirProdutos() {
                 const produtos = produtosPorCategoria[categoria];
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
-                        <div class="produto">
-                            <input type="checkbox" id="produto${index}" data-preco="${produto.preco}" onchange="atualizarTotal()">
-                            <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
-                            Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
-                        </div>`;
-                    listaProdutos.innerHTML += produtoHTML;
+    <div class="produto">
+        <input type="checkbox" id="produto${index}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()">
+        <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
+        Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
+    </div>`;
+listaProdutos.innerHTML += produtoHTML;
+                    
                 });
             }
             atualizarTotal();
@@ -107,6 +108,9 @@ function atualizarTotal() {
 }
 
 function adicionarItens() {
+    const nome = checkbox.getAttribute('data-produto'); // Agora captura corretamente o nome
+    const preco = parseFloat(checkbox.getAttribute('data-preco')); // Agora captura o preço
+
     const produtos = document.querySelectorAll('.produto');
     let totalCompra = 0;
 
@@ -141,13 +145,15 @@ function adicionarItens() {
     });
 
     // Atualiza o painel e o total
+    
     const painel = document.getElementById('itensPedido');
     painel.innerHTML = ''; // Limpa o painel para evitar duplicações
     produtosSelecionados.forEach(item => {
         painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         totalCompra += item.valor;
     });
-
+    
+    
     // Atualiza o valor total da compra
     document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
 }
