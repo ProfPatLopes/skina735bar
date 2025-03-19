@@ -185,32 +185,59 @@ function imprimirPedido() {
         return;
     }
 
-    // Dados iniciais do pedido
+    // Cabeçalho do pedido
     let detalhesPedido = `
-        <img src="Logo.png" class="logo"/img>
-        <h2>Pedido</h2>
-        <strong>Cliente:</strong> ${nomeCliente}<strong>Data:</strong> ${new Date().toLocaleString()}
-        <strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
+        <img src="Logo.png" class="logo_comanda" />
+        <h2 style="text-align: center;">Pedido</h2>
+        <p><strong>Cliente:</strong> ${nomeCliente}</p>
+        <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
+        <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
         <hr>
         <h3>Itens do Pedido</h3>
-        <ul>
+        <table style="width: 100%; border-collapse: collapse;" border="1">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Qtd</th>
+                    <th>Vlr Unit (R$)</th>
+                    <th>Vlr Total (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
     `;
 
     // Adiciona os itens do painel
     const itens = Array.from(painel.querySelectorAll('li'));
     if (itens.length > 0) {
         itens.forEach(item => {
-            detalhesPedido += `<li>${item.textContent}</li>`;
+            const produto = item.getAttribute('data-produto'); // Nome do produto
+            const quantidade = item.getAttribute('data-qtd'); // Quantidade
+            const valorUnitario = item.getAttribute('data-valor'); // Valor unitário
+
+            const valorTotal = (quantidade * valorUnitario).toFixed(2); // Valor total
+            detalhesPedido += `
+                <tr>
+                    <td>${produto}</td>
+                    <td>${quantidade}</td>
+                    <td>${Number(valorUnitario).toFixed(2)}</td>
+                    <td>${valorTotal}</td>
+                </tr>
+            `;
         });
     } else {
-        detalhesPedido += `<li>Nenhum item selecionado.</li>`;
+        detalhesPedido += `
+            <tr>
+                <td colspan="4" style="text-align: center;">Nenhum item selecionado.</td>
+            </tr>
+        `;
     }
 
-    // Finaliza com o total
+    // Finaliza o pedido
     detalhesPedido += `
-        </ul>
+            </tbody>
+        </table>
         <hr>
-        <p><strong>Total:</strong> R$${totalCompra}</p>
+        <p style="text-align: right; font-size: 1.2em;"><strong>Total:</strong> R$${totalCompra}</p>
     `;
 
     // Abre uma nova janela para impressão
@@ -224,22 +251,14 @@ function imprimirPedido() {
                         font-family: Arial, sans-serif;
                         margin: 20px;
                     }
-                    h2, h3 {
+                    table th, table td {
+                        padding: 5px;
                         text-align: center;
                     }
-                    ul {
-                        list-style-type: none;
-                        padding: 0;
-                    }
-                    li {
-                        margin-bottom: 5px;
-                    }
-                    hr {
-                        margin: 20px 0;
-                    }
-                    p {
-                        font-size: 1.1em;
-                        margin-bottom: 10px;
+                    .logo {
+                        display: block;
+                        margin: 0 auto 20px auto;
+                        width: 100px;
                     }
                 </style>
             </head>
@@ -251,4 +270,3 @@ function imprimirPedido() {
     novaJanela.print();
     novaJanela.close();
 }
-    
