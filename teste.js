@@ -179,48 +179,45 @@ function imprimirPedido() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
 
-    // Validação para garantir que os campos necessários estão preenchidos
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
 
-    // Cabeçalho do pedido
     let detalhesPedido = `
-        <img src="Logo.png" class="logo_comanda" />
-        <h2 style="text-align: center;">Pedido</h2>
-        <p><strong>Cliente:</strong> ${nomeCliente}</p>
-        <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
-        <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
-        <hr>
-        <h3>Itens do Pedido</h3>
-        <table style="width: 100%; border-collapse: collapse;" border="1">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Qtd</th>
-                    <th>Vlr Unit (R$)</th>
-                    <th>Vlr Total (R$)</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
+            <img src="Logo.png"  style="display: block; margin: 0 auto; width: 25%;" />
+            <h2 style="text-align: center; font-size: 14px;">Pedido</h2>
+            <p><strong>Cliente:</strong> ${nomeCliente}</p>
+            <p><strong>Data:</strong> ${new Date().toLocaleString()}</p>
+            <p><strong>Tipo de Pedido:</strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</p>
+            <hr>
+            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Produto</th>
+                        <th style="text-align: center;">Qtd</th>
+                        <th style="text-align: right;">Unit (R$)</th>
+                        <th style="text-align: right;">Total (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
     `;
 
-    // Adiciona os itens do painel
     const itens = Array.from(painel.querySelectorAll('li'));
     if (itens.length > 0) {
         itens.forEach(item => {
-            const produto = item.getAttribute('data-produto'); // Nome do produto
-            const quantidade = item.getAttribute('data-qtd'); // Quantidade
-            const valorUnitario = item.getAttribute('data-valor'); // Valor unitário
+            const produto = item.getAttribute('data-produto');
+            const quantidade = item.getAttribute('data-qtd');
+            const valorUnitario = item.getAttribute('data-valor');
+            const valorTotal = (quantidade * valorUnitario).toFixed(2);
 
-            const valorTotal = (quantidade * valorUnitario).toFixed(2); // Valor total
             detalhesPedido += `
                 <tr>
                     <td>${produto}</td>
-                    <td>${quantidade}</td>
-                    <td>${Number(valorUnitario).toFixed(2)}</td>
-                    <td>${valorTotal}</td>
+                    <td style="text-align: center;">${quantidade}</td>
+                    <td style="text-align: right;">${Number(valorUnitario).toFixed(2)}</td>
+                    <td style="text-align: right;">${valorTotal}</td>
                 </tr>
             `;
         });
@@ -232,34 +229,22 @@ function imprimirPedido() {
         `;
     }
 
-    // Finaliza o pedido
     detalhesPedido += `
-            </tbody>
-        </table>
-        <hr>
-        <p style="text-align: right; font-size: 1.2em;"><strong>Total:</strong> R$${totalCompra}</p>
+                </tbody>
+            </table>
+            <hr>
+            <p style="text-align: right;"><strong>Total:</strong> R$${totalCompra}</p>
+        </div>
     `;
 
-    // Abre uma nova janela para impressão
     const novaJanela = window.open('', '_blank');
     novaJanela.document.write(`
         <html>
             <head>
                 <title>Imprimir Pedido</title>
                 <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
-                    }
-                    table th, table td {
-                        padding: 5px;
-                        text-align: center;
-                    }
-                    .logo {
-                        display: block;
-                        margin: 0 auto 20px auto;
-                        width: 100px;
-                    }
+                    body { margin: 0; padding: 0; }
+                    table, th, td { border: 1px solid #000; padding: 2px; }
                 </style>
             </head>
             <body>
