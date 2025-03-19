@@ -156,7 +156,6 @@ function imprimirPedido() {
                 </thead>
                 <tbody>
     `;
-
     const itens = Array.from(painel.querySelectorAll('li'));
     if (itens.length > 0) {
         itens.forEach(item => {
