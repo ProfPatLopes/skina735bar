@@ -164,11 +164,6 @@ function imprimirPedido() {
             const quantidade = item.getAttribute('item.qtd');
             const valorUnitario = item.getAttribute('item.valor');
             const valorTotal = (quantidade * valorUnitario).toFixed(2);
-//
-//produtosSelecionados.forEach(item => {
-  //  painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
-//});
-//
             detalhesPedido += `
                 <tr>
                     <td>${produto}</td>
