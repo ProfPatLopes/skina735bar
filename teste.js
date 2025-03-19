@@ -81,7 +81,7 @@ function exibirProdutos() {
                         <div class="produto">
                             <input type="checkbox" id="produto${index}" data-preco="${produto.preco}" onchange="atualizarTotal()">
                             <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
-                            Quantidade: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
+                            Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
                         </div>`;
                     listaProdutos.innerHTML += produtoHTML;
                 });
@@ -144,7 +144,7 @@ function adicionarItens() {
     const painel = document.getElementById('itensPedido');
     painel.innerHTML = ''; // Limpa o painel para evitar duplicações
     produtosSelecionados.forEach(item => {
-        painel.innerHTML += `<li>${item.nome} - Quantidade: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+        painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         totalCompra += item.valor;
     });
 
