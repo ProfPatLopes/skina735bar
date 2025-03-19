@@ -156,18 +156,22 @@ function imprimirPedido() {
                 </thead>
                 <tbody>
     `;
-    const itens = Array.from(painel.querySelectorAll('li'));
-    if (itens.length > 0) {
-        itens.forEach(item => {
-            const produto = item.getAttribute('item.nome');
-            const quantidade = item.getAttribute('item.qtd');
-            const valorUnitario = item.getAttribute('item.valor');
-            const valorTotal = (quantidade * valorUnitario).toFixed(2);
+
+
+
+    //
+    if (produtosSelecionados.length > 0) {
+        produtosSelecionados.forEach(item => {
+            const produto = item.nome;
+            const quantidade = item.qtd;
+            const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
+            const valorTotal = item.valor.toFixed(2); // Valor total do item
+
             detalhesPedido += `
                 <tr>
                     <td>${produto}</td>
                     <td style="text-align: center;">${quantidade}</td>
-                    <td style="text-align: right;">${Number(valorUnitario).toFixed(2)}</td>
+                    <td style="text-align: right;">${valorUnitario.toFixed(2)}</td>
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
             `;
