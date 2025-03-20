@@ -29,7 +29,7 @@ function adicionarItens() {
                 produtosSelecionados.push({ nome, qtd, valor });
             }
 
-            totalCompra += (qtd+valor);
+            //totalCompra += (qtd+valor);
         }
     });
 
