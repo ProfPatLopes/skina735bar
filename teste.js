@@ -36,6 +36,7 @@ function adicionarItens() {
     // Atualiza o painel com os itens do pedido
     produtosSelecionados.forEach(item => {
         painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+        totalCompra += item.valor;
     });
 
     // Atualiza o valor total da compra
