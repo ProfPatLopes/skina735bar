@@ -39,7 +39,7 @@ function adicionarItens() {
     });
 
     // Atualiza o valor total da compra
-    document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
+    //document.getElementById('totalCompra').textContent = totalCompra.toFixed(2);
 }
 
 
