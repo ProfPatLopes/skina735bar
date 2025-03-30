@@ -137,7 +137,7 @@ function imprimirPedido2() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     //const data = document.getElementById('dataHora').textContent;
-    //var data = getDataAtual(); 
+    var data = getDataAtual(); 
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
@@ -168,10 +168,8 @@ function imprimirPedido2() {
         </tr>
 
     
-</table>  
-            <hr>
-            <table style="width: 100%; ">
-               
+        </table>  
+        <table style="width: 100%; ">
                     <tr font-size: 22px; style="width: 100%;">
                         <td style="text-align: left;">Produto</td>
                         <td style="text-align: right;">Unit</td>
@@ -215,7 +213,7 @@ function imprimirPedido2() {
     detalhesPedido += `
                 </tbody>
             </table>
-            <hr>
+            
             <p style="text-align: right; font-size: 24px;"><strong>Total:</strong> R$${totalCompra}</p>
         </div>
     `;
