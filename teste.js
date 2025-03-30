@@ -152,7 +152,7 @@ function imprimirPedido2() {
                 <img src="Logo.png" style="width: 100%; height: auto;" />
             </th>
             <th colspan="2" text-align: center;"><strong>PEDIDO</strong> </th>
-            <th id="dataHora" style="text-align: right; width: 50%;"></th>
+            <th id="dataHora" style="text-align: right; width: 50%;">Cliente: ${dataHora}</th>
             
         </tr>
         <tr>
@@ -163,9 +163,10 @@ function imprimirPedido2() {
 
     
 </table>  
+            <hr>
             <table style="width: 100%; ">
                
-                    <tr font-size: 22px;>
+                    <tr font-size: 22px; style="width: 100%;>
                         <td style="text-align: left;">Produto</td>
                         <td style="text-align: right;">Unit</td>
                         <td style="text-align: right;">Total</td>
