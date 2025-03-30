@@ -1,5 +1,5 @@
 .informacoes-cliente {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 /* Configuração padrão para telas maiores */
 body {
@@ -61,10 +61,10 @@ body {
             justify-content: space-between;
         }
         .formulario {
-            width: 60%;
+            /*width: 60%;*/
         }
         .painel {
-            width: 35%;
+            /*width: 35%;*/
             border: 1px solid #ccc;
             padding: 10px;
             height: fit-content;

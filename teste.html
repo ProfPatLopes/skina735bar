@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="teste.css">
 </head>
 <body>
+    <table>
+        <tr>
     <div class="informacoes-cliente">
         <label for="nomeCliente">Cliente:</label>
         <input type="text" id="nomeCliente" placeholder=">-- Digite --<">
@@ -27,7 +29,8 @@
         <p>Data/Hora: <span id="dataHora">00/00/0000  00:00:00  </span></p>
         
     </div>
-    
+    </tr>
+    <tr>
     <div class="formulario">
         <h3>Produtos</h3>
         <label for="categoria">Categoria:</label>
@@ -45,12 +48,14 @@
         <button class="botao" onclick="limparCampos()">Limpar</button>
         <button class="botao" onclick="imprimirPedido2()">Imprimir</button>
     </div>
+    </tr>
+    <tr>
     <div class="painel" id="painelPedidos">
         <h3>Itens do Pedido</h3>
         <ul id="itensPedido"></ul>
         <p class="total">Total: R$<span id="totalCompra">0.00</span></p>
     </div>
-    
+    </tr>
 </body>
 </html>
 
