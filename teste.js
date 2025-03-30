@@ -234,13 +234,18 @@ function imprimirPedido2() {
     
         <tr>
             <!-- Definir proporção de largura para cada elemento -->
-            <th style="width: 40%;">
+            <th text-align: right; style="width: 40%;">
                 <img src="Logo.png" style="width: 100%; height: auto;" />
             </th>
-            <th text-align: right;"><strong>${nomeCliente}</strong> </th>
-            <th style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
+            <th colspan="3" text-align: center;"><strong>PEDIDO</strong> </th>
             
         </tr>
+        <tr>
+            <th colspan="3" text-align: right;"><strong>Cliente: ${nomeCliente}</strong> </th>
+            <th style="width: 20%; text-align: right;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
+            
+        </tr>
+
     
 </table>  
             <table style="width: 100%; ">
