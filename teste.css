@@ -1,7 +1,6 @@
-.informacoes-cliente {
-    /*margin-bottom: 20px;*/
-}
-/* Configuração padrão para telas maiores */
+/*.informacoes-cliente {
+    margin-bottom: 20px;
+} */
 body {
     display: flex;
     flex-direction: row;
@@ -60,9 +59,9 @@ body {
             display: flex;
             justify-content: space-between;
         }
-        .formulario {
-            /*width: 60%;*/
-        }
+        /*.formulario {
+            width: 60%;
+        }*/
         .painel {
             /*width: 35%;*/
             border: 1px solid #ccc;
