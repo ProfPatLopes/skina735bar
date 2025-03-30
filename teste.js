@@ -58,12 +58,12 @@ function atualizarPainel() {
 const produtosPorCategoria = {
             bebidas: [
                 { nome: 'Coca-Cola', preco: 5 },
-                { nome: 'Suco de Laranja', preco: 8 },
+                { nome: 'Suco Laranja', preco: 8 },
                 { nome: 'Água Mineral', preco: 3 }
             ],
             porcoes: [
-                { nome: 'Batata Frita', preco: 12 },
-                { nome: 'Frango à Passarinho', preco: 15 },
+                { nome: 'Batata', preco: 12 },
+                { nome: 'Frango ', preco: 15 },
                 { nome: 'Aneis de Cebola', preco: 10 }
             ],
             diversos: [
@@ -137,6 +137,7 @@ function imprimirPedido2() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     const data = document.getElementById('dataHora').textContent;
+    
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
