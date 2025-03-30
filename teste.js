@@ -142,11 +142,11 @@ function imprimirPedido2() {
 
     let detalhesPedido = `
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
-        <table style="width: 100%; font-size: 24px;">
+        <table style="width: 100%; font-size: 22px;">
     
         <tr>
             <!-- Definir proporção de largura para cada elemento -->
-            <th text-align: right; style="width: 40%;">
+            <th text-align: right; style="width: 50%;">
                 <img src="Logo.png" style="width: 100%; height: auto;" />
             </th>
             <th colspan="3" text-align: center;"><strong>PEDIDO</strong> </th>
@@ -161,13 +161,13 @@ function imprimirPedido2() {
     
 </table>  
             <table style="width: 100%; ">
-                <thead>
-                    <tr font-size: 24px;>
-                        <th style="text-align: left;">Produto</th>
-                        <th style="text-align: right;">Unit</th>
-                        <th style="text-align: right;">Total</th>
+               
+                    <tr font-size: 22px;>
+                        <td style="text-align: left;">Produto</td>
+                        <td style="text-align: right;">Unit</td>
+                        <td style="text-align: right;">Total</td>
                     </tr>
-                </thead>
+                
                 <tbody>
     `;
 
