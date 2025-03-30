@@ -230,7 +230,7 @@ function imprimirPedido2() {
 
     let detalhesPedido = `
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 24px;">
+        <table style="width: 100%;font-size: 24px;">
                 <thead>
                     <tr>
                         <th style="text-align: center;"><img src="Logo.png" width: 5px;"></th>
@@ -238,12 +238,14 @@ function imprimirPedido2() {
                         <th style="text-align: right;"><strong>Cliente:</strong> ${nomeCliente}</th>
                         <th style="text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
                     </tr>
+                    <tr>
+                    <td colspan="4">------------------------------------</td></tr>
                 </thead>
           </table>  
             <hr>
             <table style="width: 100%; ">
                 <thead>
-                    <tr border-collapse: collapse; font-size: 24px;>
+                    <tr font-size: 24px;>
                         <th style="text-align: left;">Produto</th>
                         <th style="text-align: center;">Qtd</th>
                         <th style="text-align: right;">Unit (R$)</th>
@@ -271,7 +273,7 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
                 <tr>
-                    <td colspan="4">-------------------------------</td>
+                    <td colspan="4">------------------------------------</td>
                 </tr>
                 
             `;
