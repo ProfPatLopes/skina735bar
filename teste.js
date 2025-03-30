@@ -288,7 +288,7 @@ function imprimirPedido2() {
                 </tbody>
             </table>
             <hr>
-            <p style="text-align: right;"><strong>Total:</strong> R$${totalCompra}</p>
+            <p style="text-align: right; font-size: 24px;"><strong>Total:</strong> R$${totalCompra}</p>
         </div>
     `;
 
@@ -299,7 +299,7 @@ function imprimirPedido2() {
                 <title>Imprimir Pedido</title>
                 <style>
                     body { margin: 0; padding: 0; }
-                    table, th, td { border: 1px solid #000; padding: 2px; }
+                    table, th, td { border: 0px solid #000; padding: 1px; }
                 </style>
             </head>
             <body>
