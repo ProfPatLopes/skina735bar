@@ -126,8 +126,16 @@ function habilitarNumeroMesa() {
     campoMesa.style.display = tipoPedido === 'mesa' ? 'block' : 'none';
 }
 
+function getDataAtual() {
+    var hoje = new Date();
+    var dia = String(hoje.getDate()).padStart(2, '0');
+    var mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    var ano = hoje.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+}
+
 // Configurar a data do pedido
-document.getElementById('dataHora').textContent = new Date().toLocaleString();
+//document.getElementById('dataHora').textContent = new Date().toLocaleString();
 
 
 function imprimirPedido2() {
@@ -136,7 +144,6 @@ function imprimirPedido2() {
     const numeroMesa = document.getElementById('numeroMesa').value;
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
-    //const data = document.getElementById('dataHora').textContent;
     var data = getDataAtual(); 
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
