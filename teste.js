@@ -87,7 +87,7 @@ function exibirProdutos() {
         <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
         Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
     </div>`;
-listaProdutos.innerHTML += produtoHTML;
+    listaProdutos.innerHTML += produtoHTML;
                     
                 });
             }
@@ -154,35 +154,25 @@ function imprimirPedido2() {
     let detalhesPedido = `
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
         <table style="width: 100%; font-size: 22px;">
-     
-        <tr style="font-size: 22px;">
-    <td style="text-align: right; width: 50%;">
-        <img src="Logo.png" style="width: 100%; height: auto;" />
-    </td>
-    <td colspan="3" style="text-align: center;"><strong>PEDIDO</strong></td>
-</tr>
-
-        <tr font-size: 22px;>
-            
-            <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
-            
-        </tr>
-        <tr>
-            <td colspan="3" text-align: right;"><strong>${nomeCliente}</strong> </td>
-            <td style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
-            
-        </tr>
-
-    
+            <tr style="font-size: 22px;">
+                <td style="text-align: right; width: 50%;"><img src="Logo.png" style="width: 100%; height: auto;" /></td>
+                <td colspan="3" style="text-align: center;"><strong>PEDIDO</strong></td>
+            </tr>
+            <tr font-size: 22px;>
+                <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right;"><strong>${nomeCliente}</strong> </td>
+                <td style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
         </table>  
         <table style="width: 100%; ">
-                    <tr font-size: 22px; style="width: 100%;">
-                        <td style="text-align: left;">Produto</td>
-                        <td style="text-align: right;">Unit</td>
-                        <td style="text-align: right;">Total</td>
-                    </tr>
-                
-                <tbody>
+            <tr font-size: 22px; style="width: 100%;">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tbody>
     `;
 
 
