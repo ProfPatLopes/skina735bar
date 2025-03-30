@@ -233,7 +233,7 @@ function imprimirPedido2() {
         <table style="width: 100%; border-collapse: collapse; font-size: 24px;">
                 <thead>
                     <tr>
-                        <th style="text-align: left;"><img src="Logo.png"  style="display: block; margin: 0 auto; width: 25%;"></th>
+                        <th style="text-align: center;"><img src="Logo.png"width: 25%;"></th>
                         <th style="text-align: center;">Pedido</th>
                         <th style="text-align: right;"><strong>Cliente:</strong> ${nomeCliente}</th>
                         <th style="text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
