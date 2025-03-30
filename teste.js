@@ -128,7 +128,7 @@ function habilitarNumeroMesa() {
 
 // Configurar a data do pedido
 document.getElementById('dataPedido').textContent = new Date().toLocaleString();
-
+/*
 function imprimirPedido() {
     const nomeCliente = document.getElementById('nomeCliente').value;
     const tipoPedido = document.getElementById('tipoPedido').value;
@@ -215,7 +215,7 @@ function imprimirPedido() {
     novaJanela.print();
     novaJanela.close();
 }
-
+*/
 function imprimirPedido2() {
     const nomeCliente = document.getElementById('nomeCliente').value;
     const tipoPedido = document.getElementById('tipoPedido').value;
