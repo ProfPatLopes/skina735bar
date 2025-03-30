@@ -1,0 +1,53 @@
+.informacoes-cliente {
+    margin-bottom: 20px;
+}
+
+/* Configuração padrão para telas maiores */
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .formulario, .painel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .formulario, .painel {
+        padding: 10px;
+    }
+
+    .produto {
+        flex-direction: column;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario {
+    width: 60%;
+}
+
+.painel {
+    width: 35%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.total {
+    font-size: 1.2em;
+    font-weight: bold;
+}
