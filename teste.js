@@ -167,15 +167,15 @@ function imprimirPedido2() {
             </tr>
         </table>  
         <table style="width: 100%; ">
+            <tr>
+                <td colspan="4">------------------------------------------------</td>
+            </tr>
             <tr font-size: 22px; style="width: 100%;">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
             </tr>
             <tbody>
-            <tr>
-                    <td colspan="4">------------------------------------------------</td>
-                </tr>
             
     `;
 
@@ -211,6 +211,9 @@ function imprimirPedido2() {
     }
 
     detalhesPedido += `
+                <tr>
+                    <td colspan="4">------------------------------------------------</td>
+                </tr>
                 </tbody>
             </table>
             
