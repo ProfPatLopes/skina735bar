@@ -172,7 +172,7 @@ function imprimirPedido2() {
             <hr>
             <table style="width: 100%; ">
                
-                    <tr font-size: 22px; style="width: 100%;>
+                    <tr font-size: 22px; style="width: 100%;">
                         <td style="text-align: left;">Produto</td>
                         <td style="text-align: right;">Unit</td>
                         <td style="text-align: right;">Total</td>
