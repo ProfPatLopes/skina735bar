@@ -136,8 +136,9 @@ function imprimirPedido2() {
     const numeroMesa = document.getElementById('numeroMesa').value;
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
-    const data = document.getElementById('dataHora').textContent;
-    
+    //const data = document.getElementById('dataHora').textContent;
+    var data = getDataAtual(); // Obtém a data formatada
+
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
@@ -147,23 +148,22 @@ function imprimirPedido2() {
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
         <table style="width: 100%; font-size: 22px;">
     
-        <tr>
+        <tr font-size: 22px;>
             <!-- Definir proporção de largura para cada elemento -->
-            <th text-align: right; style="width: 50%;">
+            <td text-align: right; style="width: 50%;">
                 <img src="Logo.png" style="width: 100%; height: auto;" />
-            </th>
-            <th colspan="2" text-align: center;"><strong>PEDIDO</strong> </th>
-            <th style="text-align: center; width: 50%;">Data/Hora: ${data}</th>
+            </td>
+            <td colspan="3" text-align: center;"><strong>PEDIDO</strong> </td>
+            
+        </tr>
+        <tr font-size: 22px;>
+            
+            <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
             
         </tr>
         <tr>
-            
-            <td colspan="4" style="text-align: center; width: 100%;">Data/Hora: ${data}</td>
-            
-        </tr>
-        <tr>
-            <td colspan="3" text-align: right;"><strong>Cliente: ${nomeCliente}</strong> </td>
-            <td style="width: 20%; text-align: right;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            <td colspan="3" text-align: right;"><strong>${nomeCliente}</strong> </td>
+            <td style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             
         </tr>
 
