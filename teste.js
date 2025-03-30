@@ -237,7 +237,7 @@ function imprimirPedido2() {
             <th style="width: 20%;">
                 <img src="Logo.png" style="width: 100%; height: auto;" />
             </th>
-            <th style="width: 60%; text-align: right;"><strong>Cliente:</strong> ${nomeCliente}</th>
+            <th style="width: 60%; text-align: right;"><strong>${nomeCliente}</strong> </th>
             <th style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
         </tr>
     </thead>
