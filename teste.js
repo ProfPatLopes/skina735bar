@@ -127,7 +127,9 @@ function habilitarNumeroMesa() {
 }
 
 // Configurar a data do pedido
-document.getElementById('dataPedido').textContent = new Date().toLocaleString();
+document.getElementById('dataHora').textContent = new Date().toLocaleString();
+
+
 function imprimirPedido2() {
     const nomeCliente = document.getElementById('nomeCliente').value;
     const tipoPedido = document.getElementById('tipoPedido').value;
@@ -149,7 +151,8 @@ function imprimirPedido2() {
             <th text-align: right; style="width: 50%;">
                 <img src="Logo.png" style="width: 100%; height: auto;" />
             </th>
-            <th colspan="3" text-align: center;"><strong>PEDIDO</strong> </th>
+            <th colspan="2" text-align: center;"><strong>PEDIDO</strong> </th>
+            <th id="dataHora" style="text-align: right; width: 50%;"></th>
             
         </tr>
         <tr>
