@@ -215,3 +215,95 @@ function imprimirPedido() {
     novaJanela.print();
     novaJanela.close();
 }
+
+function imprimirPedido2() {
+    const nomeCliente = document.getElementById('nomeCliente').value;
+    const tipoPedido = document.getElementById('tipoPedido').value;
+    const numeroMesa = document.getElementById('numeroMesa').value;
+    const painel = document.getElementById('itensPedido');
+    const totalCompra = document.getElementById('totalCompra').textContent;
+
+    if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
+        alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
+        return;
+    }
+
+    let detalhesPedido = `
+        <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 24px;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;"><img src="Logo.png"  style="display: block; margin: 0 auto; width: 25%;"></th>
+                        <th style="text-align: center;">Pedido</th>
+                        <th style="text-align: right;"><strong>Cliente:</strong> ${nomeCliente}</th>
+                        <th style="text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
+                    </tr>
+                </thead>
+          </table>  
+            <hr>
+            <table style="width: 100%; border-collapse: collapse; font-size: 24px;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Produto</th>
+                        <th style="text-align: center;">Qtd</th>
+                        <th style="text-align: right;">Unit (R$)</th>
+                        <th style="text-align: right;">Total (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+
+
+
+    //
+    if (produtosSelecionados.length > 0) {
+        produtosSelecionados.forEach(item => {
+            const produto = item.nome;
+            const quantidade = item.qtd;
+            const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
+            const valorTotal = item.valor.toFixed(2); // Valor total do item
+            
+            detalhesPedido += `
+                <tr>
+                    <td>${produto}</td>
+                    <td style="text-align: center;">${quantidade}</td>
+                    <td style="text-align: right;">${valorUnitario.toFixed(2)}</td>
+                    <td style="text-align: right;">${valorTotal}</td>
+                </tr>
+                
+            `;
+        });
+    } else {
+        detalhesPedido += `
+            <tr>
+                <td colspan="4" style="text-align: center;">Nenhum item selecionado.</td>
+            </tr>
+        `;
+    }
+
+    detalhesPedido += `
+                </tbody>
+            </table>
+            <hr>
+            <p style="text-align: right;"><strong>Total:</strong> R$${totalCompra}</p>
+        </div>
+    `;
+
+    const novaJanela = window.open('', '_blank');
+    novaJanela.document.write(`
+        <html>
+            <head>
+                <title>Imprimir Pedido</title>
+                <style>
+                    body { margin: 0; padding: 0; }
+                    table, th, td { border: 1px solid #000; padding: 2px; }
+                </style>
+            </head>
+            <body>
+                ${detalhesPedido}
+            </body>
+        </html>
+    `);
+    novaJanela.print();
+    novaJanela.close();
+}
