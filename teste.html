@@ -13,7 +13,7 @@
         <label for="nomeCliente">Cliente:</label>
         <input type="text" id="nomeCliente" placeholder="Digite o nome do cliente">
     
-        <label for="tipoPedido">Tipo de Pedido:</label>
+        <label for="tipoPedido">Atendimento:</label>
         <select id="tipoPedido" onchange="habilitarNumeroMesa()">
             <option value="balcao">Balcão</option>
             <option value="mesa">Mesa</option>
@@ -28,10 +28,10 @@
     </div>
     
     <div class="formulario">
-        <h1>Produtos</h1>
+        <h3>Produtos</h3>
         <label for="categoria">Categoria:</label>
         <select id="categoria" onchange="exibirProdutos()">
-            <option value="">-- Escolha uma categoria --</option>
+            <option value="">-- Selecione --</option>
             <option value="bebidas">Bebidas</option>
             <option value="porcoes">Porções</option>
             <option value="diversos">Diversos</option>
@@ -45,7 +45,7 @@
         <button class="botao" onclick="imprimirPedido2()">Imprimir</button>
     </div>
     <div class="painel" id="painelPedidos">
-        <h2>Itens do Pedido</h2>
+        <h3>Itens do Pedido</h3>
         <ul id="itensPedido"></ul>
         <p class="total">Total: R$<span id="totalCompra">0.00</span></p>
     </div>
