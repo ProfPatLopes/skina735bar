@@ -231,24 +231,24 @@ function imprimirPedido2() {
     let detalhesPedido = `
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
         <table style="width: 100%; font-size: 24px;">
-    <thead>
+    
         <tr>
             <!-- Definir proporção de largura para cada elemento -->
-            <th style="width: 20%;">
-                <img src="Logo.png" style="width: 100%; height: auto;" />
-            </th>
-            <th style="width: 60%; text-align: right;"><strong>${nomeCliente}</strong> </th>
-            <th style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
+            <td>
+                <img src="Logo.png" height: auto;" />
+            </td>
+            <td  text-align: right;"><strong>${nomeCliente}</strong> </td>
+            <td  text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
         </tr>
-    </thead>
+    
 </table>  
             <table style="width: 100%; ">
                 <thead>
                     <tr font-size: 24px;>
                         <th style="text-align: left;">Produto</th>
+                        <th style="text-align: right;">Unit</th>
                         <th style="text-align: center;">Qtd</th>
-                        <th style="text-align: right;">Unit (R$)</th>
-                        <th style="text-align: right;">Total (R$)</th>
+                        <th style="text-align: right;">Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -269,9 +269,8 @@ function imprimirPedido2() {
                     <td colspan="4">--------------------------------------</td>
                 </tr>
                 <tr font-size: 22px;>
-                    <td>${produto}</td>
+                    <td colspan="2">${produto}</td>
                     <td style="text-align: center;">${quantidade}</td>
-                    <td style="text-align: right;">${valorUnitario.toFixed(2)}</td>
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
                 
