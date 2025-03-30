@@ -158,12 +158,12 @@ function imprimirPedido2() {
                 <td style="text-align: right; width: 50%;"><img src="Logo.png" style="width: 100%; height: auto;" /></td>
                 <td colspan="3" style="text-align: center;"><strong>PEDIDO</strong></td>
             </tr>
-            <tr font-size: 22px;>
+            <tr font-size: 20px;>
                 <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
             </tr>
             <tr>
-                <td colspan="3" style="text-align: right;"><strong>${nomeCliente}</strong> </td>
-                <td style="width: 20%; text-align: right;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="3" style="text-align: left;"><strong>${nomeCliente}</strong> </td>
+                <td style="width: 20%; text-align: left;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
@@ -173,6 +173,10 @@ function imprimirPedido2() {
                 <td style="text-align: right;">Total</td>
             </tr>
             <tbody>
+            <tr>
+                    <td colspan="4">------------------------------------------------</td>
+                </tr>
+            
     `;
 
 
@@ -187,7 +191,7 @@ function imprimirPedido2() {
             
             detalhesPedido += `
                 <tr>
-                    <td colspan="4">--------------------------------------</td>
+                    <td colspan="4">------------------------------------------------</td>
                 </tr>
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
