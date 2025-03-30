@@ -241,9 +241,9 @@ function imprimirPedido2() {
                 </thead>
           </table>  
             <hr>
-            <table style="width: 100%; border-collapse: collapse; font-size: 24px;">
+            <table style="width: 100%; ">
                 <thead>
-                    <tr>
+                    <tr border-collapse: collapse; font-size: 24px;>
                         <th style="text-align: left;">Produto</th>
                         <th style="text-align: center;">Qtd</th>
                         <th style="text-align: right;">Unit (R$)</th>
@@ -264,11 +264,14 @@ function imprimirPedido2() {
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             
             detalhesPedido += `
-                <tr>
+                <tr font-size: 22px;>
                     <td>${produto}</td>
                     <td style="text-align: center;">${quantidade}</td>
                     <td style="text-align: right;">${valorUnitario.toFixed(2)}</td>
                     <td style="text-align: right;">${valorTotal}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">-------------------------------</td>
                 </tr>
                 
             `;
