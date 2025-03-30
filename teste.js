@@ -136,7 +136,7 @@ function imprimirPedido2() {
     const numeroMesa = document.getElementById('numeroMesa').value;
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
-
+    const data = document.getElementById('dataHora').textContent;
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
@@ -152,12 +152,17 @@ function imprimirPedido2() {
                 <img src="Logo.png" style="width: 100%; height: auto;" />
             </th>
             <th colspan="2" text-align: center;"><strong>PEDIDO</strong> </th>
-            <th id="dataHora" style="text-align: right; width: 50%;">Cliente: ${dataHora}</th>
+            <th style="text-align: center; width: 50%;">Data/Hora: ${data}</th>
             
         </tr>
         <tr>
-            <th colspan="3" text-align: right;"><strong>Cliente: ${nomeCliente}</strong> </th>
-            <th style="width: 20%; text-align: right;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</th>
+            
+            <td colspan="4" style="text-align: center; width: 100%;">Data/Hora: ${data}</td>
+            
+        </tr>
+        <tr>
+            <td colspan="3" text-align: right;"><strong>Cliente: ${nomeCliente}</strong> </td>
+            <td style="width: 20%; text-align: right;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             
         </tr>
 
