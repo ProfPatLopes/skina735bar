@@ -155,7 +155,7 @@ function imprimirPedido2() {
     }
 
     let detalhesPedido = `
-        <div style="max-width: 88mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
+        <div style="max-width: 79mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: 100%; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
