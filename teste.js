@@ -206,21 +206,33 @@ function imprimirPedido2() {
                 detalhesPedido += `
                 <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>--------------BAR----------------<</td>
-                </tr>`;
+                </tr>
+                <tr style="width: auto;">
+                    <td colspan="4">..................................................</td>
+                    
+                    </tr>`;
                 cabBar=false;
             }
             if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
                 <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>--------------PORÇÃO-------------<</td>
-                </tr>`;
+                </tr>
+                <tr style="width: auto;">
+                    <td colspan="4">..................................................</td>
+                    
+                    </tr>`;
                 cabPor=false;
             }
             if (cabDiv=== true && tipo_produto === 'diversos') {
                 detalhesPedido += `
                 <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>-------------DIVERSOS------------<</td>
-                </tr>`;
+                </tr>
+                <tr style="width: auto;">
+                    <td colspan="4">..................................................</td>
+                    
+                    </tr>`;
                 cabDiv=false;
             }
             detalhesPedido += `
