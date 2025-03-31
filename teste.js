@@ -195,21 +195,21 @@ function imprimirPedido2() {
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            if (cabBar== true && item.tipo == 'bebidas') {
+            if (cabBar=== true && item.tipo === 'bebida') {
                 detalhesPedido += `
                 <tr>
                     <td colspan="4" style="text-align: center;">>--------------BAR----------------<</td>
                 </tr>`;
                 cabBar=false;
             }
-            if (cabPor== true && item.tipo == 'porcao') {
+            if (cabPor=== true && item.tipo === 'porcao') {
                 detalhesPedido += `
                 <tr>
                     <td colspan="4" style="text-align: center;">>--------------PORÇÃO-------------<</td>
                 </tr>`;
                 cabPor=false;
             }
-            if (cabDiv== true && item.tipo == 'diversos') {
+            if (cabDiv=== true && item.tipo === 'diversos') {
                 detalhesPedido += `
                 <tr>
                     <td colspan="4" style="text-align: center;">>-------------DIVERSOS------------<</td>
