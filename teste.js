@@ -85,7 +85,7 @@ function exibirProdutos() {
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
     <div class="produto">
-        <input type="checkbox" id="produto${index}" data-tipo="${categoria}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()">
+        <input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()">
         <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
         Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
     </div>`;
@@ -183,6 +183,10 @@ function imprimirPedido2() {
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
             </tr>
             <tbody>
             
