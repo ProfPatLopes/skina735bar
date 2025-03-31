@@ -241,10 +241,10 @@ function imprimirPedido2() {
     
     novaJanela.print();
     novaJanela.close();
-    gerarArquivoExcel(detalhesPedido);
+    gerarArquivoExcel();
 }
 // inicio gerar arquivo
-function gerarArquivoExcel(dadosPedido) {
+function gerarArquivoExcel( ) {
     console.log('Função gerarArquivoExcel foi chamada.');
     const dadosPedido = [
         ['Data', getDataAtual()],
