@@ -162,7 +162,7 @@ function imprimirPedido2() {
                 <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
             </tr>
             <tr >
-                <td colspan="4" style="font-size: 18px; text-align: center; width: 100%;">${data}</td>
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
             </tr>
              <tr>
                 <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
@@ -173,11 +173,11 @@ function imprimirPedido2() {
         </table>  
         <table style="width: 100%; ">
             <tr>
-                <td colspan="4">--------------------------------------------------</td>
+                <td colspan="4" style="width: auto;">--------------------------------------------------</td>
 
             </tr>
             
-            <tr font-size: 22px; style="width: 100%;">
+            <tr font-size: 22px; style="width: auto;">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
@@ -198,27 +198,27 @@ function imprimirPedido2() {
             const tipo_produto = item.tipo;
             if (cabBar=== true && item.tipo === 'bebida') {
                 detalhesPedido += `
-                <tr>
+                <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>--------------BAR----------------<</td>
                 </tr>`;
                 cabBar=false;
             }
             if (cabPor=== true && item.tipo === 'porcao') {
                 detalhesPedido += `
-                <tr>
+                <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>--------------PORÇÃO-------------<</td>
                 </tr>`;
                 cabPor=false;
             }
             if (cabDiv=== true && item.tipo === 'diversos') {
                 detalhesPedido += `
-                <tr>
+                <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>-------------DIVERSOS------------<</td>
                 </tr>`;
                 cabDiv=false;
             }
             detalhesPedido += `
-                <tr>
+                <tr style="width: auto;">
                     <td colspan="4">--------------------------------------------------</td>
                     
                     </tr>
@@ -240,7 +240,7 @@ function imprimirPedido2() {
     }
 
     detalhesPedido += `
-                <tr>
+                <tr style="width: auto;">
                     <td colspan="4">--------------------------------------------------</td>
 
                 </tr>
