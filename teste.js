@@ -155,7 +155,7 @@ function imprimirPedido2() {
     }
 
     let detalhesPedido = `
-        <div style="max-width: 79mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
+        <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: 100%; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
@@ -220,7 +220,8 @@ function imprimirPedido2() {
             detalhesPedido += `
                 <tr>
                     <td colspan="4">--------------------------------------------------</td>
-                </tr>
+                    
+                    </tr>
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
                     <td style="text-align: center;">${quantidade}</td>
@@ -240,7 +241,8 @@ function imprimirPedido2() {
 
     detalhesPedido += `
                 <tr>
-                    <td colspan="4">-----------------------------------------------</td>
+                    <td colspan="4">--------------------------------------------------</td>
+
                 </tr>
                 </tbody>
             </table>
