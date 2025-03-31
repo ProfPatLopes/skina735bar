@@ -219,7 +219,7 @@ function imprimirPedido2() {
                 </tbody>
             </table>
             
-            <p style="border-style: solid; border-radius: 10px; text-align: right; font-size: 24px;"><strong>Valor Total:</strong>${totalCompra}</p>
+            <p style="border-style: solid; border-radius: 10px; text-align: right; font-size: 24px;"><strong>Valor Total..:  ${totalCompra}</strong></p>
         </div>
     `;
 
