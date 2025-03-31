@@ -172,7 +172,7 @@ function imprimirPedido2() {
             </tr>
         </table>  
         <table style="width: 100%; ">
-            <tr>
+            <tr style="font-size: 22px; text-align: center;">
                 <td colspan="4">-----------------------------------------------</td>
             </tr>
             
