@@ -237,5 +237,71 @@ function imprimirPedido2() {
         </html>
     `);
     novaJanela.print();
+    gerarArquivoExcel();
     novaJanela.close();
 }
+// inicio gerar arquivo
+function gerarArquivoExcel() {
+    const dadosPedido = [
+        ['Data', getDataAtual()],
+        ['Cliente', document.getElementById('nomeCliente').value],
+        ['Produto', 'Quantidade', 'Valor Unitário (R$)', 'Valor Total (R$)'], // Cabeçalho
+    ];
+
+    produtosSelecionados.forEach(item => {
+        dadosPedido.push([
+            item.nome,
+            item.qtd,
+            (item.valor / item.qtd).toFixed(2), // Valor unitário
+            item.valor.toFixed(2)               // Valor total
+        ]);
+    });
+
+    dadosPedido.push([], ['Total do Pedido (R$)', '', '', document.getElementById('totalCompra').textContent]);
+
+    // Criação do workbook (arquivo Excel)
+    const ws = XLSX.utils.aoa_to_sheet(dadosPedido); // Converte o array em uma aba do Excel
+    const wb = XLSX.utils.book_new();               // Cria um novo workbook
+    XLSX.utils.book_append_sheet(wb, ws, 'Pedido'); // Adiciona a aba "Pedido" ao arquivo Excel
+
+    // Salvar o arquivo no navegador
+    const excelBlob = XLSX.write(wb, { bookType: 'xlsx', type: 'blob' });
+    const fileName = `Pedido_${getDataAtual().replace(/\//g, '-')}.xlsx`;
+
+    // Chama a função para enviar por e-mail
+    enviarEmailExcel(fileName, excelBlob);
+}
+// fim gerar arquivo
+// inicio enviar email
+function enviarEmailExcel(nomeArquivo, arquivoExcel) {
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const base64Excel = e.target.result.split(',')[1]; // Obtém o arquivo como Base64
+
+        const parametrosEmail = {
+            to_email: 'barskina735@gmail.com',
+            subject: 'Novo Pedido - Arquivo Excel',
+            message: 'Segue em anexo o arquivo Excel com os detalhes do pedido.',
+            attachment: {
+                filename: nomeArquivo,
+                content: base64Excel,
+                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                disposition: 'attachment',
+            },
+        };
+
+        emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', parametrosEmail)
+            .then(response => {
+                alert('E-mail enviado com o Excel anexado!');
+                console.log('SUCESSO:', response.status, response.text);
+            }, error => {
+                alert('Erro ao enviar o e-mail.');
+                console.log('ERRO:', error);
+            });
+    };
+
+    reader.readAsDataURL(arquivoExcel); // Converte o arquivo Excel para Base64
+}
+
+//
