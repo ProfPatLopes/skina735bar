@@ -26,7 +26,7 @@ function adicionarItens() {
                 itemExistente.valor = valor; // Atualiza o valor total do item
             } else {
                 // Adiciona o produto ao array se ainda não estiver na lista
-                produtosSelecionados.push({ nome, qtd, valor,tipo });
+                produtosSelecionados.push({ tipo, nome, qtd, valor});
             }
 
             //totalCompra += (qtd+valor);
