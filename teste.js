@@ -16,6 +16,7 @@ function adicionarItens() {
             const preco = parseFloat(checkbox.getAttribute('data-preco'));
             const qtd = parseInt(quantidade.value) || 0;
             const valor = preco * qtd;
+            const tipo = checkbox.getAttribute('data-tipo'); // Captura o tipo do produto
 
             // Verificar se o produto já existe na lista
             const itemExistente = produtosSelecionados.find(item => item.nome === nome);
@@ -27,6 +28,7 @@ function adicionarItens() {
             } else {
                 // Adiciona o produto ao array se ainda não estiver na lista
                 produtosSelecionados.push({ tipo, nome, qtd, valor});
+                
             }
 
             //totalCompra += (qtd+valor);
@@ -35,7 +37,7 @@ function adicionarItens() {
 
     // Atualiza o painel com os itens do pedido
     produtosSelecionados.forEach(item => {
-        painel.innerHTML += `<li>${item.tipo}-${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+        painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         totalCompra += item.valor;
     });
 
@@ -50,7 +52,7 @@ function atualizarPainel() {
         const painel = document.getElementById('itensPedido');
         //painel.innerHTML = '';
         produtosSelecionados.forEach(item => {
-            painel.innerHTML += `<li>${item.tipo}-${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+            painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         });
 }
 
@@ -83,7 +85,7 @@ function exibirProdutos() {
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
     <div class="produto">
-        <input type="checkbox" id="produto${index}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()">
+        <input type="checkbox" id="produto${index}" data-tipo="${categoria}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()">
         <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
         Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
     </div>`;
