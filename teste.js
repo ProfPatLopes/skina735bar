@@ -238,9 +238,10 @@ function imprimirPedido2() {
             </body>
         </html>
     `);
+    
+    novaJanela.print();
+    novaJanela.close();
     gerarArquivoExcel(detalhesPedido);
-    //novaJanela.print();
-    //novaJanela.close();
 }
 // inicio gerar arquivo
 function gerarArquivoExcel(dadosPedido) {
