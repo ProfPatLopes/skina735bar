@@ -152,7 +152,7 @@ function imprimirPedido2() {
     }
 
     let detalhesPedido = `
-        <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
+        <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: 100%; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
@@ -162,10 +162,10 @@ function imprimirPedido2() {
                 <td colspan="4" style="font-size: 18px; text-align: center; width: 100%;">${data}</td>
             </tr>
              <tr>
-                <td colspan="4" style="text-align: left;"><strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
             </tr>
             <tr>
-                <td colspan="4" style="width: 20%; text-align: left;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
@@ -219,7 +219,7 @@ function imprimirPedido2() {
                 </tbody>
             </table>
             
-            <p style="text-align: right; font-size: 24px;"><strong>Total:</strong> R$${totalCompra}</p>
+            <p style="border-style: solid; border-radius: 10px; text-align: right; font-size: 24px;"><strong>Total:</strong> R$${totalCompra}</p>
         </div>
     `;
 
