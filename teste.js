@@ -173,7 +173,7 @@ function imprimirPedido2() {
         </table>  
         <table style="width: 100%; ">
             <tr>
-                <td colspan="4" style="width: auto;">--------------------------------------------------</td>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
 
             </tr>
             
@@ -225,7 +225,7 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
                 <tr style="width: auto;">
-                    <td colspan="4">..................................................</td>
+                    <td colspan="4">.................................................</td>
                     
                     </tr>
                 
