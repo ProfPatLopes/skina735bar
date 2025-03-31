@@ -57,19 +57,19 @@ function atualizarPainel() {
     
 const produtosPorCategoria = {
             bebidas: [
-                { nome: 'Coca-Cola', preco: 5 },
-                { nome: 'Suco Laranja', preco: 8 },
-                { nome: 'Água Mineral', preco: 3 }
+                { nome: 'Coca-Cola', preco: 5,tipo:'bebida' },
+                { nome: 'Suco Laranja', preco: 8 ,tipo:'bebida'},
+                { nome: 'Água Mineral', preco: 3 ,tipo:'bebida'}
             ],
             porcoes: [
-                { nome: 'Batata', preco: 12 },
-                { nome: 'Frango ', preco: 15 },
-                { nome: 'Aneis de Cebola', preco: 10 }
+                { nome: 'Batata', preco: 12, tipo:'porcao' },
+                { nome: 'Frango ', preco: 15 ,tipo:'porcao'},
+                { nome: 'Aneis de Cebola', preco: 10, tipo:'porcao' }
             ],
             diversos: [
-                { nome: 'Pipoca', preco: 6 },
-                { nome: 'Amendoim', preco: 4 },
-                { nome: 'Chocolate', preco: 8 }
+                { nome: 'Pipoca', preco: 6,tipo:'diversos' },
+                { nome: 'Amendoim', preco: 4 , tipo:'diversos'},
+                { nome: 'Chocolate', preco: 8 ,tipo:'diversos'}
             ]
 };
 
@@ -145,6 +145,9 @@ function imprimirPedido2() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
+    var cabBar = true;
+    var cabPor = true;
+    var cabDiv = true;
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
@@ -152,7 +155,7 @@ function imprimirPedido2() {
     }
 
     let detalhesPedido = `
-        <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
+        <div style="max-width: 58mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: 100%; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
@@ -172,6 +175,7 @@ function imprimirPedido2() {
             <tr>
                 <td colspan="4">-----------------------------------------------</td>
             </tr>
+            
             <tr font-size: 22px; style="width: 100%;">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
@@ -190,7 +194,28 @@ function imprimirPedido2() {
             const quantidade = item.qtd;
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
-            
+            const tipo_produto = item.tipo;
+            if (cabBar== true && item.tipo == 'bebidas') {
+                detalhesPedido += `
+                <tr>
+                    <td colspan="4" style="text-align: center;">>--------------BAR----------------<</td>
+                </tr>`;
+                cabBar=false;
+            }
+            if (cabPor== true && item.tipo == 'porcao') {
+                detalhesPedido += `
+                <tr>
+                    <td colspan="4" style="text-align: center;">>--------------PORÇÃO-------------<</td>
+                </tr>`;
+                cabPor=false;
+            }
+            if (cabDiv== true && item.tipo == 'diversos') {
+                detalhesPedido += `
+                <tr>
+                    <td colspan="4" style="text-align: center;">>-------------DIVERSOS------------<</td>
+                </tr>`;
+                cabDiv=false;
+            }
             detalhesPedido += `
                 <tr>
                     <td colspan="4">-----------------------------------------------</td>
