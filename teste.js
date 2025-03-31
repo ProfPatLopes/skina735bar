@@ -238,12 +238,12 @@ function imprimirPedido2() {
             </body>
         </html>
     `);
-    gerarArquivoExcel();
+    gerarArquivoExcel(detalhesPedido);
     //novaJanela.print();
     //novaJanela.close();
 }
 // inicio gerar arquivo
-function gerarArquivoExcel() {
+function gerarArquivoExcel(dadosPedido) {
     console.log('Função gerarArquivoExcel foi chamada.');
     const dadosPedido = [
         ['Data', getDataAtual()],
