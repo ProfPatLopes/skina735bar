@@ -158,7 +158,7 @@ function imprimirPedido2() {
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
                 <td colspan="3" style="text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
             </tr>
-            <tr font-size: 20px;>
+            <tr font-size: 18px;>
                 <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
             </tr>
              <tr>
