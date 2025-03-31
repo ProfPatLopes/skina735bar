@@ -156,14 +156,16 @@ function imprimirPedido2() {
         <table style="width: 100%; font-size: 22px;">
             <tr style="font-size: 22px;">
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="text-align: left;"><strong>PEDIDO</strong></td>
+                <td colspan="3" style="text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
             </tr>
             <tr font-size: 20px;>
                 <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
             </tr>
+             <tr>
+                <td colspan="4" style="text-align: left;"><strong>${nomeCliente}</strong> </td>
+            </tr>
             <tr>
-                <td colspan="3" style="text-align: left;"><strong>${nomeCliente}</strong> </td>
-                <td style="width: 20%; text-align: left;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="4" style="width: 20%; text-align: left;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
