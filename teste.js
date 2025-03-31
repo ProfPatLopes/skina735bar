@@ -26,7 +26,7 @@ function adicionarItens() {
                 itemExistente.valor = valor; // Atualiza o valor total do item
             } else {
                 // Adiciona o produto ao array se ainda não estiver na lista
-                produtosSelecionados.push({ nome, qtd, valor });
+                produtosSelecionados.push({ nome, qtd, valor,tipo });
             }
 
             //totalCompra += (qtd+valor);
@@ -35,7 +35,7 @@ function adicionarItens() {
 
     // Atualiza o painel com os itens do pedido
     produtosSelecionados.forEach(item => {
-        painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+        painel.innerHTML += `<li>${item.tipo}-${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         totalCompra += item.valor;
     });
 
@@ -50,7 +50,7 @@ function atualizarPainel() {
         const painel = document.getElementById('itensPedido');
         //painel.innerHTML = '';
         produtosSelecionados.forEach(item => {
-            painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+            painel.innerHTML += `<li>${item.tipo}-${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
         });
 }
 
@@ -196,21 +196,21 @@ function imprimirPedido2() {
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            if (cabBar=== true && item.tipo === 'bebida') {
+            if (cabBar=== true && tipo_produto === 'bebida') {
                 detalhesPedido += `
                 <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>--------------BAR----------------<</td>
                 </tr>`;
                 cabBar=false;
             }
-            if (cabPor=== true && item.tipo === 'porcao') {
+            if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
                 <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>--------------PORÇÃO-------------<</td>
                 </tr>`;
                 cabPor=false;
             }
-            if (cabDiv=== true && item.tipo === 'diversos') {
+            if (cabDiv=== true && tipo_produto === 'diversos') {
                 detalhesPedido += `
                 <tr style="width: auto;">
                     <td colspan="4" style="text-align: center;">>-------------DIVERSOS------------<</td>
@@ -266,65 +266,6 @@ function imprimirPedido2() {
     `);
     
     novaJanela.print();
-    //
-    console.log('Função gerarArquivoExcel foi chamada.');
-    const dadosPedido = [
-        ['Data', getDataAtual()],
-        ['Cliente', document.getElementById('nomeCliente').value],
-        ['Produto', 'Quantidade', 'Valor Unitário (R$)', 'Valor Total (R$)'], // Cabeçalho
-    ];
-
-    produtosSelecionados.forEach(item => {
-        dadosPedido.push([
-            item.nome,
-            item.qtd,
-            (item.valor / item.qtd).toFixed(2), // Valor unitário
-            item.valor.toFixed(2)               // Valor total
-        ]);
-    });
-
-    dadosPedido.push([], ['Total do Pedido (R$)', '', '', document.getElementById('totalCompra').textContent]);
-
-    // Criação do workbook (arquivo Excel)
-    const ws = XLSX.utils.aoa_to_sheet(dadosPedido); // Converte o array em uma aba do Excel
-    const wb = XLSX.utils.book_new();               // Cria um novo workbook
-    XLSX.utils.book_append_sheet(wb, ws, 'Pedido'); // Adiciona a aba "Pedido" ao arquivo Excel
-
-    // Salvar o arquivo no navegador
-    const excelBlob = XLSX.write(wb, { bookType: 'xlsx', type: 'blob' });
-    const fileName = `Pedido_${getDataAtual().replace(/\//g, '-')}.xlsx`;
-
-    // Chama a função para enviar por e-mail
-    //enviarEmailExcel(fileName, excelBlob);
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        const base64Excel = e.target.result.split(',')[1]; // Obtém o arquivo como Base64
-
-        const parametrosEmail = {
-            to_email: 'barskina735@gmail.com',
-            subject: 'Novo Pedido - Arquivo Excel',
-            message: 'Segue em anexo o arquivo Excel com os detalhes do pedido.',
-            attachment: {
-                filename: nomeArquivo,
-                content: base64Excel,
-                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                disposition: 'attachment',
-            },
-        };
-
-        emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', parametrosEmail)
-            .then(response => {
-                alert('E-mail enviado com o Excel anexado!');
-                console.log('SUCESSO:', response.status, response.text);
-            }, error => {
-                alert('Erro ao enviar o e-mail.');
-                console.log('ERRO:', error);
-            });
-    };
-
-    reader.readAsDataURL(arquivoExcel); // Converte o arquivo Excel para Base64
-    //
     novaJanela.close();
     //gerarArquivoExcel();
 }
