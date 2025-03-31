@@ -225,7 +225,7 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
                 <tr style="width: auto;">
-                    <td colspan="4">.................................................</td>
+                    <td colspan="4">..................................................</td>
                     
                     </tr>
                 
@@ -244,7 +244,7 @@ function imprimirPedido2() {
                 </tbody>
             </table>
             
-            <p style="border-style: solid; border-radius: 10px; text-align: right; font-size: 24px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+            <p style="text-align: right; font-size: 24px;"><strong>Valor Total:  ${totalCompra}</strong></p>
         </div>
     `;
 
