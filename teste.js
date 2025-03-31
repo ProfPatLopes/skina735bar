@@ -241,9 +241,9 @@ function imprimirPedido2() {
     
     novaJanela.print();
     novaJanela.close();
-    gerarArquivoExcel();
+    //gerarArquivoExcel();
 }
-// inicio gerar arquivo
+/* inicio gerar arquivo
 function gerarArquivoExcel( ) {
     console.log('Função gerarArquivoExcel foi chamada.');
     const dadosPedido = [
@@ -308,4 +308,4 @@ function enviarEmailExcel(nomeArquivo, arquivoExcel) {
     reader.readAsDataURL(arquivoExcel); // Converte o arquivo Excel para Base64
 }
 
-//
+*/
