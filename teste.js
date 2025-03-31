@@ -244,6 +244,7 @@ function imprimirPedido2() {
 }
 // inicio gerar arquivo
 function gerarArquivoExcel() {
+    console.log('Função gerarArquivoExcel foi chamada.');
     const dadosPedido = [
         ['Data', getDataAtual()],
         ['Cliente', document.getElementById('nomeCliente').value],
