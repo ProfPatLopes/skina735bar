@@ -270,7 +270,35 @@ function imprimirPedido2() {
     const fileName = `Pedido_${getDataAtual().replace(/\//g, '-')}.xlsx`;
 
     // Chama a função para enviar por e-mail
-    enviarEmailExcel(fileName, excelBlob);
+    //enviarEmailExcel(fileName, excelBlob);
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const base64Excel = e.target.result.split(',')[1]; // Obtém o arquivo como Base64
+
+        const parametrosEmail = {
+            to_email: 'barskina735@gmail.com',
+            subject: 'Novo Pedido - Arquivo Excel',
+            message: 'Segue em anexo o arquivo Excel com os detalhes do pedido.',
+            attachment: {
+                filename: nomeArquivo,
+                content: base64Excel,
+                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                disposition: 'attachment',
+            },
+        };
+
+        emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', parametrosEmail)
+            .then(response => {
+                alert('E-mail enviado com o Excel anexado!');
+                console.log('SUCESSO:', response.status, response.text);
+            }, error => {
+                alert('Erro ao enviar o e-mail.');
+                console.log('ERRO:', error);
+            });
+    };
+
+    reader.readAsDataURL(arquivoExcel); // Converte o arquivo Excel para Base64
     //
     novaJanela.close();
     //gerarArquivoExcel();
@@ -309,7 +337,7 @@ function gerarArquivoExcel( ) {
 }
 // fim gerar arquivo
 // inicio enviar email
-*/
+
 function enviarEmailExcel(nomeArquivo, arquivoExcel) {
     const reader = new FileReader();
 
@@ -340,4 +368,4 @@ function enviarEmailExcel(nomeArquivo, arquivoExcel) {
 
     reader.readAsDataURL(arquivoExcel); // Converte o arquivo Excel para Base64
 }
-
+*/
