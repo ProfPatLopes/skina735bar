@@ -154,12 +154,12 @@ function imprimirPedido2() {
     let detalhesPedido = `
         <div style="max-width: 58mm; font-size: 12px; font-family: Arial, sans-serif;">
         <table style="width: 100%; font-size: 22px;">
-            <tr style="font-size: 22px;">
+            <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
+                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
             </tr>
-            <tr font-size: 18px;>
-                <td colspan="4" style="text-align: center; width: 100%;">${data}</td>
+            <tr >
+                <td colspan="4" style="font-size: 18px; text-align: center; width: 100%;">${data}</td>
             </tr>
              <tr>
                 <td colspan="4" style="text-align: left;"><strong>${nomeCliente}</strong> </td>
