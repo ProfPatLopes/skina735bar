@@ -161,6 +161,83 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
+                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>CÓPIA PEDIDO - CAIXA</strong></td>
+            </tr>
+            <tr >
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+            </tr>
+             <tr>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
+        </table>  
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            
+            <tr font-size: 22px; style="width: auto;">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            <tbody>
+            
+    `;
+
+
+
+    //
+    if (produtosSelecionados.length > 0) {
+        produtosSelecionados.forEach(item => {
+            const produto = item.nome;
+            const quantidade = item.qtd;
+            const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
+            const valorTotal = item.valor.toFixed(2); // Valor total do item
+            const tipo_produto = item.tipo;
+            
+            detalhesPedido += `
+                
+                <tr font-size: 22px;>
+                    <td colspan="2">${produto}</td>
+                    <td style="text-align: center;">${quantidade}</td>
+                    <td style="text-align: right;">${valorTotal}</td>
+                </tr>
+                <tr style="width: auto;">
+                    <td colspan="4">..................................................</td>
+                    
+                    </tr>
+                
+            `;
+        });
+    } else {
+        detalhesPedido += `
+            <tr>
+                <td colspan="4" style="text-align: center;">Nenhum item selecionado.</td>
+            </tr>
+        `;
+    }
+
+    detalhesPedido += `
+                
+                </tbody>
+            </table>
+            
+            <p style="text-align: right; font-size: 24px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+        
+    `;
+//cópia
+    detalhesPedido += `
+        <table style="width: auto; font-size: 22px;">
+            <tr>
+                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
                 <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
             </tr>
             <tr >
@@ -204,35 +281,113 @@ function imprimirPedido2() {
             const tipo_produto = item.tipo;
             if (cabBar=== true && tipo_produto === 'bebida') {
                 detalhesPedido += `
-                <tr style="width: auto;">
-                    <td colspan="4" style="text-align: center;">>--------------BAR----------------<</td>
-                </tr>
-                <tr style="width: auto;">
-                    <td colspan="4">..................................................</td>
-                    
-                    </tr>`;
+                <table style="width: auto; font-size: 22px;">
+            <tr>
+                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
+                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----BAR----<</strong></td>
+            </tr>
+            <tr >
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+            </tr>
+             <tr>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
+        </table>  
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            
+            <tr font-size: 22px; style="width: auto;">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            <tbody>
+            
+    `;
                 cabBar=false;
             }
             if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
-                <tr style="width: auto;">
-                    <td colspan="4" style="text-align: center;">>--------------PORÇÃO-------------<</td>
-                </tr>
-                <tr style="width: auto;">
-                    <td colspan="4">..................................................</td>
-                    
-                    </tr>`;
+        <table style="width: auto; font-size: 22px;">
+            <tr>
+                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
+                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----PORÇÃO----<</strong></td>
+            </tr>
+            <tr >
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+            </tr>
+             <tr>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
+        </table>  
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            
+            <tr font-size: 22px; style="width: auto;">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            <tbody>
+            
+    `;
                 cabPor=false;
             }
             if (cabDiv=== true && tipo_produto === 'diversos') {
                 detalhesPedido += `
-                <tr style="width: auto;">
-                    <td colspan="4" style="text-align: center;">>-------------DIVERSOS------------<</td>
-                </tr>
-                <tr style="width: auto;">
-                    <td colspan="4">..................................................</td>
-                    
-                    </tr>`;
+        <table style="width: auto; font-size: 22px;">
+            <tr>
+                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
+                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>>--DIVERSOS--<</strong></td>
+            </tr>
+            <tr >
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+            </tr>
+             <tr>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
+        </table>  
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            
+            <tr font-size: 22px; style="width: auto;">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+
+            </tr>
+            <tbody>
+            
+    `;
                 cabDiv=false;
             }
             detalhesPedido += `
@@ -261,11 +416,9 @@ function imprimirPedido2() {
                 
                 </tbody>
             </table>
-            
-            <p style="text-align: right; font-size: 24px;"><strong>Valor Total:  ${totalCompra}</strong></p>
         </div>
     `;
-
+//
     const novaJanela = window.open('', '_blank');
     novaJanela.document.write(`
         <html>
