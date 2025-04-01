@@ -58,20 +58,56 @@ function atualizarPainel() {
 
     
 const produtosPorCategoria = {
-            bebidas: [
-                { nome: 'Coca-Cola', preco: 5,tipo:'bebida' },
-                { nome: 'Suco Laranja', preco: 8 ,tipo:'bebida'},
-                { nome: 'Água Mineral', preco: 3 ,tipo:'bebida'}
+            Cerveja: [
+                { nome:'Heiniken 600ml',     preco:14.00,tipo:'bebida'},
+                { nome:'Skol 600ml',         preco:10.00,tipo:'bebida'},
+                { nome:'Amistel 600ml',      preco:10.00,tipo:'bebida'},
+                { nome:'Original 600ml',     preco:14.00,tipo:'bebida'},
+                { nome:'Brahma 600ml',       preco:12.00,tipo:'bebida'},
+                { nome:'Skol 300ml',         preco: 5.00,tipo:'bebida'},
+                { nome:'Brahma 300ml',       preco: 5.00,tipo:'bebida'},
+                { nome:'Original 300ml',     preco: 5.00,tipo:'bebida'},
+                { nome:'Conti 300ml',        preco: 4.00,tipo:'bebida'},
+                { nome:'Skol lata 350ml',    preco: 5.00,tipo:'bebida'},
+                { nome:'Brahma lata 350ml',  preco: 5.00,tipo:'bebida'},
+                { nome:'Smistel lata 350ml', preco: 5.00,tipo:'bebida'},
+                { nome:'Heineken lata 350ml',preco: 7.00,tipo:'bebida'}],
+            Refrigerante:[
+                { nome:'Coca-cola 350ml ',   preco: 5.00,tipo:'bebida'},
+                { nome:'Fanta laranja 350ml',preco: 5.00,tipo:'bebida'},
+                { nome:'Fanta uva 350ml ',   preco: 5.00,tipo:'bebida'},
+                { nome:'Guarana 350ml ',     preco: 5.00,tipo:'bebida'},
+                { nome:'Coca-Cola 1L desc',  preco: 8.00,tipo:'bebida'},
+                { nome:'Coca-Cola 1L ret ',  preco: 8.00,tipo:'bebida'},
+                { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'bebida'},
+                { nome:'Sodinha 200ml',      preco: 3.00,tipo:'bebida'},
+                { nome:'Tubaina 600ml',      preco: 5.00,tipo:'bebida'}],
+            Suco:[
+                { nome:'Dell Vale uva',      preco: 5.00,tipo:'bebida'}, 
+                { nome:'Dell Vale laranja',  preco: 5.00,tipo:'bebida'}],
+            Destilado:[
+                { nome:'Passaporte',  preco: 10.00,tipo:'bebida'},
+                { nome:'Matu Nobre',  preco: 10.00,tipo:'bebida'},
+                { nome:'Vodka Smirnof',  preco: 8.00,tipo:'bebida'},
+                { nome:'Vodka',  preco: 8.00,tipo:'bebida'},
+                { nome:'Campari',  preco: 8.00,tipo:'bebida'}
             ],
-            porcoes: [
-                { nome: 'Batata', preco: 12, tipo:'porcao' },
-                { nome: 'Frango ', preco: 15 ,tipo:'porcao'},
-                { nome: 'Aneis de Cebola', preco: 10, tipo:'porcao' }
+            Outras:[
+                { nome:'Redbull',  preco: 10.00,tipo:'bebida'},
+                { nome:'Monster',  preco: 10.00,tipo:'bebida'},
+                { nome:'Agua s/gas 500ml',  preco: 4.00,tipo:'bebida'},
+                { nome:'Agua c/gas 500ml',  preco: 4.00,tipo:'bebida'},
+                { nome:'Campari',  preco: 8.00,tipo:'bebida'}
             ],
-            diversos: [
-                { nome: 'Pipoca', preco: 6,tipo:'diversos' },
-                { nome: 'Amendoim', preco: 4 , tipo:'diversos'},
-                { nome: 'Chocolate', preco: 8 ,tipo:'diversos'}
+            Porcoes: [
+                { nome: 'Batata', preco: 22.00, tipo:'porcao' },
+                { nome: 'Frango ', preco: 35.00 ,tipo:'porcao'},
+                { nome: 'Peixe', preco: 42.00, tipo:'porcao' }
+            ],
+            Diversos: [
+                { nome: 'Trident', preco: 6,tipo:'diversos' },
+                { nome: 'Halls', preco: 4 , tipo:'diversos'},
+                { nome: 'Bombom', preco: 8 ,tipo:'diversos'}
             ]
 };
 
