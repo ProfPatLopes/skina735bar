@@ -122,9 +122,9 @@ function exibirProdutos() {
                 const produtos = produtosPorCategoria[categoria];
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
-    <div class="produto">
-        <table>
-            <tr>
+    <div class="produto" style="width=100%">
+        <table style="width=100%">
+            <tr style="width=100%">
                 <td><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
                 <td><label class='item' for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
                 <td><label>Qtd:</label><input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></td>
