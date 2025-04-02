@@ -12,12 +12,12 @@ input[type="text"] {
     width: auto; /* Define a largura */
 }
 input[type="number"] {
-    width:5%; /* Define a largura */
+    width:15%; /* Define a largura */
 }
 
 /* Ajustes para telas menores (como smartphones) */
-.produtos,.label{
-    width: 80%;
+.produtos,label{
+    width: 50%;
 }
 @media (max-width: 768px) {
     body {
