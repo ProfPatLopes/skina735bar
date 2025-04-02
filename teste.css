@@ -24,9 +24,6 @@ select[type="text"] {
     width: auto; /* Define a largura */
 }
 
-input[type="number"] {
-    width:auto; /* Define a largura */
-}
 
 /* Ajustes para telas menores (como smartphones) */
 .produtos,label, .item{
