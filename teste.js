@@ -179,10 +179,13 @@ function getDataAtual() {
 
     var horas = String(hoje.getHours()).padStart(2, '0');
     var minutos = String(hoje.getMinutes()).padStart(2, '0');
-    var segundos = String(hoje.getSeconds()).padStart(2, '0');
+    
 
     return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
-   
+    
+}
+
+
 
 function imprimirPedido2() {
     const nomeCliente = document.getElementById('nomeCliente').value;
@@ -268,7 +271,7 @@ function imprimirPedido2() {
             <p style="text-align: right; font-size: 24px;"><strong>Valor Total:  ${totalCompra}</strong></p>
         
     `;
-//cópia
+
     if (produtosSelecionados.length > 0) {
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
