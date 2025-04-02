@@ -14,9 +14,11 @@ body {
     justify-content: space-between;
     margin: 20px;
 }
-
 input[type="text"] {
     width: auto; /* Define a lautoargura */
+}
+.produto,input[type="text"] {
+    width: 15%; /* Define a lautoargura */
 }
 select[type="text"] {
     width: auto; /* Define a largura */
