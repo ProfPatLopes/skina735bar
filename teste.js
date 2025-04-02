@@ -327,7 +327,7 @@ function imprimirPedido2() {
 
             </tr>
             
-            <tr font-size: 22px; style="width: auto;">
+            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
