@@ -207,7 +207,7 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>CÓPIA PEDIDO - CAIXA</strong></td>
+                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO - CAIXA</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
@@ -281,29 +281,12 @@ function imprimirPedido2() {
     `;
 //cópia
     detalhesPedido += `
-        <table style="width: auto; font-size: 22px;">
-            <tr>
-                <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO</strong></td>
-            </tr>
-            <tr >
-                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
-            </tr>
-             <tr>
-                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
-            </tr>
-        </table>  
         <table style="width: 100%; ">
             <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
+                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
 
             </tr>
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
-            </tr>
+            
             <tbody>
             
     `;
@@ -321,9 +304,12 @@ function imprimirPedido2() {
             if (cabBar=== true && tipo_produto === 'bebida') {
                 detalhesPedido += `
                 <table style="width: auto; font-size: 22px;">
+                <tr>
+                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+
+            </tr>
             <tr>
-                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----BAR----<</strong></td>
+                <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----VIA BAR----<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
@@ -358,9 +344,12 @@ function imprimirPedido2() {
             if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
         <table style="width: auto; font-size: 22px;">
+        <tr>
+                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+
+            </tr>
             <tr>
-                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----PORÇÃO----<</strong></td>
+                <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----VIA COZINHA----<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
@@ -395,9 +384,12 @@ function imprimirPedido2() {
             if (cabDiv=== true && tipo_produto === 'diversos') {
                 detalhesPedido += `
         <table style="width: auto; font-size: 22px;">
+        <tr>
+                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+
+            </tr>
             <tr>
-                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>>--DIVERSOS--<</strong></td>
+                <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>--DIVERSOS--<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
