@@ -18,6 +18,10 @@ body {
 input[type="text"] {
     width: auto; /* Define a largura */
 }
+select[type="text"] {
+    width: auto; /* Define a largura */
+}
+
 input[type="number"] {
     width:15%; /* Define a largura */
 }
@@ -26,6 +30,7 @@ input[type="number"] {
 .produtos,label, .item{
     width: 80%;
 }
+
 @media (max-width: 768px) {
     body {
         flex-direction: column; /* Empilhar elementos verticalmente */
