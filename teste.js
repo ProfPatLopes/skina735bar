@@ -287,7 +287,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
         <table style="width: 100%; ">
             <tr>
-                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+                <td colspan="4" style="width: auto;font-size: 20px;">--------------------- corte aqui ------------------</td>
 
             </tr>
             
@@ -325,7 +325,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
         <table style="width: 100%; ">
             <tr>
-                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+                <td colspan="4" style="width: auto;font-size: 20px;">--------------------- corte aqui ------------------</td>
 
             </tr>
             
@@ -363,7 +363,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
         <table style="width: 100%; ">
             <tr>
-                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+                <td colspan="4" style="width: auto;font-size: 20px;">--------------------- corte aqui ------------------</td>
 
             </tr>
             
