@@ -14,16 +14,16 @@ function adicionarItens() {
 
         if (checkbox.checked && quantidade.value > 0) {
             const preco = parseFloat(checkbox.getAttribute('data-preco'));
-            const qtd = parseInt(quantidade.value) || 0;
+            const qtd   = parseInt(quantidade.value) || 0;
             const valor = preco * qtd;
-            const tipo = checkbox.getAttribute('data-tipo'); // Captura o tipo do produto
+            const tipo  = checkbox.getAttribute('data-tipo'); // Captura o tipo do produto
 
             // Verificar se o produto já existe na lista
             const itemExistente = produtosSelecionados.find(item => item.nome === nome);
 
             if (itemExistente) {
                 // Atualiza a quantidade e o valor se o item já existir
-                itemExistente.qtd = qtd; // Atualiza a quantidade
+                itemExistente.qtd   = qtd; // Atualiza a quantidade
                 itemExistente.valor = valor; // Atualiza o valor total do item
             } else {
                 // Adiciona o produto ao array se ainda não estiver na lista
@@ -58,7 +58,7 @@ function atualizarPainel() {
 
     
 const produtosPorCategoria = {
-            Cerveja: [
+            cerveja: [
                 { nome:'Heiniken 600ml',     preco:14.00,tipo:'bebida'},
                 { nome:'Skol 600ml',         preco:10.00,tipo:'bebida'},
                 { nome:'Amistel 600ml',      preco:10.00,tipo:'bebida'},
@@ -71,8 +71,9 @@ const produtosPorCategoria = {
                 { nome:'Skol lata 350ml',    preco: 5.00,tipo:'bebida'},
                 { nome:'Brahma lata 350ml',  preco: 5.00,tipo:'bebida'},
                 { nome:'Smistel lata 350ml', preco: 5.00,tipo:'bebida'},
-                { nome:'Heineken lata 350ml',preco: 7.00,tipo:'bebida'}],
-            Refrigerante:[
+                { nome:'Heineken lata 350ml',preco: 7.00,tipo:'bebida'}
+            ],
+            refri:[
                 { nome:'Coca-cola 350ml ',   preco: 5.00,tipo:'bebida'},
                 { nome:'Fanta laranja 350ml',preco: 5.00,tipo:'bebida'},
                 { nome:'Fanta uva 350ml ',   preco: 5.00,tipo:'bebida'},
@@ -81,36 +82,37 @@ const produtosPorCategoria = {
                 { nome:'Coca-Cola 1L ret ',  preco: 8.00,tipo:'bebida'},
                 { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'bebida'},
                 { nome:'Sodinha 200ml',      preco: 3.00,tipo:'bebida'},
-                { nome:'Tubaina 600ml',      preco: 5.00,tipo:'bebida'}],
-            Suco:[
+                { nome:'Tubaina 600ml',      preco: 5.00,tipo:'bebida'}
+            ],
+            suco:[
                 { nome:'Dell Vale uva',      preco: 5.00,tipo:'bebida'}, 
-                { nome:'Dell Vale laranja',  preco: 5.00,tipo:'bebida'}],
-            Destilado:[
-                { nome:'Passaporte',  preco: 10.00,tipo:'bebida'},
-                { nome:'Matu Nobre',  preco: 10.00,tipo:'bebida'},
-                { nome:'Vodka Smirnof',  preco: 8.00,tipo:'bebida'},
-                { nome:'Vodka',  preco: 8.00,tipo:'bebida'},
-                { nome:'Campari',  preco: 8.00,tipo:'bebida'}
+                { nome:'Dell Vale laranja',  preco: 5.00,tipo:'bebida'}
             ],
-            Outras:[
-                { nome:'Redbull',  preco: 10.00,tipo:'bebida'},
-                { nome:'Monster',  preco: 10.00,tipo:'bebida'},
-                { nome:'Agua s/gas 500ml',  preco: 4.00,tipo:'bebida'},
-                { nome:'Agua c/gas 500ml',  preco: 4.00,tipo:'bebida'},
-                { nome:'Campari',  preco: 8.00,tipo:'bebida'}
+            dose:[
+                { nome:'Passaporte',         preco: 10.00,tipo:'bebida'},
+                { nome:'Matu Nobre',         preco: 10.00,tipo:'bebida'},
+                { nome:'Vodka Smirnof',      preco:  8.00,tipo:'bebida'},
+                { nome:'Vodka',              preco:  8.00,tipo:'bebida'},
+                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
             ],
-            Porcoes: [
-                { nome: 'Batata', preco: 22.00, tipo:'porcao' },
-                { nome: 'Frango ', preco: 35.00 ,tipo:'porcao'},
-                { nome: 'Peixe', preco: 42.00, tipo:'porcao' }
+            outras:[
+                { nome:'Redbull',            preco: 10.00,tipo:'bebida'},
+                { nome:'Monster',            preco: 10.00,tipo:'bebida'},
+                { nome:'Agua s/gas 500ml',   preco:  4.00,tipo:'bebida'},
+                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'},
+                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
             ],
-            Diversos: [
-                { nome: 'Trident', preco: 6,tipo:'diversos' },
-                { nome: 'Halls', preco: 4 , tipo:'diversos'},
-                { nome: 'Bombom', preco: 8 ,tipo:'diversos'}
+            porcoes: [
+                { nome: 'Batata',           preco: 22.00, tipo:'porcao' },
+                { nome: 'Frango ',          preco: 35.00, tipo:'porcao' },
+                { nome: 'Peixe',            preco: 42.00, tipo:'porcao' }
+            ],
+            diversos: [
+                { nome: 'Trident', preco: 6 , tipo:'diversos'},
+                { nome: 'Halls',   preco: 4 , tipo:'diversos'},
+                { nome: 'Bombom',  preco: 8 , tipo:'diversos'}
             ]
 };
-
 function exibirProdutos() {
             const categoria = document.getElementById('categoria').value;
             const listaProdutos = document.getElementById('listaProdutos');
