@@ -126,9 +126,11 @@ function exibirProdutos() {
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
     <div class="produto">
-        <input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()">
-        <label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label>
-        Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTotal()">
+        <tabel><tr>
+        <td><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
+        <td style='width:80%'><label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
+        <td>Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTota</td>
+        </table>
     </div>`;
     listaProdutos.innerHTML += produtoHTML;
                     
