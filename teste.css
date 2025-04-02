@@ -23,7 +23,7 @@ input[type="number"] {
 }
 
 /* Ajustes para telas menores (como smartphones) */
-.produtos,label,item{
+.produtos,label, .item{
     width: 80%;
 }
 @media (max-width: 768px) {
