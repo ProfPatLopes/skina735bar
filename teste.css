@@ -1,11 +1,8 @@
-/*.informacoes-cliente {
-    margin-bottom: 20px;
-} */
-table tr:nth-child(odd) {
+.produto,table tr:nth-child(odd) {
     background-color: #f2f2f2; /* Cor cinza clara para linhas ímpares */
 }
 
-table tr:nth-child(even) {
+.produto,table tr:nth-child(even) {
     background-color: #ffffff; /* Cor branca para linhas pares */
 }
 body {
