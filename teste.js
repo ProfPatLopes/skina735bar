@@ -176,7 +176,18 @@ function getDataAtual() {
     var dia = String(hoje.getDate()).padStart(2, '0');
     var mes = String(hoje.getMonth() + 1).padStart(2, '0');
     var ano = hoje.getFullYear();
-    return `${dia}/${mes}/${ano}`;
+
+    var horas = String(hoje.getHours()).padStart(2, '0');
+    var minutos = String(hoje.getMinutes()).padStart(2, '0');
+    var segundos = String(hoje.getSeconds()).padStart(2, '0');
+
+    return `${dia}/${mes}/${ano} ${horas}:${minutos}:${segundos}`;
+    /*
+    var hoje = new Date();
+    var dia = String(hoje.getDate()).padStart(2, '0');
+    var mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    var ano = hoje.getFullYear();
+    return `${dia}/${mes}/${ano}`;*/
 }
 
 // Configurar a data do pedido
