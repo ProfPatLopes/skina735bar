@@ -130,7 +130,7 @@ function exibirProdutos() {
             <tr>
                 <td><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
                 <td style='width:80%'><label for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
-                <td>Qtd: <input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTota</td>
+                <td><label>Qtd:</label><input type="number" id="quantidade${index}" value="0" min="0" onchange="atualizarTota()"</td>
                 <td><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="10" height="10"></button></td>
             </tr>
         </table>
