@@ -39,7 +39,8 @@ function adicionarItens() {
     produtosSelecionados.forEach(item => {
         painel.innerHTML += `<tr><td style='width: 70%'>${item.nome}</td>
                                  <td style='width: 10%'>Qtd: ${item.qtd}</td>
-                                 <td style='width: 20%'>Valor: ${item.valor.toFixed(2)}<td></tr>`;
+                                 <td style='width: 20%'>Valor: ${item.valor.toFixed(2)}<td></tr>
+                                  <button class="botao" onclick="adicionarItens()">+</button>`;
         totalCompra += item.valor;
     });
 
