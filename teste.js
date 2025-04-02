@@ -304,10 +304,7 @@ function imprimirPedido2() {
             if (cabBar=== true && tipo_produto === 'bebida') {
                 detalhesPedido += `
                 <table style="width: auto; font-size: 22px;">
-                <tr>
-                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
-
-            </tr>
+                
             <tr>
                 <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----VIA BAR----<</strong></td>
             </tr>
@@ -384,10 +381,6 @@ function imprimirPedido2() {
             if (cabDiv=== true && tipo_produto === 'diversos') {
                 detalhesPedido += `
         <table style="width: auto; font-size: 22px;">
-        <tr>
-                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
-
-            </tr>
             <tr>
                 <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>--DIVERSOS--<</strong></td>
             </tr>
