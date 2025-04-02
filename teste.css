@@ -82,4 +82,7 @@ body {
         .botao {
             margin: 10px 5px;
         }
+        .botao+ {
+            margin: auto;
+        }
     
