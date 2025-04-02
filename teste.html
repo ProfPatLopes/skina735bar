@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="teste.css">
 </head>
 <body>
-    <table>
+    
         <div class="informacoes-cliente">
                 <label for="nomeCliente">Cliente:</label>
                     <input type="text" style="width: 50%" id="nomeCliente" placeholder=">------- Digite -------<">
@@ -25,8 +25,8 @@
                     <input type="number" style="width: 50%" id="numeroMesa" min="1" placeholder=">-- Número --<">
                 </div>
     
-    </div>
-    <div class="formulario">
+        </div>
+        <div class="formulario">
         <h3>Produtos</h3>
         <label for="categoria">Categoria:</label>
         <select id="categoria" onchange="exibirProdutos()">
@@ -44,16 +44,14 @@
             <!-- Produtos serão exibidos aqui -->
             </table> 
         </div>
-    </div>
-    </tr>
-    <tr>
+        </div>
     <div class="painel" id="painelPedidos">
         <h3>Pedido</h3>
         <ul id="itensPedido"></ul>
         <p class="total">Total: R$<span id="totalCompra">0.00</span></p>
         <center><button class="botao" onclick="imprimirPedido2()"><img src="imprimi.png" alt="Imprimir" width="20" height="20"></button><button class="botao" onclick="limparCampos()"><img src="cancela.png" alt="Cancelar" width="20" height="20"></button></center>
     </div>
-    </tr>
+    
 </body>
 </html>
 
