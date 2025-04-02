@@ -80,9 +80,7 @@ body {
             font-weight: bold;
         }
         .botao {
-            margin: 10px 5px;
+            width:auto;
         }
-        .botao+ {
-            margin: auto;
-        }
+        
     
