@@ -23,8 +23,11 @@ select[type="text"] {
 
 
 /* Ajustes para telas menores (como smartphones) */
-.produtos, .item{
-    width: 80%;
+.produto, .item{
+    width: 100%;
+}
+.produto, .qt{
+    width: 30%;
 }
 
 @media (max-width: 768px) {
