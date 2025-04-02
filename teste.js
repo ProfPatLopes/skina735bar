@@ -220,19 +220,10 @@ function imprimirPedido2() {
             </tr>
         </table>  
         <table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
-            </tr>
-            
-            <tr font-size: 22px; style="width: auto;">
+            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
             </tr>
             <tbody>
             
@@ -320,19 +311,10 @@ function imprimirPedido2() {
             </tr>
         </table>  
         <table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
-            </tr>
-            
             <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
             </tr>
             <tbody>
             
@@ -367,19 +349,10 @@ function imprimirPedido2() {
             </tr>
         </table>  
         <table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
-            </tr>
-            
-            <tr font-size: 22px; style="width: auto;">
+            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
             </tr>
             <tbody>
             
@@ -413,19 +386,10 @@ function imprimirPedido2() {
             </tr>
         </table>  
         <table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
-            </tr>
-            
-            <tr font-size: 22px; style="width: auto;">
+            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: auto;">-------------------------------------------------</td>
-
             </tr>
             <tbody>
             
