@@ -16,14 +16,14 @@ body {
 }
 
 input[type="text"] {
-    width: auto; /* Define a largura */
+    width: auto; /* Define a lautoargura */
 }
 select[type="text"] {
     width: auto; /* Define a largura */
 }
 
 input[type="number"] {
-    width:15%; /* Define a largura */
+    width:auto; /* Define a largura */
 }
 
 /* Ajustes para telas menores (como smartphones) */
