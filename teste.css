@@ -12,7 +12,7 @@ input[type="text"] {
     width: auto; /* Define a largura */
 }
 input[type="number"] {
-    width: 15px; /* Define a largura */
+    width:5%; /* Define a largura */
 }
 /* Ajustes para telas menores (como smartphones) */
 
@@ -77,7 +77,7 @@ body {
             height: fit-content;
         }
         .produto {
-            margin-bottom: 10px;
+            /*margin-bottom: 10px;*/
         }
         .total {
             font-size: 1.2em;
