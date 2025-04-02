@@ -37,7 +37,9 @@ function adicionarItens() {
 
     // Atualiza o painel com os itens do pedido
     produtosSelecionados.forEach(item => {
-        painel.innerHTML += `<li>${item.nome} - Qtd: ${item.qtd} - Valor: R$${item.valor.toFixed(2)}</li>`;
+        painel.innerHTML += `<tr><td styke='whidth: 70%'>${item.nome}</td>
+                                 <td styke='whidth: 10%'>Qtd: ${item.qtd}</td>
+                                 <td styke='whidth: 20%'>Valor: ${item.valor.toFixed(2)}<td></tr>`;
         totalCompra += item.valor;
     });
 
