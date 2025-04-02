@@ -280,16 +280,7 @@ function imprimirPedido2() {
         
     `;
 //cópia
-    detalhesPedido += `
-        <table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
-
-            </tr>
-            
-            <tbody>
-            
-    `;
+    
 
 
 
@@ -302,6 +293,16 @@ function imprimirPedido2() {
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
             if (cabBar=== true && tipo_produto === 'bebida') {
+                detalhesPedido += `
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+
+            </tr>
+            
+            <tbody>
+            
+    `;
                 detalhesPedido += `
                 <table style="width: auto; font-size: 22px;">
                 
@@ -340,11 +341,18 @@ function imprimirPedido2() {
             }
             if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
-        <table style="width: auto; font-size: 22px;">
-        <tr>
+        <table style="width: 100%; ">
+            <tr>
                 <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
 
             </tr>
+            
+            <tbody>
+            
+    `;
+                detalhesPedido += `
+        <table style="width: auto; font-size: 22px;">
+        
             <tr>
                 <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>----VIA COZINHA----<</strong></td>
             </tr>
@@ -379,6 +387,16 @@ function imprimirPedido2() {
                 cabPor=false;
             }
             if (cabDiv=== true && tipo_produto === 'diversos') {
+                detalhesPedido += `
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;">--------------------- corte aqui ------------------</td>
+
+            </tr>
+            
+            <tbody>
+            
+    `;
                 detalhesPedido += `
         <table style="width: auto; font-size: 22px;">
             <tr>
