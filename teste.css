@@ -46,8 +46,8 @@ input[type="checkbox"] {
 
     .produto {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        grid-auto-rows: minmax(100px, auto); 
+        /*grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        //grid-auto-rows: minmax(100px, auto); */
     }
 }
 
@@ -78,9 +78,6 @@ body {
             border: 1px solid #ccc;
             padding: 10px;
             height: fit-content;
-        }
-        .produto {
-            /*margin-bottom: 10px;*/
         }
         .total {
             font-size: 1.2em;
