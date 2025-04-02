@@ -344,7 +344,7 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 22px;">
         
             <tr>
-                <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>---VIA COZINHA--<</strong></td>
+                <td colspan="4" style="font-size: 22px; text-align: left; padding: 15px""><strong>>--VIA COZINHA--<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
