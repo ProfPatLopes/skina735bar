@@ -68,10 +68,10 @@ const produtosPorCategoria = {
                 { nome:'Brahma 300ml',       preco: 5.00,tipo:'bebida'},
                 { nome:'Original 300ml',     preco: 5.00,tipo:'bebida'},
                 { nome:'Conti 300ml',        preco: 4.00,tipo:'bebida'},
-                { nome:'Skol lata 350ml',    preco: 5.00,tipo:'bebida'},
-                { nome:'Brahma lata 350ml',  preco: 5.00,tipo:'bebida'},
-                { nome:'Smistel lata 350ml', preco: 5.00,tipo:'bebida'},
-                { nome:'Heineken lata 350ml',preco: 7.00,tipo:'bebida'}
+                { nome:'Skol lt 350ml',    preco: 5.00,tipo:'bebida'},
+                { nome:'Brahma lt 350ml',  preco: 5.00,tipo:'bebida'},
+                { nome:'Smistel lt 350ml', preco: 5.00,tipo:'bebida'},
+                { nome:'Heineken lt 350ml',preco: 7.00,tipo:'bebida'}
             ],
             refri:[
                 { nome:'Coca-cola 350ml ',   preco: 5.00,tipo:'bebida'},
@@ -125,7 +125,7 @@ function exibirProdutos() {
     <div class="produto" style="width:100%">
         <table style="width:100%">
             <tr style="width:100%">
-                <td><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
+                <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
                 <td><label class='item' for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
                 <td style="width:15%; text-align: right"><label class='quant' >Qtd:<input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
                 <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
@@ -268,7 +268,7 @@ function imprimirPedido2() {
                 </tbody>
             </table>
             
-            <p style="text-align: right; font-size: 24px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+            <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
         
     `;
 
