@@ -38,15 +38,9 @@ select[type="text"] {
 
     .formulario, .painel {
         width: 100%; /* Cada um ocupa 100% da largura */
-        margin-bottom: 20px; /* Espaço entre os blocos */
+        
     }
 
-    
-
-    .painel {
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
 
     .mensagem-inicial {
         font-size: 1em;
