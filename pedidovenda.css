@@ -1,0 +1,99 @@
+.produto,table tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Cor cinza clara para linhas ímpares */
+}
+
+.produto,table tr:nth-child(even) {
+    background-color: #ffffff; /* Cor branca para linhas pares */
+}
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+input[type="text"] {
+    width: auto; /* Define a lautoargura */
+}
+.produto,input[type="text"] {
+    width: 15%; /* Define a lautoargura */
+}
+select[type="text"] {
+    width: auto; /* Define a largura */
+}
+
+
+/* Ajustes para telas menores (como smartphones) */
+.produto, .item{
+    width: 100%;
+}
+.produto, .quant{
+    width: 30%;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Empilhar elementos verticalmente */
+        margin: 10px;
+    }
+
+    .formulario, .painel {
+        width: 100%; /* Cada um ocupa 100% da largura */
+        
+    }
+
+
+    .mensagem-inicial {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .produto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-auto-rows: minmax(100px, auto); 
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .total {
+        font-size: 1em;
+    }
+
+    .botao {
+        width: 100%; /* Botões ocupam toda a largura */
+        margin: 5px 0; /* Espaço entre os botões */
+        padding: 10px;
+    }
+}
+
+body {
+            font-family: Arial, sans-serif;
+            /*margin: 20px;*/
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .conf {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: fit-content;
+        }
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .valor-produto {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .botao {
+            width:auto;
+        }
+        
+        #listaProdutos {
+            max-height: 300px; /* Ajuste o tamanho conforme necessário */
+            overflow-y: auto;
+            border: 1px solid #ccc; /* Opcional: para melhor visualização */
+            padding: 10px; /* Espaçamento interno opcional */
+        }
