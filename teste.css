@@ -102,4 +102,9 @@ body {
             width:auto;
         }
         
-    
+        #listaProdutos {
+            max-height: 300px; /* Ajuste o tamanho conforme necessário */
+            overflow-y: auto;
+            border: 1px solid #ccc; /* Opcional: para melhor visualização */
+            padding: 10px; /* Espaçamento interno opcional */
+        }
