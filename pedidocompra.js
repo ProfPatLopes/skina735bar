@@ -59,52 +59,52 @@ function atualizarPainel() {
     
 const produtosPorCategoria = {
             hei:[
-                { nome:'Heiniken 600ml',     preco:14.00,tipo:'bebida'},
-                { nome:'Heineken lt 350ml',preco: 7.00,tipo:'bebida'},
-                { nome:'Passaporte',         preco: 10.00,tipo:'bebida'},
-                { nome:'Matu Nobre',         preco: 10.00,tipo:'bebida'},
-                { nome:'Vodka Smirnof',      preco:  8.00,tipo:'bebida'},
-                { nome:'Vodka',              preco:  8.00,tipo:'bebida'},
-                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
+                { nome:'Heiniken 600ml',     preco:14.00,tipo:'hei'},
+                { nome:'Heineken lt 350ml',preco: 7.00,tipo:'hei'},
+                { nome:'Passaporte',         preco: 10.00,tipo:'hei'},
+                { nome:'Matu Nobre',         preco: 10.00,tipo:'hei'},
+                { nome:'Vodka Smirnof',      preco:  8.00,tipo:'hei'},
+                { nome:'Vodka',              preco:  8.00,tipo:'hei'},
+                { nome:'Campari',            preco:  8.00,tipo:'hei'}
             ],
             conti: [
-                { nome:'Conti 300ml',        preco: 4.00,tipo:'bebida'},
-                { nome:'Sodinha 200ml',      preco: 3.00,tipo:'bebida'},
-                { nome:'Tubaina 600ml',      preco: 5.00,tipo:'bebida'},
-                { nome:'Passaporte',         preco: 10.00,tipo:'bebida'},
-                { nome:'Matu Nobre',         preco: 10.00,tipo:'bebida'},
-                { nome:'Vodka Smirnof',      preco:  8.00,tipo:'bebida'},
-                { nome:'Vodka',              preco:  8.00,tipo:'bebida'},
-                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
+                { nome:'Conti 300ml',        preco: 4.00,tipo:'conti'},
+                { nome:'Sodinha 200ml',      preco: 3.00,tipo:'conti'},
+                { nome:'Tubaina 600ml',      preco: 5.00,tipo:'conti'},
+                { nome:'Passaporte',         preco: 10.00,tipo:'conti'},
+                { nome:'Matu Nobre',         preco: 10.00,tipo:'conti'},
+                { nome:'Vodka Smirnof',      preco:  8.00,tipo:'conti'},
+                { nome:'Vodka',              preco:  8.00,tipo:'conti'},
+                { nome:'Campari',            preco:  8.00,tipo:'conti'}
                 
             ],
             skol: [
-                { nome:'Skol 600ml',         preco:10.00,tipo:'bebida'},
-                { nome:'Skol 300ml',         preco: 5.00,tipo:'bebida'},
-                { nome:'Skol lt 350ml',    preco: 5.00,tipo:'bebida'}],
+                { nome:'Skol 600ml',         preco:10.00,tipo:'skol'},
+                { nome:'Skol 300ml',         preco: 5.00,tipo:'skol'},
+                { nome:'Skol lt 350ml',    preco: 5.00,tipo:'skol'}],
             bhrama: [
-                    { nome:'Brahma 600ml',       preco:12.00,tipo:'bebida'},
-                    { nome:'Brahma 300ml',       preco: 5.00,tipo:'bebida'},
-                    { nome:'Brahma lt 350ml',  preco: 5.00,tipo:'bebida'}],
+                    { nome:'Brahma 600ml',       preco:12.00,tipo:'bhrama'},
+                    { nome:'Brahma 300ml',       preco: 5.00,tipo:'bhrama'},
+                    { nome:'Brahma lt 350ml',  preco: 5.00,tipo:'bhrama'}],
             amistel: [
-                { nome:'Heiniken 600ml',     preco:14.00,tipo:'bebida'},
-                { nome:'Amistel 600ml',      preco:10.00,tipo:'bebida'},
-                { nome:'Smistel lt 350ml', preco: 5.00,tipo:'bebida'}],
+                { nome:'Heiniken 600ml',     preco:14.00,tipo:'amistel'},
+                { nome:'Amistel 600ml',      preco:10.00,tipo:'amistel'},
+                { nome:'Smistel lt 350ml', preco: 5.00,tipo:'amistel'}],
             coca:[
-                { nome:'Coca-cola 350ml ',   preco: 5.00,tipo:'bebida'},
-                { nome:'Fanta laranja 350ml',preco: 5.00,tipo:'bebida'},
-                { nome:'Fanta uva 350ml ',   preco: 5.00,tipo:'bebida'},
-                { nome:'Guarana 350ml ',     preco: 5.00,tipo:'bebida'},
-                { nome:'Coca-Cola 1L desc',  preco: 8.00,tipo:'bebida'},
-                { nome:'Coca-Cola 1L ret ',  preco: 8.00,tipo:'bebida'},
-                { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'bebida'},
-                { nome:'Dell Vale uva',      preco: 5.00,tipo:'bebida'}, 
-                { nome:'Dell Vale laranja',  preco: 5.00,tipo:'bebida'},
-                { nome:'Redbull',            preco: 10.00,tipo:'bebida'},
-                { nome:'Monster',            preco: 10.00,tipo:'bebida'},
-                { nome:'Agua s/gas 500ml',   preco:  4.00,tipo:'bebida'},
-                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'},
-                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
+                { nome:'Coca-cola 350ml ',   preco: 5.00,tipo:'coca'},
+                { nome:'Fanta laranja 350ml',preco: 5.00,tipo:'coca'},
+                { nome:'Fanta uva 350ml ',   preco: 5.00,tipo:'coca'},
+                { nome:'Guarana 350ml ',     preco: 5.00,tipo:'coca'},
+                { nome:'Coca-Cola 1L desc',  preco: 8.00,tipo:'coca'},
+                { nome:'Coca-Cola 1L ret ',  preco: 8.00,tipo:'coca'},
+                { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'coca'},
+                { nome:'Dell Vale uva',      preco: 5.00,tipo:'coca'}, 
+                { nome:'Dell Vale laranja',  preco: 5.00,tipo:'coca'},
+                { nome:'Redbull',            preco: 10.00,tipo:'coca'},
+                { nome:'Monster',            preco: 10.00,tipo:'coca'},
+                { nome:'Agua s/gas 500ml',   preco:  4.00,tipo:'coca'},
+                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'coca'},
+                { nome:'Campari',            preco:  8.00,tipo:'coca'}
             ]
             
 };
@@ -186,9 +186,9 @@ function imprimirPedido2() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
-    var cabBar = true;
-    var cabPor = true;
-    var cabDiv = true;
+    var cabcoca = true;
+    var cabamis = true;
+    var cabbhra= true;
 
     let detalhesPedido = `
         <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
