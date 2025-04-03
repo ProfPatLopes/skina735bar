@@ -202,14 +202,16 @@ function imprimirPedido2() {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
-
+//<td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO  CAIXA</strong></td>
     let detalhesPedido = `
         <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: auto; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO  CAIXA</strong></td>
+                <td colspan="3" style="font-size: 12px; text-align: left; padding: 15px""><strong>Skina 735 Bar - Rua Goioerê esquina com a Norte do Paraná, 735 - Bairro Jd. Curitiba - Goioerê-Pr CEP 87,360-000 - CNPJ: 14.451.465/0001-73</strong></td>
             </tr>
+            <p style="background-color: black; color: white;text-align: center; font-size: 22px;"><strong>PEDIDO</strong></p>
+
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
             </tr>
