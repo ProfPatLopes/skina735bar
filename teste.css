@@ -41,9 +41,7 @@ select[type="text"] {
         margin-bottom: 20px; /* Espaço entre os blocos */
     }
 
-    .formulario {
-        padding: 10px;
-    }
+    
 
     .painel {
         padding: 10px;
@@ -81,9 +79,7 @@ body {
             display: flex;
             justify-content: space-between;
         }
-        /*.formulario {
-            width: 60%;
-        }*/
+        
         .painel {
             /*width: 35%;*/
             border: 1px solid #ccc;
