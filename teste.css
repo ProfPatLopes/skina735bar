@@ -74,8 +74,7 @@ body {
             justify-content: space-between;
         }
         
-        .painel {
-            /*width: 35%;*/
+        .conf {
             border: 1px solid #ccc;
             padding: 10px;
             height: fit-content;
