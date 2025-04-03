@@ -208,7 +208,7 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 6px; text-align: justufy; padding: 15px""><strong>Skina 735 Bar - Rua Goioerê, 735 esquina com a Norte do Paraná Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000       CNPJ: 14.451.465/0001-73      Contato: (44) 99865-5735</strong></td>
+                <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Goioerê, 735 esquina com a Norte do Paraná Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
             </tr>
             <tr>
             <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
