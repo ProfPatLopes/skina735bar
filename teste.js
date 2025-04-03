@@ -438,7 +438,7 @@ function imprimirPedido2() {
         </html>
     `);
     
-    //novaJanela.print();
+    novaJanela.print();
     novaJanela.close();
     
 }
