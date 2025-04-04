@@ -227,13 +227,163 @@ function imprimirPedido2() {
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            //
-            var cabcoca = true;
-    var cabamis = true;
-    var cabbhra= true;
-    var cabhei= true;
-    var cabconti= true;
-    var cabskol= true;
+         
+            if (cabskol=== true && tipo_produto === 'skol') {
+                detalhesPedido += `
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+
+            </tr>
+            
+            <tbody>
+            
+    `;
+                detalhesPedido += `
+                <table style="width: auto; font-size: 22px;">
+                
+            <tr>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----SKOL----<</strong></td>
+                
+            </tr>
+            <tr >
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+            </tr>
+             <tr>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
+        </table>  
+        <table style="width: 100%; ">
+            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tbody>
+            
+    `;
+                cabskol=false;
+            }
+    if (cabconti=== true && tipo_produto === 'conti') {
+        detalhesPedido += `
+<table style="width: 100%; ">
+    <tr>
+        <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+
+    </tr>
+    
+    <tbody>
+    
+`;
+        detalhesPedido += `
+        <table style="width: auto; font-size: 22px;">
+        
+    <tr>
+        <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----CONTI----<</strong></td>
+        
+    </tr>
+    <tr >
+        <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+    </tr>
+     <tr>
+        <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+    </tr>
+    <tr>
+        <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+    </tr>
+</table>  
+<table style="width: 100%; ">
+    <tr font-size: 22px; style="background-color: black; color: white;width: auto">
+        <td colspan="2" style="text-align: left;">Produto</td>
+        <td style="text-align: right;">Unit</td>
+        <td style="text-align: right;">Total</td>
+    </tr>
+    <tbody>
+    
+`;
+        cabconti=false;
+    }
+    if (cabhei=== true && tipo_produto === 'heineken') {
+        detalhesPedido += `
+<table style="width: 100%; ">
+    <tr>
+        <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+
+    </tr>
+    
+    <tbody>
+    
+`;
+        detalhesPedido += `
+        <table style="width: auto; font-size: 22px;">
+        
+    <tr>
+        <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----HEINEKEN----<</strong></td>
+        
+    </tr>
+    <tr >
+        <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+    </tr>
+     <tr>
+        <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+    </tr>
+    <tr>
+        <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+    </tr>
+</table>  
+<table style="width: 100%; ">
+    <tr font-size: 22px; style="background-color: black; color: white;width: auto">
+        <td colspan="2" style="text-align: left;">Produto</td>
+        <td style="text-align: right;">Unit</td>
+        <td style="text-align: right;">Total</td>
+    </tr>
+    <tbody>
+    
+`;
+        cabhei=false;
+    }
+    if (cabbhra=== true && tipo_produto === 'bhrama') {
+        detalhesPedido += `
+<table style="width: 100%; ">
+    <tr>
+        <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+
+    </tr>
+    
+    <tbody>
+    
+`;
+        detalhesPedido += `
+        <table style="width: auto; font-size: 22px;">
+        
+    <tr>
+        <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----BHRAMA----<</strong></td>
+        
+    </tr>
+    <tr >
+        <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+    </tr>
+     <tr>
+        <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+    </tr>
+    <tr>
+        <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+    </tr>
+</table>  
+<table style="width: 100%; ">
+    <tr font-size: 22px; style="background-color: black; color: white;width: auto">
+        <td colspan="2" style="text-align: left;">Produto</td>
+        <td style="text-align: right;">Unit</td>
+        <td style="text-align: right;">Total</td>
+    </tr>
+    <tbody>
+    
+`;
+        cabcoca=false;
+    }
             if (cabcoca=== true && tipo_produto === 'coca') {
                 detalhesPedido += `
         <table style="width: 100%; ">
@@ -272,6 +422,45 @@ function imprimirPedido2() {
             
     `;
                 cabcoca=false;
+            }
+            if (cabamis=== true && tipo_produto === 'amistel') {
+                detalhesPedido += `
+        <table style="width: 100%; ">
+            <tr>
+                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+
+            </tr>
+            
+            <tbody>
+            
+    `;
+                detalhesPedido += `
+                <table style="width: auto; font-size: 22px;">
+                
+            <tr>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----AMISTEL----<</strong></td>
+                
+            </tr>
+            <tr >
+                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+            </tr>
+             <tr>
+                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+            </tr>
+        </table>  
+        <table style="width: 100%; ">
+            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
+                <td colspan="2" style="text-align: left;">Produto</td>
+                <td style="text-align: right;">Unit</td>
+                <td style="text-align: right;">Total</td>
+            </tr>
+            <tbody>
+            
+    `;
+                cabcmis=false;
             }
             if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
