@@ -182,7 +182,7 @@ function getDataAtual() {
 
 
 
-function imprimirPedido2() {
+function imprimirPedidoCompra() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
