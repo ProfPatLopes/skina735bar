@@ -214,13 +214,13 @@ function imprimirPedido2() {
             <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
             </tr>
             <tr >
-                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
             </tr>
              <tr>
-                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
             </tr>
             <tr>
-                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="4" style="width: 20%; text-align: left;font-size: 18px;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
@@ -294,20 +294,20 @@ function imprimirPedido2() {
             
     `;
                 detalhesPedido += `
-                <table style="width: auto; font-size: 22px;">
+                <table style="width: auto; font-size: 15px;">
                 
             <tr>
                 <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----VIA BAR----<</strong></td>
                 
             </tr>
             <tr >
-                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
             </tr>
              <tr>
-                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
             </tr>
             <tr>
-                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="4" style="width: 20%; text-align: left;font-size: 18px;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
@@ -333,19 +333,19 @@ function imprimirPedido2() {
             
     `;
                 detalhesPedido += `
-        <table style="width: auto; font-size: 22px;">
+        <table style="width: auto; font-size: 15px;">
         
             <tr>
                 <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--VIA COZINHA--<</strong></td>
             </tr>
             <tr >
-                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
+                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
             </tr>
              <tr>
-                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
             </tr>
             <tr>
-                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="4" style="width: 20%; text-align: left;font-size: 18px;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
@@ -371,18 +371,18 @@ function imprimirPedido2() {
             
     `;
                 detalhesPedido += `
-        <table style="width: auto; font-size: 22px;">
+        <table style="width: auto; font-size: 15px;">
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 15px;width:100%"><strong>>--DIVERSOS--<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; width:100%"><strong>>--DIVERSOS--<</strong></td>
             </tr>
             <tr >
-                <td colspan="4" style="width: auto;font-size: 18px; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
             </tr>
              <tr>
-                <td colspan="4" style="text-align: left;">Cliente: <strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
             </tr>
             <tr>
-                <td colspan="4" style="width: 20%; text-align: left;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
+                <td colspan="4" style="width: 20%; text-align: left;font-size: 18px;">Atendimento: ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
             </tr>
         </table>  
         <table style="width: 100%; ">
