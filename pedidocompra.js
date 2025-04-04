@@ -189,6 +189,10 @@ function imprimirPedido2() {
     var cabcoca = true;
     var cabamis = true;
     var cabbhra= true;
+    var cabhei= true;
+    var cabconti= true;
+    var cabskol= true;
+
 
     let detalhesPedido = `
         <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
@@ -198,7 +202,7 @@ function imprimirPedido2() {
                 <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Goioerê, 735 esquina com a Norte do Paraná Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
             </tr>
             <tr>
-            <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
+            <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>COMPRAS</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
@@ -223,7 +227,14 @@ function imprimirPedido2() {
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            if (cabBar=== true && tipo_produto === 'bebida') {
+            //
+            var cabcoca = true;
+    var cabamis = true;
+    var cabbhra= true;
+    var cabhei= true;
+    var cabconti= true;
+    var cabskol= true;
+            if (cabcoca=== true && tipo_produto === 'coca') {
                 detalhesPedido += `
         <table style="width: 100%; ">
             <tr>
@@ -238,7 +249,7 @@ function imprimirPedido2() {
                 <table style="width: auto; font-size: 22px;">
                 
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----VIA BAR----<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----COCA-COLA----<</strong></td>
                 
             </tr>
             <tr >
@@ -260,7 +271,7 @@ function imprimirPedido2() {
             <tbody>
             
     `;
-                cabBar=false;
+                cabcoca=false;
             }
             if (cabPor=== true && tipo_produto === 'porcao') {
                 detalhesPedido += `
