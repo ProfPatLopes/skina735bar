@@ -214,7 +214,7 @@ function imprimirPedido2() {
             <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
             </tr>
             <tr >
-                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                <td colspan="4" style="width: auto; text-align: left; width: 100%;font-size: 15px;">Data/hora: ${data}</td>
             </tr>
              <tr>
                 <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
