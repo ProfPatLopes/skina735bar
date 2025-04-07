@@ -297,7 +297,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
                 <table style="width: auto; font-size: 15px;">
                 <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--------VIA BAR--------<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>--------VIA BAR--------<</strong></center></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
@@ -335,7 +335,7 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 15px;">
         
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>------VIA COZINHA-----<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>------VIA COZINHA-----<</strong></center></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
@@ -372,7 +372,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
         <table style="width: auto; font-size: 15px;">
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; width:100%"><strong>>-------DIVERSOS-------<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; width:100%"><center><strong>>-------DIVERSOS-------<</strong></center></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
