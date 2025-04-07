@@ -124,16 +124,22 @@ function exibirProdutos() {
                 const produtos = produtosPorCategoria[categoria];
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
-    <div class="produto" style="width:100%">
-        <table style="width:100%">
-            <tr style="width:100%">
-                <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
-                <td><label class='item' for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
-                <td style="width:15%; text-align: right"><label class='quant' >Qtd:<input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
-                <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
-            </tr>
-        </table>
-    </div>`;
+                    <table style="width:100%">
+                            <tr style="width:100%">
+                                <td style="width:auto"></td>
+                                <td>Descrição</td>
+                                <td style="width:15%; text-align: center">Qtd</td>
+                                <td style="width:15%"></td>
+                            </tr>
+                        <div class="produto" style="width:100%">
+                            <tr style="width:100%">
+                                <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
+                                <td><label class='item' for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
+                                <td style="width:15%; text-align: right"><label class='quant' >Qtd:<input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
+                                <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
+                            </tr>
+                        </div>
+                    </table>`;
     listaProdutos.innerHTML += produtoHTML;
                     
                 });
@@ -298,7 +304,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
                 <table style="width: auto; font-size: 15px;">
                 <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----------VIA BAR----------<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--------VIA BAR--------<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
@@ -336,7 +342,7 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 15px;">
         
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>------VIA COZINHA------<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>------VIA COZINHA-----<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
