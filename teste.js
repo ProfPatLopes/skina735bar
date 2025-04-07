@@ -125,12 +125,43 @@ function exibirProdutos() {
                     const produtoHTML = `
     <div class="produto" style="width:100%">
         <table style="width:100%">
+        <thead>
+    <tr>
+      <th>Descrição</th>
+      <th>Qtd</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+
             <tr style="width:100%">
-                <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
-                <td><label class='item' for="produto${index}">${produto.nome} (R$${produto.preco.toFixed(2)})</label></td>
-                <td style="width:15%; text-align: right"><label class='quant' >Qtd:<input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
-                <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
-            </tr>
+  <td style="width:auto">
+    <input 
+      type="checkbox" 
+      id="produto${index}" 
+      data-tipo="${produto.tipo}" 
+      data-produto="${produto.nome}" 
+      data-preco="${produto.preco}" 
+      onchange="atualizarTotal()"
+    >
+  </td>
+  <td>
+    <label class='item' for="produto${index}">
+      ${produto.nome} (R$${produto.preco.toFixed(2)})
+    </label>
+  </td>
+  <td style="width:15%; text-align: right">
+    <label class='quant'>Qtd:
+      <input 
+        type="number" 
+        style="width: 30%" 
+        id="quantidade${index}" 
+        value="1" 
+        min="0" 
+        oninput="atualizarTotal()"
+      >
+    </label>
+  </td>
+</tr>
         </table>
     </div>`;
     listaProdutos.innerHTML += produtoHTML;
