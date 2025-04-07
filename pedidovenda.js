@@ -132,6 +132,9 @@ function exibirProdutos() {
                             </tr>`;
                 produtos.forEach((produto, index) => {
                     produtoHTML += `
+    <div class="produto" style="width:100%">
+        <table style="width:100%">
+            <tr style="width:100%">
                         <div class="produto" style="width:100%">
                             <tr style="width:100%">
                                 <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
