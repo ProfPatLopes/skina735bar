@@ -25,6 +25,7 @@ select[type="text"] {
 /* Ajustes para telas menores (como smartphones) */
 .produto, .item{
     width: 100%;
+    font-size:18px;
 }
 .produto, .quant{
     width: 30%;
