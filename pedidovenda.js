@@ -139,7 +139,7 @@ function exibirProdutos() {
                                 <td style="width:15%; text-align: right"><label class='quant' ><input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
                                 <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
                             </tr>`;
-                }
+                
                 
     listaProdutos.innerHTML += produtoHTML;
                 produtoHTML += `</table>           
