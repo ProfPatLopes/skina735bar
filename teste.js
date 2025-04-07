@@ -99,13 +99,14 @@ const produtosPorCategoria = {
                 { nome:'Redbull',            preco: 10.00,tipo:'bebida'},
                 { nome:'Monster',            preco: 10.00,tipo:'bebida'},
                 { nome:'Agua s/gas 500ml',   preco:  4.00,tipo:'bebida'},
-                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'},
-                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
+                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'}
             ],
             porcoes: [
-                { nome: 'Batata',           preco: 22.00, tipo:'porcao' },
-                { nome: 'Frango ',          preco: 35.00, tipo:'porcao' },
-                { nome: 'Peixe',            preco: 42.00, tipo:'porcao' }
+                { nome: 'Batata frita',           preco: 22.00, tipo:'porcao' },
+                { nome: 'Frango frito 1kg',          preco: 35.00, tipo:'porcao' },
+                { nome: 'Frango frito 1/2kg',          preco: 21.00, tipo:'porcao' },
+                { nome: 'Filé Peixe frito 1kg ',            preco: 42.00, tipo:'porcao' },
+                { nome: 'Filé Peixe frito 1/2kg',            preco: 25.00, tipo:'porcao' }
             ],
             diversos: [
                 { nome: 'Trident', preco: 6 , tipo:'diversos'},
@@ -297,8 +298,7 @@ function imprimirPedido2() {
                 <table style="width: auto; font-size: 22px;">
                 
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----VIA BAR----<</strong></td>
-                
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--------VIA BAR--------<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
@@ -336,7 +336,7 @@ function imprimirPedido2() {
         <table style="width: auto; font-size: 22px;">
         
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--VIA COZINHA--<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>-----VIA COZINHA-----<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
@@ -373,7 +373,7 @@ function imprimirPedido2() {
                 detalhesPedido += `
         <table style="width: auto; font-size: 22px;">
             <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 15px;width:100%"><strong>>--DIVERSOS--<</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 15px;width:100%"><strong>>-------DIVERSOS-------<</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: left; width: 100%;">Data/hora: ${data}</td>
