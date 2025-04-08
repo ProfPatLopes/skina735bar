@@ -117,17 +117,17 @@ function exibirProdutos() {
                 const produtos = produtosPorCategoria[categoria];
                 produtos.forEach((produto, index) => {
                     const produtoHTML = `
-    <div class="produto" style="width:100%">
-        <table style="width:100%">
-            <tr style="width:100%">
-                <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
-                <td><label class='item' for="produto${index}">${produto.nome}</label></td>
-                <td style="width:15%; text-align: right"><label class='quant' >Qtd:<input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
-                <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
-            </tr>
-        </table>
-    </div>`;
-    listaProdutos.innerHTML += produtoHTML;
+                        <div class="produto" style="width:100%">
+                        <table style="width:100%">
+                            <tr style="width:100%">
+                                <td style="width:auto"><input type="checkbox" id="produto${index}" data-tipo="${produto.tipo}" data-produto="${produto.nome}" data-preco="${produto.preco}" onchange="atualizarTotal()"></td>
+                                <td><label class='item' for="produto${index}">${produto.nome}</label></td>
+                                <td style="width:15%; text-align: right"><label class='quant' >Qtd:<input type="number" style="width: 30%" id="quantidade${index}" value=" " min="0" onchange="atualizarTota()"></label</td>
+                                <td style="width:15%"><button class="botao" onclick="adicionarItens()"><img src="adiciona.png" alt="Adicionar" width="20" height="20"></button></td>
+                            </tr>
+                        </table>
+                    </div>`;
+                listaProdutos.innerHTML += produtoHTML;
                     
                 });
             }
@@ -265,8 +265,7 @@ function imprimirPedidoCompra() {
                 cabamis=false;
             }
             
-            detalhesPedido += `
-                
+            detalhesPedido += `                
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
                     <td style="text-align: center;">${quantidade}</td>
@@ -274,18 +273,16 @@ function imprimirPedidoCompra() {
                 </tr>
                 <tr style="width: auto;">
                     <td colspan="4">..................................................</td>
-                    
-                    </tr>
-                
+                </tr>
             `;
         });
-    } else {
-        detalhesPedido += `
+        } else {
+            detalhesPedido += `
             <tr>
                 <td colspan="4" style="text-align: center;">Nenhum item selecionado.</td>
             </tr>
-        `;
-    }
+            `;
+        }
 
     detalhesPedido += `
                 
