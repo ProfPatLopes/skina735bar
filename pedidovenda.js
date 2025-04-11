@@ -103,16 +103,20 @@ const produtosPorCategoria = {
                 { nome:'Campari',            preco:  8.00,tipo:'bebida'}
             ],
             porcoes: [
-                { nome: 'Batata frita',           preco: 22.00, tipo:'porcao' },
-                { nome: 'Frango frito 1kg',          preco: 35.00, tipo:'porcao' },
-                { nome: 'Frango frito 1/2kg',          preco: 25.00, tipo:'porcao' },
-                { nome: 'Filé Peixe frito 1kg ',            preco: 35.00, tipo:'porcao' },
-                { nome: 'Filé Peixe frito 1/2kg',            preco: 25.00, tipo:'porcao' }
+                { nome: 'Batata frita',          preco: 30.00, tipo:'porcao' },
+                { nome: 'Batata frita',          preco: 20.00, tipo:'porcao' },
+                { nome: 'Polenta',               preco: 20.00, tipo:'porcao' },
+                { nome: 'Polenta',               preco: 15.00, tipo:'porcao' },
+                { nome: 'Frango frito 1kg',      preco: 40.00, tipo:'porcao' },
+                { nome: 'Frango frito 1/2kg',    preco: 35.00, tipo:'porcao' },
+                { nome: 'Filé Peixe frito 1kg ', preco: 45.00, tipo:'porcao' },
+                { nome: 'Filé Peixe frito 1/2kg',preco: 30.00, tipo:'porcao' }
             ],
             diversos: [
-                { nome: 'Trident', preco: 6 , tipo:'diversos'},
-                { nome: 'Halls',   preco: 4 , tipo:'diversos'},
-                { nome: 'Bombom',  preco: 8 , tipo:'diversos'}
+                { nome: 'Trident',      preco: 6 , tipo:'diversos'},
+                { nome: 'Halls',        preco: 4 , tipo:'diversos'},
+                { nome: 'Bombom',       preco: 8 , tipo:'diversos'},
+                { nome: 'Sinuca ficha', preco: 2 , tipo:'diversos'}
             ]
 };
 function exibirProdutos() {
