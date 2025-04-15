@@ -279,7 +279,8 @@ function imprimirPedido2() {
             <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
         
     `;
-
+    // se não for fechamento imprime individual 
+    if (!this.checked) {
     if (produtosSelecionados.length > 0) {
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
@@ -420,6 +421,7 @@ function imprimirPedido2() {
             </tr>
         `;
     }
+    } // checado
 
     detalhesPedido += `
                 
