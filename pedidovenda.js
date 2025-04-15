@@ -193,6 +193,7 @@ function getDataAtual() {
 
 
 function imprimirPedido2() {
+    const fechar = document.getElementById("fecharConta").checked;
     const nomeCliente = document.getElementById('nomeCliente').value;
     const tipoPedido = document.getElementById('tipoPedido').value;
     const numeroMesa = document.getElementById('numeroMesa').value;
@@ -280,7 +281,7 @@ function imprimirPedido2() {
         
     `;
     // se não for fechamento imprime individual 
-    if (!this.checked) {
+    if (!fechar.checked) {
     if (produtosSelecionados.length > 0) {
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
