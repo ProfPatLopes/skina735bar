@@ -200,13 +200,11 @@ function imprimirPedido2() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
-    
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
-//<td colspan="3" style="font-size: 22px; text-align: left; padding: 15px""><strong>PEDIDO  CAIXA</strong></td>
     let detalhesPedido = `
         <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: auto; font-size: 22px;">
@@ -236,9 +234,6 @@ function imprimirPedido2() {
             <tbody>
             
     `;
-
-
-
     //
     if (produtosSelecionados.length > 0) {
         const bebidas = [];
@@ -258,7 +253,6 @@ function imprimirPedido2() {
                 diversos.push({ produto, quantidade, valorUnitario, valorTotal });
             }
             detalhesPedido += `
-                
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
                     <td style="text-align: center;">${quantidade}</td>
@@ -266,10 +260,7 @@ function imprimirPedido2() {
                 </tr>
                 <tr style="width: auto;">
                     <td colspan="4">..................................................</td>
-                    
-                    </tr>
-                
-            `;
+                </tr>`;
         });
     } else {
         detalhesPedido += `
@@ -279,23 +270,21 @@ function imprimirPedido2() {
         `;
     }
 
-    detalhesPedido += `
-                
+    detalhesPedido += `           
                 </tbody>
             </table>
-            
-            <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
-        
-    `;
+                <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+            `;
     // se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
+        /*
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
             const quantidade = item.qtd;
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            //
+            */
             if (diversos.length > 0 && cabDiv === true) {
                 detalhesPedido += `<table style="width: 100%; ">
                     <tr>
@@ -404,7 +393,7 @@ function imprimirPedido2() {
                     </tr>
                 
             `;
-        });
+        /*});*/
         
     } else {
         detalhesPedido += `
