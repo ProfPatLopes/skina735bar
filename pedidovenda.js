@@ -353,10 +353,11 @@ function imprimirPedido2() {
             </table>  
             <table style="width: 100%; ">`;
                 porco.forEach(item => {
-                    detalhesPedido +=`<tr font-size: 14px; style="background-color: black; color: white;width: auto">
-                        <td colspan="2" style="text-align: left;"><strong>Produto</strong></td>
-                        <td style="text-align: right;"><strong>Unit</strong></td>
-                        <td style="text-align: right;"><strong>Total</strong></td></tr>`;
+                    detalhesPedido += `<tr>
+                        <td colspan="2" style="text-align: left;">${item.produto}</td>
+                        <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
+                        <td style="text-align: right;">${item.valorTotal}</td>
+                        </tr>`;
                 })
             detalhesPedido +=`<tbody>`;
     }
@@ -378,11 +379,7 @@ function imprimirPedido2() {
         `;
     }
 
-    detalhesPedido += `           
-                </tbody>
-            </table>
-            <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
-            `;
+    
     
 // aqui
     detalhesPedido += `
