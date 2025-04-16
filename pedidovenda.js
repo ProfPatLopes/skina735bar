@@ -1,4 +1,8 @@
 const produtosSelecionados = []; // Array para armazenar os produtos já adicionados
+const bebid = [];
+const porco = [];
+const divers = [];
+
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
     const painel = document.getElementById('itensPedido');
@@ -213,12 +217,12 @@ function imprimirPedido2() {
                 <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Norte do Paraná, 735 esquina com a Goioerê Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
             </tr>
             <tr>
-            <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
             </tr>
             <tr >
                 <td colspan="4" style="width: auto; text-align: left; width: 100%;font-size: 15px;">Data/hora: ${data}</td>
             </tr>
-             <tr>
+            <tr>
                 <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
             </tr>
             <tr>
@@ -231,14 +235,9 @@ function imprimirPedido2() {
                 <td style="text-align: right;">Unit</td>
                 <td style="text-align: right;">Total</td>
             </tr>
-            <tbody>
-            
-    `;
+            <tbody>`;
     //
     if (produtosSelecionados.length > 0) {
-        const bebid = [];
-        const porco = [];
-        const divers = [];
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
             const quantidade = item.qtd;
@@ -277,16 +276,8 @@ function imprimirPedido2() {
             `;
     // se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
-        /*
-        produtosSelecionados.forEach(item => {
-            const produto = item.nome;
-            const quantidade = item.qtd;
-            const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
-            const valorTotal = item.valor.toFixed(2); // Valor total do item
-            const tipo_produto = item.tipo;
-            */
-            if (divers.length > 0 && cabDiv === true) {
-                detalhesPedido += `<table style="width: 100%; ">
+        if (divers.length > 0 && cabDiv === true) {
+            detalhesPedido += `<table style="width: 100%; ">
                     <tr>
                         <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
                     </tr>
@@ -316,9 +307,9 @@ function imprimirPedido2() {
                 });
                 detalhesPedido+=`<tbody>`;
                 cabDiv=false;
-            }
-            if (bebid.length > 0 && cabBar === true) {
-                detalhesPedido += `<table style="width: 100%; ">
+        }
+        if (bebid.length > 0 && cabBar === true) {
+            detalhesPedido += `<table style="width: 100%; ">
                     <tr>
                         <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
                     </tr>
@@ -339,7 +330,7 @@ function imprimirPedido2() {
                     </table>  
                     <table style="width: 100%; ">`;
         
-                bebid.forEach(item => {
+            bebid.forEach(item => {
                     detalhesPedido += `<tr>
                     <td colspan="2" style="text-align: left;">${item.produto}</td>
                     <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
@@ -348,8 +339,8 @@ function imprimirPedido2() {
                 });
                 detalhesPedido+=`<tbody>`;
                 cabBar=false;
-            }
-            if (porco.length > 0 && cabpor === true) {
+        }
+        if (porco.length > 0 && cabPor === true) {
                 detalhesPedido += `<table style="width: 100%; ">
                 <tr>
                 <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
@@ -378,9 +369,9 @@ function imprimirPedido2() {
                 })
                 detalhesPedido +=`<tbody>`;
                 cabPor=false;
-            }
+        }
             
-            detalhesPedido += `
+        detalhesPedido += `
                 
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
@@ -392,8 +383,8 @@ function imprimirPedido2() {
                     
                     </tr>
                 
-            `;
-        /*});*/
+        `;
+        
         
     } else {
         detalhesPedido += `
