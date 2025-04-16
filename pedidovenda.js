@@ -381,12 +381,7 @@ function imprimirPedido2() {
         }
             
         detalhesPedido += `
-                
-                <tr font-size: 22px;>
-                    <td colspan="2">${produto}</td>
-                    <td style="text-align: center;">${quantidade}</td>
-                    <td style="text-align: right;">${valorTotal}</td>
-                </tr>
+                            
                 <tr style="width: auto;">
                     <td colspan="4">..................................................</td>
                     
