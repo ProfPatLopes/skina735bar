@@ -203,6 +203,9 @@ function imprimirPedido2() {
     const numeroMesa = document.getElementById('numeroMesa').value;
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
+    const cabBar=true;
+    const cabDiv=true;
+    const cabPor=true;
     var data = getDataAtual(); 
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
@@ -276,9 +279,7 @@ function imprimirPedido2() {
             `;
     // se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
-        const cabBar=true;
-        const cabDiv=true;
-        const cabPor=true;
+        
 
         if (divers.length > 0 && cabDiv === true) {
             detalhesPedido += `<table style="width: 100%; ">
@@ -346,32 +347,32 @@ function imprimirPedido2() {
         }
         if (porco.length > 0 && cabPor === true) {
                 detalhesPedido += `<table style="width: 100%; ">
-                <tr>
-                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-                </tr> 
-                <tbody>
-                <table style="width: auto; font-size: 15px;">
-                <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>------VIA COZINHA-----<</strong></center></td>
-                </tr>
-                <tr >
-                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-                </tr>
-                <tr>
-                    <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-                </tr>
-                <tr>
-                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-                </tr>
-                </table>  
-                <table style="width: 100%; ">`;
-                porco.forEach(item => {
-                    detalhesPedido +=`<tr font-size: 14px; style="background-color: black; color: white;width: auto">
-                    <td colspan="2" style="text-align: left;"><strong>Produto</strong></td>
-                    <td style="text-align: right;"><strong>Unit</strong></td>
-                    <td style="text-align: right;"><strong>Total</strong></td></tr>`;
-                })
-                detalhesPedido +=`<tbody>`;
+                        <tr>
+                            <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+                        </tr> 
+                    <tbody>
+                        <table style="width: auto; font-size: 15px;">
+                            <tr>
+                                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>------VIA COZINHA-----<</strong></center></td>
+                            </tr>
+                            <tr >
+                                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                            </tr>
+                    </table>  
+                    <table style="width: 100%; ">`;
+                        porco.forEach(item => {
+                            detalhesPedido +=`<tr font-size: 14px; style="background-color: black; color: white;width: auto">
+                                <td colspan="2" style="text-align: left;"><strong>Produto</strong></td>
+                                <td style="text-align: right;"><strong>Unit</strong></td>
+                                <td style="text-align: right;"><strong>Total</strong></td></tr>`;
+                        })
+                    detalhesPedido +=`<tbody>`;
                 cabPor=false;
         }
             
