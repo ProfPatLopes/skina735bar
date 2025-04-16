@@ -249,9 +249,11 @@ function imprimirPedido2() {
             const tipo_produto = item.tipo;
             if (tipo_produto === "bebida") {
                 bebid.push({ produto, quantidade, valorUnitario, valorTotal });
-            } else if (tipo_produto === "porcao") {
+            } 
+            if (tipo_produto === "porcao") {
                 porco.push({ produto, quantidade, valorUnitario, valorTotal });
-            } else if (tipo_produto === "diversos") {
+            } 
+            if (tipo_produto === "diversos") {
                 divers.push({ produto, quantidade, valorUnitario, valorTotal });
             }
             detalhesPedido += `
@@ -277,7 +279,7 @@ function imprimirPedido2() {
             </table>
                 <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
             `;
-    // se não for fechamento imprime individual 
+    /* se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
         
 
@@ -398,7 +400,7 @@ function imprimirPedido2() {
             </tr>
         `;
     }
-    // checado
+    */ checado
 
     detalhesPedido += `
                 
