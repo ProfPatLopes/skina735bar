@@ -279,7 +279,7 @@ function imprimirPedido2() {
             </table>
                 <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
             `;
-    /* se não for fechamento imprime individual 
+    // se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
         
 
@@ -400,8 +400,8 @@ function imprimirPedido2() {
             </tr>
         `;
     }
-    */
-
+    
+// aqui
     detalhesPedido += `
                 
                 </tbody>
