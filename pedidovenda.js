@@ -400,7 +400,7 @@ function imprimirPedido2() {
             </tr>
         `;
     }
-    */ checado
+    */
 
     detalhesPedido += `
                 
