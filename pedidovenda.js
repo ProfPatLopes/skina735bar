@@ -276,6 +276,10 @@ function imprimirPedido2() {
             `;
     // se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
+        const cabBar=true;
+        const cabDiv=true;
+        const cabPor=true;
+
         if (divers.length > 0 && cabDiv === true) {
             detalhesPedido += `<table style="width: 100%; ">
                     <tr>
