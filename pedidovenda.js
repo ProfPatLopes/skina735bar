@@ -200,9 +200,7 @@ function imprimirPedido2() {
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
-    var cabBar = true;
-    var cabPor = true;
-    var cabDiv = true;
+    
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
@@ -243,13 +241,22 @@ function imprimirPedido2() {
 
     //
     if (produtosSelecionados.length > 0) {
+        const bebidas = [];
+        const porcoes = [];
+        const diversos = [];
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
             const quantidade = item.qtd;
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            
+            if (tipo_produto === "bebida") {
+                bebidas.push({ produto, quantidade, valorUnitario, valorTotal });
+            } else if (tipo_produto === "porcao") {
+                porcoes.push({ produto, quantidade, valorUnitario, valorTotal });
+            } else if (tipo_produto === "diversos") {
+                diversos.push({ produto, quantidade, valorUnitario, valorTotal });
+            }
             detalhesPedido += `
                 
                 <tr font-size: 22px;>
@@ -289,7 +296,9 @@ function imprimirPedido2() {
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            if (cabBar=== true && tipo_produto === 'bebida') {
+            //
+            if (bebidas.length > 0 && cabBar === true) {
+            
                 detalhesPedido += `
         <table style="width: 100%; ">
             <tr>
@@ -315,12 +324,18 @@ function imprimirPedido2() {
                 <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
             </tr>
         </table>  
-        <table style="width: 100%; ">
-            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
-                <td colspan="2" style="text-align: left;">Produto</td>
-                <td style="text-align: right;">Unit</td>
-                <td style="text-align: right;">Total</td>
+        <table style="width: 100%; ">`;
+        
+            bebidas.forEach(item => {
+            detalhesPedido += `
+            <tr>
+                <td colspan="2" style="text-align: left;">${item.produto}</td>
+                <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
+                <td style="text-align: right;">${item.valorTotal}</td>
             </tr>
+            `;
+        });
+        detalhesPedido+=`
             <tbody>
             
     `;
@@ -415,6 +430,7 @@ function imprimirPedido2() {
                 
             `;
         });
+        
     } else {
         detalhesPedido += `
             <tr>
