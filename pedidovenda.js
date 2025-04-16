@@ -236,9 +236,9 @@ function imprimirPedido2() {
     `;
     //
     if (produtosSelecionados.length > 0) {
-        const bebidas = [];
-        const porcoes = [];
-        const diversos = [];
+        const bebid = [];
+        const porco = [];
+        const divers = [];
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
             const quantidade = item.qtd;
@@ -246,11 +246,11 @@ function imprimirPedido2() {
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
             if (tipo_produto === "bebida") {
-                bebidas.push({ produto, quantidade, valorUnitario, valorTotal });
+                bebid.push({ produto, quantidade, valorUnitario, valorTotal });
             } else if (tipo_produto === "porcao") {
-                porcoes.push({ produto, quantidade, valorUnitario, valorTotal });
+                porco.push({ produto, quantidade, valorUnitario, valorTotal });
             } else if (tipo_produto === "diversos") {
-                diversos.push({ produto, quantidade, valorUnitario, valorTotal });
+                divers.push({ produto, quantidade, valorUnitario, valorTotal });
             }
             detalhesPedido += `
                 <tr font-size: 22px;>
@@ -285,7 +285,7 @@ function imprimirPedido2() {
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
             */
-            if (diversos.length > 0 && cabDiv === true) {
+            if (divers.length > 0 && cabDiv === true) {
                 detalhesPedido += `<table style="width: 100%; ">
                     <tr>
                         <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
@@ -307,7 +307,7 @@ function imprimirPedido2() {
                     </table>  
                     <table style="width: 100%; ">`;
         
-                diversos.forEach(item => {
+                divers.forEach(item => {
                     detalhesPedido += `<tr>
                     <td colspan="2" style="text-align: left;">${item.produto}</td>
                     <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
@@ -317,7 +317,7 @@ function imprimirPedido2() {
                 detalhesPedido+=`<tbody>`;
                 cabDiv=false;
             }
-            if (bebidas.length > 0 && cabBar === true) {
+            if (bebid.length > 0 && cabBar === true) {
                 detalhesPedido += `<table style="width: 100%; ">
                     <tr>
                         <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
@@ -339,7 +339,7 @@ function imprimirPedido2() {
                     </table>  
                     <table style="width: 100%; ">`;
         
-                bebidas.forEach(item => {
+                bebid.forEach(item => {
                     detalhesPedido += `<tr>
                     <td colspan="2" style="text-align: left;">${item.produto}</td>
                     <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
@@ -349,7 +349,7 @@ function imprimirPedido2() {
                 detalhesPedido+=`<tbody>`;
                 cabBar=false;
             }
-            if (porcoes.length > 0 && cabpor === true) {
+            if (porco.length > 0 && cabpor === true) {
                 detalhesPedido += `<table style="width: 100%; ">
                 <tr>
                 <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
@@ -370,7 +370,7 @@ function imprimirPedido2() {
                 </tr>
                 </table>  
                 <table style="width: 100%; ">`;
-                porcoes.forEach(item => {
+                porco.forEach(item => {
                     detalhesPedido +=`<tr font-size: 14px; style="background-color: black; color: white;width: auto">
                     <td colspan="2" style="text-align: left;"><strong>Produto</strong></td>
                     <td style="text-align: right;"><strong>Unit</strong></td>
