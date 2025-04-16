@@ -203,9 +203,7 @@ function imprimirPedido2() {
     const numeroMesa = document.getElementById('numeroMesa').value;
     const painel = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
-    const cabBar=true;
-    const cabDiv=true;
-    const cabPor=true;
+    
     var data = getDataAtual(); 
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
@@ -242,6 +240,9 @@ function imprimirPedido2() {
     //
     if (produtosSelecionados.length > 0) {
         produtosSelecionados.forEach(item => {
+            const cabBar=true;
+            const cabDiv=true;
+            const cabPor=true;
             const produto = item.nome;
             const quantidade = item.qtd;
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
@@ -277,43 +278,41 @@ function imprimirPedido2() {
     detalhesPedido += `           
                 </tbody>
             </table>
-                <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+            <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
             `;
     // se não for fechamento imprime individual 
     if (produtosSelecionados.length > 0) {
-        
-
         if (divers.length > 0 && cabDiv === true) {
             detalhesPedido += `<table style="width: 100%; ">
+                <tr>
+                    <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+                </tr>
+                <tbody>
+                <table style="width: auto; font-size: 15px;">
                     <tr>
-                        <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+                        <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>--------DIVERSOS--------<</strong></center></td>
                     </tr>
-                    <tbody>
-                    <table style="width: auto; font-size: 15px;">
-                        <tr>
-                            <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>--------DIVERSOS--------<</strong></center></td>
-                        </tr>
-                        <tr >
-                            <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-                        </tr>
+                    <tr >
+                        <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                    </tr>
                     </table>  
                     <table style="width: 100%; ">`;
         
-                divers.forEach(item => {
+            divers.forEach(item => {
                     detalhesPedido += `<tr>
                     <td colspan="2" style="text-align: left;">${item.produto}</td>
                     <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
                     <td style="text-align: right;">${item.valorTotal}</td>
                     </tr>`;
-                });
-                detalhesPedido+=`<tbody>`;
-                cabDiv=false;
+            });
+            detalhesPedido+=`<tbody>`;
+            cabDiv=false;
         }
         if (bebid.length > 0 && cabBar === true) {
             detalhesPedido += `<table style="width: 100%; ">
@@ -343,9 +342,9 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
                     <td style="text-align: right;">${item.valorTotal}</td>
                     </tr>`;
-                });
-                detalhesPedido+=`<tbody>`;
-                cabBar=false;
+            });
+            detalhesPedido+=`<tbody>`;
+            cabBar=false;
         }
         if (porco.length > 0 && cabPor === true) {
                 detalhesPedido += `<table style="width: 100%; ">
