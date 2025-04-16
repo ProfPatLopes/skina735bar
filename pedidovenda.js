@@ -197,6 +197,9 @@ function getDataAtual() {
 
 
 function imprimirPedido2() {
+    var cabBar = true;
+    var cabPor = true;
+    var cabDiv = true;
     const fechar = document.getElementById("fecharConta").checked;
     const nomeCliente = document.getElementById('nomeCliente').value;
     const tipoPedido = document.getElementById('tipoPedido').value;
