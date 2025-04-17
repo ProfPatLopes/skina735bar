@@ -129,15 +129,7 @@ function exibirProdutos() {
             const listaProdutos = document.getElementById('listaProdutos');
             listaProdutos.innerHTML = '';
 //
-listaProdutos.addEventListener('touchstart', (event) => {
-    event.preventDefault(); // Bloqueia o comportamento padrão
-    console.log("Touchstart prevenido!");
-});
 
-listaProdutos.addEventListener('touchmove', (event) => {
-    event.preventDefault(); // Garante que o scroll seja gerenciado manualmente
-    console.log("Touchmove prevenido!");
-});
 
 //
             if (categoria && produtosPorCategoria[categoria]) {
