@@ -2,6 +2,7 @@ const produtosSelecionados = []; // Array para armazenar os produtos já adicion
 const bebid = [];
 const porco = [];
 const divers = [];
+const checkbox = document.getElementById('fecharConta');
 
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
@@ -270,6 +271,7 @@ function imprimirPedido2() {
         </table>
         <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>`;
 // se não for fechamento imprime individual 
+    if (!checkbox.checked) {
     if (divers.length > 0 ) {
         detalhesPedido += `<table style="width: 100%; ">
         <tr>
@@ -358,7 +360,7 @@ function imprimirPedido2() {
                 })
             detalhesPedido +=`<tbody>`;
     }
-    
+    } // checado
     detalhesPedido += `
                     
         <tr style="width: auto;">
