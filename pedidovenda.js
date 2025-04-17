@@ -2,6 +2,13 @@ const produtosSelecionados = []; // Array para armazenar os produtos já adicion
 const bebid = [];
 const porco = [];
 const divers = [];
+
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault(); // Bloqueia o unload da página
+    event.returnValue = ''; // Essa linha ajuda a funcionar em alguns navegadores
+});
+
+
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
     const painel = document.getElementById('itensPedido');
