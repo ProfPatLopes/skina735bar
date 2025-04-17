@@ -3,11 +3,15 @@ const bebid = [];
 const porco = [];
 const divers = [];
 
-window.addEventListener('beforeunload', (event) => {
-    event.preventDefault(); // Bloqueia o unload da página
-    event.returnValue = ''; // Essa linha ajuda a funcionar em alguns navegadores
+listaProdutos.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Bloqueia o comportamento padrão
+    console.log("Touchstart prevenido!");
 });
 
+listaProdutos.addEventListener('touchmove', (event) => {
+    event.preventDefault(); // Garante que o scroll seja gerenciado manualmente
+    console.log("Touchmove prevenido!");
+});
 
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
