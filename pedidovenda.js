@@ -246,13 +246,13 @@ function imprimirPedido2() {
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
             if (tipo_produto === "bebida") {
-                bebid.push({ produto, qtd, valorUnitario, valorTotal });
+                bebid.push({ produto, quantidade, valorUnitario, valorTotal });
             } 
             if (tipo_produto === "porcao") {
-                porco.push({ produto, qtd, valorUnitario, valorTotal });
+                porco.push({ produto, quantidade, valorUnitario, valorTotal });
             } 
             if (tipo_produto === "diversos") {
-                divers.push({ produto, qtd, valorUnitario, valorTotal });
+                divers.push({ produto, quantidade, valorUnitario, valorTotal });
             }
             detalhesPedido += `
                 <tr font-size: 22px;>
@@ -295,7 +295,7 @@ function imprimirPedido2() {
         divers.forEach(item => {
             detalhesPedido += `<tr>
             <td colspan="3" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.qtd}</td>
+            <td style="text-align: right;">${item.quantidade}</td>
             </tr>`;
         });
         detalhesPedido+=`<tbody>`;
@@ -325,7 +325,7 @@ function imprimirPedido2() {
         bebid.forEach(item => {
             detalhesPedido += `<tr>
             <td colspan="3" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.qtd}</td>
+            <td style="text-align: right;">${item.quantidade}</td>
             </tr>`;
         });
         detalhesPedido+=`<tbody>`;
@@ -354,7 +354,7 @@ function imprimirPedido2() {
                 porco.forEach(item => {
                     detalhesPedido += `<tr>
                         <td colspan="3" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.qtd}</td>
+            <td style="text-align: right;">${item.quantidade}</td>
             </tr>`;
                 })
             detalhesPedido +=`<tbody>`;
