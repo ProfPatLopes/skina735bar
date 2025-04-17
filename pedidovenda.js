@@ -2,7 +2,6 @@ const produtosSelecionados = []; // Array para armazenar os produtos já adicion
 const bebid = [];
 const porco = [];
 const divers = [];
-
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
     const painel = document.getElementById('itensPedido');
@@ -197,6 +196,7 @@ function getDataAtual() {
 
 
 function imprimirPedido2() {
+    
     const checkbox    = document.getElementById('fecharConta');
     const nomeCliente = document.getElementById('nomeCliente').value;
     const tipoPedido  = document.getElementById('tipoPedido').value;
