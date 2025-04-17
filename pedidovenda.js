@@ -3,15 +3,6 @@ const bebid = [];
 const porco = [];
 const divers = [];
 
-listaProdutos.addEventListener('touchstart', (event) => {
-    event.preventDefault(); // Bloqueia o comportamento padrão
-    console.log("Touchstart prevenido!");
-});
-
-listaProdutos.addEventListener('touchmove', (event) => {
-    event.preventDefault(); // Garante que o scroll seja gerenciado manualmente
-    console.log("Touchmove prevenido!");
-});
 
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
@@ -137,7 +128,18 @@ function exibirProdutos() {
             const categoria = document.getElementById('categoria').value;
             const listaProdutos = document.getElementById('listaProdutos');
             listaProdutos.innerHTML = '';
+//
+listaProdutos.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Bloqueia o comportamento padrão
+    console.log("Touchstart prevenido!");
+});
 
+listaProdutos.addEventListener('touchmove', (event) => {
+    event.preventDefault(); // Garante que o scroll seja gerenciado manualmente
+    console.log("Touchmove prevenido!");
+});
+
+//
             if (categoria && produtosPorCategoria[categoria]) {
                 const produtos = produtosPorCategoria[categoria];
                 produtos.forEach((produto, index) => {
