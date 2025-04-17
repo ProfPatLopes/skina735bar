@@ -197,12 +197,11 @@ function getDataAtual() {
 
 
 function imprimirPedido2() {
-    const checkbox = document.getElementById('fecharConta');
-    const fechar = document.getElementById("fecharConta").checked;
+    const checkbox    = document.getElementById('fecharConta');
     const nomeCliente = document.getElementById('nomeCliente').value;
-    const tipoPedido = document.getElementById('tipoPedido').value;
-    const numeroMesa = document.getElementById('numeroMesa').value;
-    const painel = document.getElementById('itensPedido');
+    const tipoPedido  = document.getElementById('tipoPedido').value;
+    const numeroMesa  = document.getElementById('numeroMesa').value;
+    const painel      = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     
     var data = getDataAtual(); 
