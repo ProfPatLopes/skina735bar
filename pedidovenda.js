@@ -293,9 +293,8 @@ function imprimirPedido2() {
             <table style="width: 100%; ">`;
         divers.forEach(item => {
             detalhesPedido += `<tr>
-            <td colspan="2" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
-            <td style="text-align: right;">${item.valorTotal}</td>
+            <td colspan="3" style="text-align: left;">${item.produto}</td>
+            <td style="text-align: right;">${item.qtd}</td>
             </tr>`;
         });
         detalhesPedido+=`<tbody>`;
@@ -324,9 +323,8 @@ function imprimirPedido2() {
 
         bebid.forEach(item => {
             detalhesPedido += `<tr>
-            <td colspan="2" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
-            <td style="text-align: right;">${item.valorTotal}</td>
+            <td colspan="3" style="text-align: left;">${item.produto}</td>
+            <td style="text-align: right;">${item.qtd}</td>
             </tr>`;
         });
         detalhesPedido+=`<tbody>`;
@@ -354,10 +352,9 @@ function imprimirPedido2() {
             <table style="width: 100%; ">`;
                 porco.forEach(item => {
                     detalhesPedido += `<tr>
-                        <td colspan="2" style="text-align: left;">${item.produto}</td>
-                        <td style="text-align: right;">${item.valorUnitario.toFixed(2)}</td>
-                        <td style="text-align: right;">${item.valorTotal}</td>
-                        </tr>`;
+                        <td colspan="3" style="text-align: left;">${item.produto}</td>
+            <td style="text-align: right;">${item.qtd}</td>
+            </tr>`;
                 })
             detalhesPedido +=`<tbody>`;
     }
