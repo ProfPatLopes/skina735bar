@@ -11,21 +11,19 @@
 <body>
     
         <div class="informacoes-cliente">
-                <label for="nomeCliente">Cliente:</label>
-                    <input type="text" style="width: 75%" id="nomeCliente" placeholder="--------------> Digite <--------------">
-                <label for="tipoPedido">Atendimento:</label>
-                    <select id="tipoPedido" onchange="habilitarNumeroMesa()">
+            <table>
+                <tr><label for="nomeCliente">Cliente:</label><input type="text" style="width: 75%" id="nomeCliente" placeholder="--------------> Digite <--------------"></tr>
+                <tr><label for="tipoPedido">Atendimento:</label><select id="tipoPedido" onchange="habilitarNumeroMesa()">
                         <option value="balcao">Balcão</option>
                         <option value="mesa">Mesa</option>
-                    </select>
-    
+                    </select></tr>
+                <tr>
                 <div id="campoMesa" style="display: none;">
-                    <label for="numeroMesa">Mesa:</label>
-                    <input type="number" style="width: 30%" id="numeroMesa" min="1" placeholder=">- Número -<">
+                    <label for="numeroMesa">Mesa:</label><input type="number" style="width: 30%" id="numeroMesa" min="1" placeholder=">- Número -<">
                     
-                </div>
-                <label for="fecharConta">Fechar Conta:</label>
-                    <input type="checkbox" id="fecharConta">
+                </div></tr>
+                <tr><label for="fecharConta">Fechar Conta:</label><input type="checkbox" id="fecharConta"></tr>
+            </table>
             </div>
         <div class="formulario">
         <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>Produtos</strong></p>
