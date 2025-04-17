@@ -246,13 +246,13 @@ function imprimirPedido2() {
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
             if (tipo_produto === "bebida") {
-                bebid.push({ produto, quantidade, valorUnitario, valorTotal });
+                bebid.push({ produto, qtd, valorUnitario, valorTotal });
             } 
             if (tipo_produto === "porcao") {
-                porco.push({ produto, quantidade, valorUnitario, valorTotal });
+                porco.push({ produto, qtd, valorUnitario, valorTotal });
             } 
             if (tipo_produto === "diversos") {
-                divers.push({ produto, quantidade, valorUnitario, valorTotal });
+                divers.push({ produto, qtd, valorUnitario, valorTotal });
             }
             detalhesPedido += `
                 <tr font-size: 22px;>
