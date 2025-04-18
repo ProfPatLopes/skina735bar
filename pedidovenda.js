@@ -362,20 +362,38 @@ function imprimirPedido2() {
             <td style="text-align: right;">${item.quantidade}</td>
             </tr>`;
                 })
+
+            
             detalhesPedido +=`<tbody>`;
     }
-    } // checado
+    } else{
+            
+    // checado
     detalhesPedido += `
                     
         <tr style="width: auto;">
             <td colspan="4">..................................................</td>
-            
-            </tr>
+        </tr>
         
 `;
-        //fim por categoria
+        const totalPedido = totalCompra; // Insira o valor total aqui
+        document.getElementById("total").innerText = totalPedido.toFixed(2);
+        const chavePIX = "sua-chave-pix-aqui"; // Insira sua chave PIX
+        const nomeRecebedor = "Skina 735 Bar";
+        const cidade = "Goioerê";
+        const descricao = "Pagamento do pedido";
+        const txid = "12345ABC"; // Identificador único para a transação
+        const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalPedido.toFixed(2)}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
+        // Gerar QR Code
+        QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
+            if (error) console.error(error);
+            console.log("QR Code gerado com sucesso!");
+        });
+        detalhePedido +=`<canvas id="qrcode"></canvas>`;
+    }    //fim por categoria
     } else {
-        detalhesPedido += `
+        
+           detalhesPedido += `
             <tr>
                 <td colspan="4" style="text-align: center;">Nenhum item selecionado.</td>
             </tr>
@@ -386,7 +404,7 @@ function imprimirPedido2() {
     
 // aqui
     detalhesPedido += `
-                
+       
                 </tbody>
             </table>
         </div>
