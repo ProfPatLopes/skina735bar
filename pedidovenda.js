@@ -3,6 +3,10 @@ const bebid = [];
 const porco = [];
 const divers = [];
 
+QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
+    if (error) console.error(error);
+    console.log("QR Code gerado com sucesso!");
+});
 
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
@@ -367,7 +371,15 @@ function imprimirPedido2() {
             detalhesPedido +=`<tbody>`;
     }
     } else{
-            
+        const chavePIX = "+55998865663"; // Insira sua chave PIX
+        const nomeRecebedor = "Skina 735 Bar";
+        const cidade = "Goioerê";
+        const descricao = "Pagamento do pedido";
+        const txid = "12345ABC"; // Identificador único para a transação
+        const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
+        
+        detalhesPedido +=`<canvas id="qrcode"></canvas>`;
+   
     // checado
     detalhesPedido += `
                     
@@ -376,18 +388,8 @@ function imprimirPedido2() {
         </tr>
         
 `;
-        detalhesPedido +=`<canvas id="qrcode"></canvas>`;
-        const chavePIX = "+55998865663"; // Insira sua chave PIX
-        const nomeRecebedor = "Skina 735 Bar";
-        const cidade = "Goioerê";
-        const descricao = "Pagamento do pedido";
-        const txid = "12345ABC"; // Identificador único para a transação
-        const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
         // Gerar QR Code
-        QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
-            if (error) console.error(error);
-            console.log("QR Code gerado com sucesso!");
-        });
+        
         
     }    //fim por categoria
     } else {
