@@ -376,7 +376,7 @@ function imprimirPedido2() {
         </tr>
         
 `;
-        detalhePedido +=`<canvas id="qrcode"></canvas>`;
+        detalhesPedido +=`<canvas id="qrcode"></canvas>`;
         const chavePIX = "+55998865663"; // Insira sua chave PIX
         const nomeRecebedor = "Skina 735 Bar";
         const cidade = "Goioerê";
