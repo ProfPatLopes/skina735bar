@@ -377,7 +377,7 @@ function imprimirPedido2() {
         
 `;
         
-        const chavePIX = "sua-chave-pix-aqui"; // Insira sua chave PIX
+        const chavePIX = "998865663"; // Insira sua chave PIX
         const nomeRecebedor = "Skina 735 Bar";
         const cidade = "Goioerê";
         const descricao = "Pagamento do pedido";
