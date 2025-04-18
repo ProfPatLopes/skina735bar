@@ -376,13 +376,13 @@ function imprimirPedido2() {
         </tr>
         
 `;
-        const totalPedido = totalCompra; // Insira o valor total aqui
+        
         const chavePIX = "sua-chave-pix-aqui"; // Insira sua chave PIX
         const nomeRecebedor = "Skina 735 Bar";
         const cidade = "Goioerê";
         const descricao = "Pagamento do pedido";
         const txid = "12345ABC"; // Identificador único para a transação
-        const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalPedido}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
+        const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
         // Gerar QR Code
         QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
             if (error) console.error(error);
