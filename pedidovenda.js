@@ -417,6 +417,7 @@ function imprimirPedido2() {
             <head>
                 <title>Imprimir Pedido</title>
                 <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+                <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
                 <style>
                     body { margin: 0; padding: 0; }
                     table, th, td { border: 0px solid #000; padding: 1px; }
