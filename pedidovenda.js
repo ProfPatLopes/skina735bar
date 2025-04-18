@@ -377,9 +377,7 @@ function imprimirPedido2() {
         const descricao = "Pagamento do pedido";
         const txid = "12345ABC"; // Identificador único para a transação
         const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
-        
-        detalhesPedido +=`<canvas id="qrcode"></canvas>`;
-   
+          
     // checado
     detalhesPedido += `
                     
@@ -425,6 +423,7 @@ function imprimirPedido2() {
             </head>
             <body>
                 ${detalhesPedido}
+                <canvas id="qrcode"></canvas>
             </body>
         </html>
     `);
