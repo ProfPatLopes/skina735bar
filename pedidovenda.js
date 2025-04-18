@@ -3,10 +3,7 @@ const bebid = [];
 const porco = [];
 const divers = [];
 
-QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
-    if (error) console.error(error);
-    console.log("QR Code gerado com sucesso!");
-});
+
 
 function adicionarItens() {
     const produtos = document.querySelectorAll('.produto');
@@ -423,7 +420,10 @@ function imprimirPedido2() {
             </head>
             <body>
                 ${detalhesPedido}
-                <canvas id="qrcode"></canvas>
+                <canvas id="qrcode"><script>QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
+    if (error) console.error(error);
+    console.log("QR Code gerado com sucesso!");
+});</script></canvas>
             </body>
         </html>
     `);
