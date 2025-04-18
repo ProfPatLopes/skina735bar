@@ -377,7 +377,7 @@ function imprimirPedido2() {
         
 `;
         const totalPedido = totalCompra; // Insira o valor total aqui
-        document.getElementById("total").innerText = totalPedido.toFixed(2);
+        //document.getElementById("total").innerText = totalPedido.toFixed(2);
         const chavePIX = "sua-chave-pix-aqui"; // Insira sua chave PIX
         const nomeRecebedor = "Skina 735 Bar";
         const cidade = "Goioerê";
