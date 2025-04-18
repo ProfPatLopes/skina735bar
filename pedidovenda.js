@@ -376,8 +376,8 @@ function imprimirPedido2() {
         </tr>
         
 `;
-        
-        const chavePIX = "998865663"; // Insira sua chave PIX
+        detalhePedido +=`<canvas id="qrcode"></canvas>`;
+        const chavePIX = "+55998865663"; // Insira sua chave PIX
         const nomeRecebedor = "Skina 735 Bar";
         const cidade = "Goioerê";
         const descricao = "Pagamento do pedido";
@@ -388,7 +388,7 @@ function imprimirPedido2() {
             if (error) console.error(error);
             console.log("QR Code gerado com sucesso!");
         });
-        detalhePedido +=`<canvas id="qrcode"></canvas>`;
+        
     }    //fim por categoria
     } else {
         
