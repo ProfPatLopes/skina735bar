@@ -368,14 +368,7 @@ function imprimirPedido2() {
             detalhesPedido +=`<tbody>`;
     }
     } else{
-        const chavePIX = "+55998865663"; // Insira sua chave PIX
-        const nomeRecebedor = "Skina 735 Bar";
-        const cidade = "Goioerê";
-        const descricao = "Pagamento do pedido";
-        const txid = "12345ABC"; // Identificador único para a transação
-        const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
-          
-    // checado
+        
     detalhesPedido += `
                     
         <tr style="width: auto;">
@@ -426,8 +419,8 @@ function imprimirPedido2() {
                     const nomeRecebedor = "Skina 735 Bar";
                     const cidade = "Goioerê";
                     const descricao = "Pagamento do pedido";
-                    const txid = "12345ABC"; // Identificador único para a transação
-                    const payloadPIX = `00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304`;
+                    const txid = "${nomeCliente}${data}"; // Identificador único para a transação
+                    const payloadPIX = "00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304";
     
                     QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
                     if (error) console.error(error);
