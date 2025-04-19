@@ -389,9 +389,40 @@ function imprimirPedido2() {
                     <img src="${qrCodeBase64}" alt="QR Code" style="width: 50%;">
                 </td>
             </tr>
-        `;
+            </tbody>
+            </table>
+        </div>
+    `;
+      
+
+        // Após garantir que o QR Code foi gerado, abrir nova janela
+        const novaJanela = window.open('', '_blank');
+        novaJanela.document.write(`
+            <html>
+                <head>
+                    <title>Imprimir Pedido</title>
+                    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+                    <style>
+                        body { margin: 0; padding: 10px; font-family: Arial, sans-serif; }
+                        table, th, td { border: 0px solid #000; padding: 1px; }
+                        img { display: block; margin: 0 auto; }
+                    </style>
+                        
+
+                </head>
+                <body>
+                    <table>
+                        ${detalhesPedido}
+                    </table>
+                </body>
+            </html>
+        `);
+        novaJanela.document.close();
+        novaJanela.print();
+        novaJanela.close();
         }
     });
+    //
         
     }    //fim por categoria
     } else {
@@ -400,38 +431,11 @@ function imprimirPedido2() {
             <tr>
                 <td colspan="4" style="text-align: center;">Nenhum item selecionado.</td>
             </tr>
-        `;
-    }
-
-    
-    
-// aqui
-    detalhesPedido += `
-       
-                </tbody>
+                      </tbody>
             </table>
         </div>
-    `;
-//
-    const novaJanela = window.open('', '_blank');
-    novaJanela.document.write(`
-        <html>
-            <head>
-                <title>Imprimir Pedido</title>
-                <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
-                <style>
-                    body { margin: 0; padding: 0; }
-                    table, th, td { border: 0px solid #000; padding: 1px; }
-                </style>
-            </head>
-            <body>
-                ${detalhesPedido}                              
-            </body>
-        </html>
-    `);
-    
-    novaJanela.print();
-    novaJanela.close();
+        `;
+    }
     
 }
 
