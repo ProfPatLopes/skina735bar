@@ -368,8 +368,12 @@ function imprimirPedido2() {
             detalhesPedido +=`<tbody>`;
     }
     } else{
-        const txid = "${nomeCliente}-${data}"; // Identificador único para a transação
-        const payloadPIX = "00020126580014BR.GOV.BCB.PIX01145544998865663020PEDIDO520400005303986540${totalCompra}5802BR5911SKINA735BAR6009GOIOERE62070503${txid}6304";
+        //const txid = "${nomeCliente}-${data}"; // Identificador único para a transação
+
+        let totalCompra = parseFloat(document.getElementById("totalCompra").innerText); // Obter o valor do DOM
+        const txid = "Clientedodia";
+        //
+        const payloadPIX = `00020126360014BR.GOV.BCB.PIX0114144514650001735204000053039865405${totalCompra.toFixed(2)}5802BR5901N6001C62150511skina745bar6304A830`;
         const canvasElement = document.getElementById("qrcode");
         QRCode.toCanvas(canvasElement, payloadPIX, function (error) {
         if (error) {
