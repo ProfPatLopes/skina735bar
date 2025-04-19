@@ -434,3 +434,4 @@ function imprimirPedido2() {
     novaJanela.close();
     
 }
+
