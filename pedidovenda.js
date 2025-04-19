@@ -420,10 +420,7 @@ function imprimirPedido2() {
             </head>
             <body>
                 ${detalhesPedido}
-                <canvas id="qrcode"><script>QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
-    if (error) console.error(error);
-    console.log("QR Code gerado com sucesso!");
-});</script></canvas>
+                <canvas id="qrcode"></canvas>
             </body>
         </html>
     `);
@@ -432,3 +429,7 @@ function imprimirPedido2() {
     novaJanela.close();
     
 }
+QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
+    if (error) console.error(error);
+    console.log("QR Code gerado com sucesso!");
+});
