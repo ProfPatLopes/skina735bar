@@ -368,16 +368,30 @@ function imprimirPedido2() {
             detalhesPedido +=`<tbody>`;
     }
     } else{
-        
-    detalhesPedido += `
-                    
-        <tr style="width: auto;">
-            <td colspan="4">..................................................</td>
-        </tr>
-        
-`;
-        // Gerar QR Code
-        
+        const txid = "${nomeCliente}-${data}"; // Identificador único para a transação
+        const payloadPIX = "00020126580014BR.GOV.BCB.PIX01145544998865663020PEDIDO520400005303986540${totalCompra}5802BR5911SKINA735BAR6009GOIOERE62070503${txid}6304";
+        const canvasElement = document.getElementById("qrcode");
+        QRCode.toCanvas(canvasElement, payloadPIX, function (error) {
+        if (error) {
+            console.error("Erro ao gerar QR Code:", error);
+        } else {
+            console.log("QR Code gerado com sucesso!");
+//
+            const qrCodeBase64 = canvasElement.toDataURL();
+//
+        // Converter o QR Code para imagem base64 e adicionar ao detalhesPedido
+        detalhesPedido  += `
+            <tr style="width: auto;">
+                <td colspan="4">..................................................</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <img src="${qrCodeBase64}" alt="QR Code" style="width: 50%;">
+                </td>
+            </tr>
+        `;
+        }
+    });
         
     }    //fim por categoria
     } else {
@@ -405,29 +419,13 @@ function imprimirPedido2() {
             <head>
                 <title>Imprimir Pedido</title>
                 <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
-                <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
                 <style>
                     body { margin: 0; padding: 0; }
                     table, th, td { border: 0px solid #000; padding: 1px; }
                 </style>
             </head>
             <body>
-                ${detalhesPedido}
-                <canvas id="qrcode">
-                <script>
-                    const chavePIX = "+55998865663"; // Insira sua chave PIX
-                    const nomeRecebedor = "Skina 735 Bar";
-                    const cidade = "Goioerê";
-                    const descricao = "Pagamento do pedido";
-                    const txid = "${nomeCliente}${data}"; // Identificador único para a transação
-                    const payloadPIX = "00020126580014BR.GOV.BCB.PIX0114${chavePIX}020${descricao}520400005303986540${totalCompra}5802BR5911${nomeRecebedor}6009${cidade}62070503${txid}6304";
-    
-                    QRCode.toCanvas(document.getElementById("qrcode"), payloadPIX, function (error) {
-                    if (error) console.error(error);
-                        console.log("QR Code gerado com sucesso!");
-                    });
-                </script>
-                </canvas>
+                ${detalhesPedido}                              
             </body>
         </html>
     `);
