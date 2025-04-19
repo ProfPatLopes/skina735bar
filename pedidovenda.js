@@ -209,7 +209,7 @@ function imprimirPedido2() {
     const numeroMesa  = document.getElementById('numeroMesa').value;
     const painel      = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
-    console.log("O checkbox está marcado!". checkbox);
+    
     var data = getDataAtual(); 
 
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
