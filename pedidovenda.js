@@ -282,7 +282,7 @@ function imprimirPedido2() {
             if (divers.length > 0 ) {
                 detalhesPedido += `
                 <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
-                <p style="background-color: black; color: white;text-align: center; font-size: 16px;><strong>>----------DIVERSOS----------<</strong></p>
+                <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------DIVERSOS----------<</strong></p>
                 <table style="width: 100%; font-size: 15px;">
                     <tbody>
                         <tr >
