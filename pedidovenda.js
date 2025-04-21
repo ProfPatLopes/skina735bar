@@ -216,9 +216,11 @@ function imprimirPedido2() {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
+    //        <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
+
     let detalhesPedido = `
-        <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
-        <table style="width: auto; font-size: 22px;">
+        <div style="text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
+        <table style="width: 100%; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
                 <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Norte do Paraná, 735 esquina com a Goioerê Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
