@@ -367,9 +367,33 @@ function imprimirPedido2() {
             
             detalhesPedido +=`<tbody>`;
     }
+    // Após garantir que o QR Code foi gerado, abrir nova janela
+    const novaJanela = window.open('', '_blank');
+    novaJanela.document.write(`
+        <html>
+            <head>
+                <title>Imprimir Pedido</title>
+                <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+                <style>
+                    body { margin: 0; padding: 10px; font-family: Arial, sans-serif; }
+                    table, th, td { border: 0px solid #000; padding: 1px; }
+                    img { display: block; margin: 0 auto; }
+                </style>
+                    
+
+            </head>
+            <body>
+                <table>
+                    ${detalhesPedido}
+                </table>
+            </body>
+        </html>
+    `);
     novaJanela.document.close();
     novaJanela.print();
     novaJanela.close();
+
+
     } else{
         //const txid = "${nomeCliente}-${data}"; // Identificador único para a transação
 
