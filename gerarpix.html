@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skina 735 Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <link rel="stylesheet" href="pedidovenda.css">
+    <script src="gerarpix.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <img src="Logo.png" alt="Logo Skina 735 Bar" class="logo"> 
+        <h2>Gerar QR Code</h2>
+        <form onsubmit="return false;"> <!-- Evita que o formulário seja enviado -->
+            <table>
+                <tr>
+                    <td>
+                        <label for="valorPix">Valor:</label>
+                        <input type="text" style="width: 50%;" id="valorPix" placeholder="--> Digite <--">
+                    </td>
+                    <td>
+                        <button type="button" class="botao" onclick="gerar()">
+                            Gerar
+                        </button>
+                    </td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td colspan="2">
+                        <canvas id="qrcode"></canvas>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+
+ 
