@@ -267,7 +267,7 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${valorTotal}</td>
                 </tr>
                 <tr style="width: auto;">
-                    <td colspan="4">..................................................</td>
+                    <td colspan="4">.......................................................</td>
                 </tr>`;
         });
         // imprimi por categoria
@@ -278,24 +278,21 @@ function imprimirPedido2() {
 // se não for fechamento imprime individual 
         if (!checkbox.checked) {
             if (divers.length > 0 ) {
-                detalhesPedido += `<table style="width: 100%; ">
-                <tr>
-                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-                </tr>
-                <tbody>
-                <table style="width: auto; font-size: 15px;">
-                <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------DIVERSOS----------<</strong></center></td>
-                </tr>
-                <tr >
-                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-                </tr>
-                <tr>
-                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-                </tr>
-                <tr>
-                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-                </tr>
+                detalhesPedido += `
+                <p style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</p>
+                <p style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----------DIVERSOS----------<</strong></p>
+                <table style="width: 100%; font-size: 15px;">
+                    <tbody>
+                        <tr >
+                        <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                        </tr>
+                        <tr>
+                        <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                        </tr>
+                        <tr>
+                        <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                        </tr>
+                    </tbody>
                 </table>  
                 <table style="width: 100%; ">`;
                 divers.forEach(item => {
@@ -304,18 +301,14 @@ function imprimirPedido2() {
                 <td style="text-align: right;">${item.quantidade}</td>
                 </tr>`;
                 });
-                detalhesPedido+=`<tbody>`;
+                detalhesPedido+=`</table>`;
             }
             if (bebid.length > 0 ) {
-                detalhesPedido += `<table style="width: 100%; ">
-                    <tr>
-                        <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-                    </tr>
-                    <tbody>
-                    <table style="width: auto; font-size: 15px;">
-                        <tr>
-                            <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------VIA BAR----------<</strong></center></td>
-                        </tr>
+                detalhesPedido += `
+                    <p style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</p>
+                    <p style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------VIA BAR----------<</strong></p>
+                    <table style="width: 100%; font-size: 15px;">
+                    <tbody>                    
                         <tr >
                             <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
                         </tr>
@@ -325,6 +318,7 @@ function imprimirPedido2() {
                         <tr>
                             <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
                         </tr>
+                    </body>
                     </table>  
                     <table style="width: 100%; ">`;
 
@@ -334,18 +328,14 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${item.quantidade}</td>
                     </tr>`;
                 });
-                detalhesPedido+=`<tbody>`;
+                detalhesPedido+=`</table>`;
             }
             if (porco.length > 0 ) {
-                detalhesPedido += `<table style="width: 100%; ">
-                        <tr>
-                            <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-                        </tr> 
-                    <tbody>
+                detalhesPedido += `
+                        <p style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</p>
+                        <p style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--------VIA COZINHA-------<</strong></p> 
                         <table style="width: auto; font-size: 15px;">
-                            <tr>
-                                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>--------VIA COZINHA-------<</strong></center></td>
-                            </tr>
+                        <tbody>    
                             <tr >
                                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
                             </tr>
@@ -355,6 +345,7 @@ function imprimirPedido2() {
                             <tr>
                                 <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
                             </tr>
+                            </tbody>
                     </table>  
                     <table style="width: 100%; ">`;
                         porco.forEach(item => {
@@ -365,7 +356,7 @@ function imprimirPedido2() {
                         })
 
                     
-                    detalhesPedido +=`<tbody>`;
+                    detalhesPedido +=`</table>`;
             }
     // vai imprimir
         } else{
@@ -381,9 +372,11 @@ function imprimirPedido2() {
                 console.log("QR Code gerado com sucesso!");
                 const qrCodeBase64 = canvasElement.toDataURL();
                 detalhesPedido  += `
-                    <tr style="width: auto;">
-                        <td colspan="4">..................................................</td>
-                    </tr>
+                    <p>..................................................</p>
+                    <p>CÓDIGO PARA PAGAMENTO - PIX</p>
+                    <p>..................................................</p>
+                    
+                    
                     <tr>
                         <td colspan="4" style="text-align: center;">
                             <img src="${qrCodeBase64}" alt="QR Code" style="width: 50%;">
@@ -402,7 +395,7 @@ function imprimirPedido2() {
                 <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
                 <style>
                     body { margin: 0; padding: 10px; font-family: Arial, sans-serif; }
-                    table, th, td { border: 0px solid #000; padding: 1px; }
+                    table, th, td { border: 0px solid #000; padding: 0px; }
                     img { display: block; margin: 0 auto; }
                 </style>
             </head>
