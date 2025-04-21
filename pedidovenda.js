@@ -367,6 +367,9 @@ function imprimirPedido2() {
             
             detalhesPedido +=`<tbody>`;
     }
+    novaJanela.document.close();
+    novaJanela.print();
+    novaJanela.close();
     } else{
         //const txid = "${nomeCliente}-${data}"; // Identificador único para a transação
 
@@ -421,9 +424,9 @@ function imprimirPedido2() {
                 </body>
             </html>
         `);
-        //novaJanela.document.close();
-        //novaJanela.print();
-        //novaJanela.close();
+        novaJanela.document.close();
+        novaJanela.print();
+        novaJanela.close();
         }
     });
     //
@@ -440,9 +443,7 @@ function imprimirPedido2() {
         </div>
         `;
     }
-    novaJanela.document.close();
-    novaJanela.print();
-    novaJanela.close();
+    
         
     
 }
