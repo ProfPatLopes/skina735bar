@@ -375,7 +375,7 @@ function imprimirPedido2() {
                 const qrCodeBase64 = canvasElement.toDataURL();
                 detalhesPedido  += `
                     <p>..................................................</p>
-                    <p>PAGAMENTO - PIX</p>
+                    <p style="text-align: center;">PAGAMENTO - PIX</p>
                     <p>..................................................</p>
                     
                     
