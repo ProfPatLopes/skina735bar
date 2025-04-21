@@ -65,63 +65,63 @@ function atualizarPainel() {
     
 const produtosPorCategoria = {
             cerveja: [
-                { nome:'Heiniken 600ml',   preco:14.00,tipo:'bebida'},
-                { nome:'Skol 600ml',       preco:10.00,tipo:'bebida'},
-                { nome:'Amistel 600ml',    preco:10.00,tipo:'bebida'},
+                { nome:'Heineken 600ml',   preco:14.00,tipo:'bebida'},
+                { nome:'Skol     600ml',       preco:10.00,tipo:'bebida'},
+                { nome:'Amistel  600ml',    preco:10.00,tipo:'bebida'},
                 { nome:'Original 600ml',   preco:14.00,tipo:'bebida'},
-                { nome:'Brahma 600ml',     preco:12.00,tipo:'bebida'},
-                { nome:'Skol 300ml',       preco: 5.00,tipo:'bebida'},
-                { nome:'Brahma 300ml',     preco: 5.00,tipo:'bebida'},
-                { nome:'Original 300ml',   preco: 5.00,tipo:'bebida'},
-                { nome:'Conti 300ml',      preco: 4.00,tipo:'bebida'},
-                { nome:'Skol lt 350ml',    preco: 5.00,tipo:'bebida'},
-                { nome:'Brahma lt 350ml',  preco: 5.00,tipo:'bebida'},
-                { nome:'Smistel lt 350ml', preco: 5.00,tipo:'bebida'},
-                { nome:'Heineken lt 350ml',preco: 7.00,tipo:'bebida'}
+                { nome:'Brahma   600ml',     preco:12.00,tipo:'bebida'},
+                { nome:'Skol     300ml',       preco: 5.00,tipo:'bebida'},
+                { nome:'Brahma   300ml',     preco: 5.00,tipo:'bebida'},
+                { nome:'Original 300ml',   preco: 6.00,tipo:'bebida'},
+                { nome:'Conti    300ml',      preco: 4.00,tipo:'bebida'},
+                { nome:'Skol lt     350ml',    preco: 5.00,tipo:'bebida'},
+                { nome:'Brahma lt   350ml',  preco: 5.00,tipo:'bebida'},
+                { nome:'Amistel lt  350ml', preco: 5.00,tipo:'bebida'},
+                { nome:'Heineken lt 350ml',preco: 6.00,tipo:'bebida'}
             ],
             refri:[
-                { nome:'Coca-cola 350ml ',   preco: 5.00,tipo:'bebida'},
-                { nome:'Fanta laranja 350ml',preco: 5.00,tipo:'bebida'},
-                { nome:'Fanta uva 350ml ',   preco: 5.00,tipo:'bebida'},
-                { nome:'Guarana 350ml ',     preco: 5.00,tipo:'bebida'},
-                { nome:'Coca-Cola 1L desc',  preco: 8.00,tipo:'bebida'},
-                { nome:'Coca-Cola 1L ret ',  preco: 8.00,tipo:'bebida'},
+                { nome:'Coca-cola     350ml ',   preco: 6.00,tipo:'bebida'},
+                { nome:'Fanta laranja 350ml',preco: 6.00,tipo:'bebida'},
+                { nome:'Fanta uva     350ml ',   preco: 6.00,tipo:'bebida'},
+                { nome:'Guarana       350ml ',     preco: 6.00,tipo:'bebida'},
+                { nome:'Coca-Cola    1L',  preco: 8.00,tipo:'bebida'},
                 { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'bebida'},
-                { nome:'Sodinha 200ml',      preco: 3.00,tipo:'bebida'},
-                { nome:'Tubaina 600ml',      preco: 5.00,tipo:'bebida'}
+                { nome:'Sodinha   200ml',      preco: 3.00,tipo:'bebida'},
+                { nome:'Tubaina   600ml',      preco: 5.00,tipo:'bebida'}
             ],
             suco:[
                 { nome:'Dell Vale uva',      preco: 5.00,tipo:'bebida'}, 
                 { nome:'Dell Vale laranja',  preco: 5.00,tipo:'bebida'}
             ],
             dose:[
-                { nome:'Passaporte',         preco: 10.00,tipo:'bebida'},
-                { nome:'Matu Nobre',         preco: 10.00,tipo:'bebida'},
-                { nome:'Vodka Smirnof',      preco:  8.00,tipo:'bebida'},
+                { nome:'Passport Scotch',         preco: 10.00,tipo:'bebida'},
+                { nome:'Matu Nobilis',         preco: 10.00,tipo:'bebida'},
+                { nome:'Vodka Smirnoff',      preco:  8.00,tipo:'bebida'},
                 { nome:'Vodka',              preco:  8.00,tipo:'bebida'},
-                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
+                { nome:'Ypioca',              preco:  5.00,tipo:'bebida'},
+                { nome:'Campari',            preco:  8.00,tipo:'bebida'},
+                { nome:'Caipirinha (vodka)', preco:  15.00,tipo:'bebida'}
             ],
             outras:[
                 { nome:'Redbull',            preco: 10.00,tipo:'bebida'},
                 { nome:'Monster',            preco: 10.00,tipo:'bebida'},
                 { nome:'Agua s/gas 500ml',   preco:  4.00,tipo:'bebida'},
-                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'},
-                { nome:'Campari',            preco:  8.00,tipo:'bebida'}
+                { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'}
             ],
             porcoes: [
-                { nome: 'Batata frita',          preco: 30.00, tipo:'porcao' },
-                { nome: 'Batata frita',          preco: 20.00, tipo:'porcao' },
-                { nome: 'Polenta',               preco: 20.00, tipo:'porcao' },
-                { nome: 'Polenta',               preco: 15.00, tipo:'porcao' },
-                { nome: 'Frango frito 1kg',      preco: 40.00, tipo:'porcao' },
-                { nome: 'Frango frito 1/2kg',    preco: 35.00, tipo:'porcao' },
-                { nome: 'Filé Peixe frito 1kg ', preco: 45.00, tipo:'porcao' },
-                { nome: 'Filé Peixe frito 1/2kg',preco: 30.00, tipo:'porcao' }
+                { nome: 'Frango frito 1kg',     preco: 40.00, tipo:'porcao' },
+                { nome: 'Frango frito 500g',    preco: 30.00, tipo:'porcao' },
+                { nome: 'Peixe frito 500g ',    preco: 45.00, tipo:'porcao' },
+                { nome: 'Peixe frito 250g',     preco: 30.00, tipo:'porcao' },
+                { nome: 'Calabresa 500g ',      preco: 30.00, tipo:'porcao' },
+                { nome: 'Calabresa 250g',       preco: 20.00, tipo:'porcao' },
+                { nome: 'Batata frita',         preco: 30.00, tipo:'porcao' },
+                { nome: 'Batata frita',         preco: 20.00, tipo:'porcao' },
+                { nome: 'Polenta 500g',              preco: 20.00, tipo:'porcao' },
+                { nome: 'Polenta 250g',              preco: 15.00, tipo:'porcao' }
+                
             ],
             diversos: [
-                { nome: 'Trident',      preco: 6 , tipo:'diversos'},
-                { nome: 'Halls',        preco: 4 , tipo:'diversos'},
-                { nome: 'Bombom',       preco: 8 , tipo:'diversos'},
                 { nome: 'Sinuca ficha', preco: 2 , tipo:'diversos'}
             ]
 };
@@ -421,9 +421,9 @@ function imprimirPedido2() {
                 </body>
             </html>
         `);
-        novaJanela.document.close();
-        novaJanela.print();
-        novaJanela.close();
+        //novaJanela.document.close();
+        //novaJanela.print();
+        //novaJanela.close();
         }
     });
     //
@@ -440,6 +440,10 @@ function imprimirPedido2() {
         </div>
         `;
     }
+    novaJanela.document.close();
+    novaJanela.print();
+    novaJanela.close();
+        
     
 }
 
