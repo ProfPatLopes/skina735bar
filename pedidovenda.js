@@ -276,97 +276,123 @@ function imprimirPedido2() {
         </table>
         <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>`;
 // se não for fechamento imprime individual 
-    if (!checkbox.checked) {
-    if (divers.length > 0 ) {
-        detalhesPedido += `<table style="width: 100%; ">
-        <tr>
-            <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-        </tr>
-        <tbody>
-        <table style="width: auto; font-size: 15px;">
-            <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------DIVERSOS----------<</strong></center></td>
-            </tr>
-            <tr >
-                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-            </tr>
-            </table>  
-            <table style="width: 100%; ">`;
-        divers.forEach(item => {
-            detalhesPedido += `<tr>
-            <td colspan="3" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.quantidade}</td>
-            </tr>`;
-        });
-        detalhesPedido+=`<tbody>`;
-    }
-    if (bebid.length > 0 ) {
-        detalhesPedido += `<table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-            </tr>
-            <tbody>
-            <table style="width: auto; font-size: 15px;">
+        if (!checkbox.checked) {
+            if (divers.length > 0 ) {
+                detalhesPedido += `<table style="width: 100%; ">
                 <tr>
-                    <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------VIA BAR----------<</strong></center></td>
+                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+                </tr>
+                <tbody>
+                <table style="width: auto; font-size: 15px;">
+                <tr>
+                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------DIVERSOS----------<</strong></center></td>
                 </tr>
                 <tr >
-                    <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
                 </tr>
-            </table>  
-            <table style="width: 100%; ">`;
+                </table>  
+                <table style="width: 100%; ">`;
+                divers.forEach(item => {
+                detalhesPedido += `<tr>
+                <td colspan="3" style="text-align: left;">${item.produto}</td>
+                <td style="text-align: right;">${item.quantidade}</td>
+                </tr>`;
+                });
+                detalhesPedido+=`<tbody>`;
+            }
+            if (bebid.length > 0 ) {
+                detalhesPedido += `<table style="width: 100%; ">
+                    <tr>
+                        <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+                    </tr>
+                    <tbody>
+                    <table style="width: auto; font-size: 15px;">
+                        <tr>
+                            <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------VIA BAR----------<</strong></center></td>
+                        </tr>
+                        <tr >
+                            <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                        </tr>
+                    </table>  
+                    <table style="width: 100%; ">`;
 
-        bebid.forEach(item => {
-            detalhesPedido += `<tr>
-            <td colspan="3" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.quantidade}</td>
-            </tr>`;
-        });
-        detalhesPedido+=`<tbody>`;
-    }
-    if (porco.length > 0 ) {
-        detalhesPedido += `<table style="width: 100%; ">
-                <tr>
-                    <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-                </tr> 
-            <tbody>
-                <table style="width: auto; font-size: 15px;">
-                    <tr>
-                        <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>--------VIA COZINHA-------<</strong></center></td>
-                    </tr>
-                    <tr >
-                        <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-                    </tr>
-            </table>  
-            <table style="width: 100%; ">`;
-                porco.forEach(item => {
+                bebid.forEach(item => {
                     detalhesPedido += `<tr>
-                        <td colspan="3" style="text-align: left;">${item.produto}</td>
-            <td style="text-align: right;">${item.quantidade}</td>
-            </tr>`;
-                })
+                    <td colspan="3" style="text-align: left;">${item.produto}</td>
+                    <td style="text-align: right;">${item.quantidade}</td>
+                    </tr>`;
+                });
+                detalhesPedido+=`<tbody>`;
+            }
+            if (porco.length > 0 ) {
+                detalhesPedido += `<table style="width: 100%; ">
+                        <tr>
+                            <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
+                        </tr> 
+                    <tbody>
+                        <table style="width: auto; font-size: 15px;">
+                            <tr>
+                                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>--------VIA COZINHA-------<</strong></center></td>
+                            </tr>
+                            <tr >
+                                <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                            </tr>
+                    </table>  
+                    <table style="width: 100%; ">`;
+                        porco.forEach(item => {
+                            detalhesPedido += `<tr>
+                                <td colspan="3" style="text-align: left;">${item.produto}</td>
+                    <td style="text-align: right;">${item.quantidade}</td>
+                    </tr>`;
+                        })
 
-            
-            detalhesPedido +=`<tbody>`;
-    }
+                    
+                    detalhesPedido +=`<tbody>`;
+            }
+    // vai imprimir
+        } else{
+            let totalCompra = parseFloat(document.getElementById("totalCompra").innerText); // Obter o valor do DOM
+            const txid = "Clientedodia";
+            //
+            const payloadPIX = `00020126360014BR.GOV.BCB.PIX0114144514650001735204000053039865405${totalCompra.toFixed(2)}5802BR5901N6001C62150511skina745bar6304A830`;
+            const canvasElement = document.getElementById("qrcode");
+            QRCode.toCanvas(canvasElement, payloadPIX, function (error) {
+            if (error) {
+                console.error("Erro ao gerar QR Code:", error);
+            } else {
+                console.log("QR Code gerado com sucesso!");
+                const qrCodeBase64 = canvasElement.toDataURL();
+                detalhesPedido  += `
+                    <tr style="width: auto;">
+                        <td colspan="4">..................................................</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center;">
+                            <img src="${qrCodeBase64}" alt="QR Code" style="width: 50%;">
+                        </td>
+                    </tr>
+                    </tbody></table></div>`;
+            // vai imprimir
+            }}); // gera qr        
+        } // fechar pedido e gera qr  
     // Após garantir que o QR Code foi gerado, abrir nova janela
     const novaJanela = window.open('', '_blank');
     novaJanela.document.write(`
@@ -379,8 +405,6 @@ function imprimirPedido2() {
                     table, th, td { border: 0px solid #000; padding: 1px; }
                     img { display: block; margin: 0 auto; }
                 </style>
-                    
-
             </head>
             <body>
                 <table>
@@ -391,71 +415,7 @@ function imprimirPedido2() {
     `);
     novaJanela.document.close();
     novaJanela.print();
-    novaJanela.close();
-
-
-    } else{
-        //const txid = "${nomeCliente}-${data}"; // Identificador único para a transação
-
-        let totalCompra = parseFloat(document.getElementById("totalCompra").innerText); // Obter o valor do DOM
-        const txid = "Clientedodia";
-        //
-        const payloadPIX = `00020126360014BR.GOV.BCB.PIX0114144514650001735204000053039865405${totalCompra.toFixed(2)}5802BR5901N6001C62150511skina745bar6304A830`;
-        const canvasElement = document.getElementById("qrcode");
-        QRCode.toCanvas(canvasElement, payloadPIX, function (error) {
-        if (error) {
-            console.error("Erro ao gerar QR Code:", error);
-        } else {
-            console.log("QR Code gerado com sucesso!");
-//
-            const qrCodeBase64 = canvasElement.toDataURL();
-//
-        // Converter o QR Code para imagem base64 e adicionar ao detalhesPedido
-        detalhesPedido  += `
-            <tr style="width: auto;">
-                <td colspan="4">..................................................</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="text-align: center;">
-                    <img src="${qrCodeBase64}" alt="QR Code" style="width: 50%;">
-                </td>
-            </tr>
-            </tbody>
-            </table>
-        </div>
-    `;
-      
-
-        // Após garantir que o QR Code foi gerado, abrir nova janela
-        const novaJanela = window.open('', '_blank');
-        novaJanela.document.write(`
-            <html>
-                <head>
-                    <title>Imprimir Pedido</title>
-                    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
-                    <style>
-                        body { margin: 0; padding: 10px; font-family: Arial, sans-serif; }
-                        table, th, td { border: 0px solid #000; padding: 1px; }
-                        img { display: block; margin: 0 auto; }
-                    </style>
-                        
-
-                </head>
-                <body>
-                    <table>
-                        ${detalhesPedido}
-                    </table>
-                </body>
-            </html>
-        `);
-        novaJanela.document.close();
-        novaJanela.print();
-        novaJanela.close();
-        }
-    });
-    //
-        
-    }    //fim por categoria
+    novaJanela.close();  //fim por categoria
     } else {
         
            detalhesPedido += `
