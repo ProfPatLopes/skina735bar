@@ -279,8 +279,8 @@ function imprimirPedido2() {
         if (!checkbox.checked) {
             if (divers.length > 0 ) {
                 detalhesPedido += `
-                <p style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</p>
-                <p style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----------DIVERSOS----------<</strong></p>
+                <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
+                <p style="background-color: black; color: white;text-align: center; font-size: 16px;><strong>>----------DIVERSOS----------<</strong></p>
                 <table style="width: 100%; font-size: 15px;">
                     <tbody>
                         <tr >
@@ -305,8 +305,8 @@ function imprimirPedido2() {
             }
             if (bebid.length > 0 ) {
                 detalhesPedido += `
-                    <p style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</p>
-                    <p style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><center><strong>>----------VIA BAR----------<</strong></p>
+                    <p style="text-align: center;font-size: 14px;">------------------- corte aqui ----------------</p>
+                    <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------VIA BAR----------<</strong></p>
                     <table style="width: 100%; font-size: 15px;">
                     <tbody>                    
                         <tr >
@@ -332,9 +332,9 @@ function imprimirPedido2() {
             }
             if (porco.length > 0 ) {
                 detalhesPedido += `
-                        <p style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</p>
-                        <p style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>--------VIA COZINHA-------<</strong></p> 
-                        <table style="width: auto; font-size: 15px;">
+                        <p style="text-align: center;font-size: 14px;">------------------- corte aqui ----------------</p>
+                        <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>--------VIA COZINHA-------<</strong></p> 
+                        <table style="width: 100%; font-size: 15px;">
                         <tbody>    
                             <tr >
                                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
@@ -373,7 +373,7 @@ function imprimirPedido2() {
                 const qrCodeBase64 = canvasElement.toDataURL();
                 detalhesPedido  += `
                     <p>..................................................</p>
-                    <p>CÓDIGO PARA PAGAMENTO - PIX</p>
+                    <p>PAGAMENTO - PIX</p>
                     <p>..................................................</p>
                     
                     
