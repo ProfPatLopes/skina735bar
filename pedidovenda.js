@@ -362,6 +362,7 @@ function imprimirPedido2() {
             }
     // vai imprimir
         } else{
+            /*
             let totalCompra = parseFloat(document.getElementById("totalCompra").innerText); // Obter o valor do DOM
             const txid = "Clientedodia";
             //
@@ -387,7 +388,8 @@ function imprimirPedido2() {
                     </tr>
                     </tbody></table></div>`;
             // vai imprimir
-            }}); // gera qr        
+            }}); */
+            // gera qr        
         } // fechar pedido e gera qr  
     // Após garantir que o QR Code foi gerado, abrir nova janela
     const novaJanela = window.open('', '_blank');
