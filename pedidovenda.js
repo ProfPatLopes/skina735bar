@@ -373,6 +373,7 @@ function imprimirPedido2() {
             } else {
                 console.log("QR Code gerado com sucesso!");
                 const qrCodeBase64 = canvasElement.toDataURL();
+                console.log(qrCodeBase64);
                 detalhesPedido  += `
                     <p style="text-align: center;">..................................................</p>
                     <p style="text-align: center;">PAGAMENTO - PIX</p>
