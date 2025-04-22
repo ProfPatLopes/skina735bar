@@ -109,6 +109,7 @@ const produtosPorCategoria = {
                 { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'}
             ],
             porcoes: [
+                { nome: 'Alcatra acebolado 500g',preco: 50.00, tipo:'porcao' },
                 { nome: 'Frango frito 1kg',     preco: 40.00, tipo:'porcao' },
                 { nome: 'Frango frito 500g',    preco: 30.00, tipo:'porcao' },
                 { nome: 'Peixe frito 500g ',    preco: 45.00, tipo:'porcao' },
@@ -211,21 +212,42 @@ function imprimirPedido2() {
     const totalCompra = document.getElementById('totalCompra').textContent;
     
     var data = getDataAtual(); 
-
+//
+if (produtosSelecionados.length > 0) {
+    produtosSelecionados.forEach(item => {
+        const produto = item.nome;
+        const quantidade = item.qtd;
+        const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
+        const valorTotal = item.valor.toFixed(2); // Valor total do item
+        const tipo_produto = item.tipo;
+        if (tipo_produto === "bebida") {
+            bebid.push({ produto, quantidade, valorUnitario, valorTotal });
+        } 
+        if (tipo_produto === "porcao") {
+            porco.push({ produto, quantidade, valorUnitario, valorTotal });
+        } 
+        if (tipo_produto === "diversos") {
+            divers.push({ produto, quantidade, valorUnitario, valorTotal });
+        }
+    });
+}
+//
+    
+    
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
-    //        <div style="max-width: 78mm; text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
-
+    
     let detalhesPedido = `
         <div style="text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
         <table style="width: 100%; font-size: 22px;">
             <tr>
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
                 <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Norte do Paraná, 735 esquina com a Goioerê Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
-            </tr>
-            <tr>
+            </tr>`;
+            if (checkbox.checked) {
+            detalhesPedido += `<tr>
                 <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
             </tr>
             <tr >
@@ -253,15 +275,6 @@ function imprimirPedido2() {
             const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
             const valorTotal = item.valor.toFixed(2); // Valor total do item
             const tipo_produto = item.tipo;
-            if (tipo_produto === "bebida") {
-                bebid.push({ produto, quantidade, valorUnitario, valorTotal });
-            } 
-            if (tipo_produto === "porcao") {
-                porco.push({ produto, quantidade, valorUnitario, valorTotal });
-            } 
-            if (tipo_produto === "diversos") {
-                divers.push({ produto, quantidade, valorUnitario, valorTotal });
-            }
             detalhesPedido += `
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
@@ -276,12 +289,13 @@ function imprimirPedido2() {
         detalhesPedido += `           
         </tbody>
         </table>
-        <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>`;
-// se não for fechamento imprime individual 
+        <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+        `;
+// se não for fechamento imprime individual
+        } 
         if (!checkbox.checked) {
             if (divers.length > 0 ) {
                 detalhesPedido += `
-                <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
                 <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------DIVERSOS----------<</strong></p>
                 <table style="width: 100%; font-size: 15px;">
                     <tbody>
@@ -303,11 +317,12 @@ function imprimirPedido2() {
                 <td style="text-align: right;">${item.quantidade}</td>
                 </tr>`;
                 });
-                detalhesPedido+=`</table>`;
+                detalhesPedido+=`</table>
+                <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
+`;
             }
             if (bebid.length > 0 ) {
                 detalhesPedido += `
-                    <p style="text-align: center;font-size: 14px;">------------------- corte aqui ----------------</p>
                     <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------VIA BAR----------<</strong></p>
                     <table style="width: 100%; font-size: 15px;">
                     <tbody>                    
@@ -330,11 +345,12 @@ function imprimirPedido2() {
                     <td style="text-align: right;">${item.quantidade}</td>
                     </tr>`;
                 });
-                detalhesPedido+=`</table>`;
+                detalhesPedido+=`</table>
+                                <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
+`;
             }
             if (porco.length > 0 ) {
                 detalhesPedido += `
-                        <p style="text-align: center;font-size: 14px;">------------------- corte aqui ----------------</p>
                         <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>--------VIA COZINHA-------<</strong></p> 
                         <table style="width: 100%; font-size: 15px;">
                         <tbody>    
@@ -358,7 +374,9 @@ function imprimirPedido2() {
                         })
 
                     
-                    detalhesPedido +=`</table>`;
+                    detalhesPedido +=`</table>
+                                    <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
+`;
             }
     // vai imprimir
         } else{
