@@ -20,6 +20,7 @@ function gerar() {
             console.error("Erro ao gerar QR Code:", error);
         } else {
             console.log("QR Code gerado com sucesso no canvas!");
+            const qrCodeBase64 = canvasElement.toDataURL();
         }
     });
 }
