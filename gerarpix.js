@@ -13,7 +13,7 @@ function gerar() {
 
     // Obtendo o elemento canvas
     const canvasElement = document.getElementById("qrcode");
-
+    canvasElement = canvasElement.toDataURL();
     // Gerando o QR Code no canvas
     QRCode.toCanvas(canvasElement, payloadPIX, function (error) {
         if (error) {

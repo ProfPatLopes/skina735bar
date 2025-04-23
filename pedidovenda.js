@@ -210,152 +210,114 @@ function imprimirPedido2() {
     const numeroMesa  = document.getElementById('numeroMesa').value;
     const painel      = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
-    
-    var data = getDataAtual(); 
-//
-if (produtosSelecionados.length > 0) {
-    if (checkbox.checked){
-    produtosSelecionados.forEach(item => {
-        const produto = item.nome;
-        const quantidade = item.qtd;
-        const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
-        const valorTotal = item.valor.toFixed(2); // Valor total do item
-        const tipo_produto = item.tipo;
-        if (tipo_produto === "bebida") {
-            bebid.push({ produto, quantidade, valorUnitario, valorTotal });
-        } 
-        if (tipo_produto === "porcao") {
-            porco.push({ produto, quantidade, valorUnitario, valorTotal });
-        } 
-        if (tipo_produto === "diversos") {
-            divers.push({ produto, quantidade, valorUnitario, valorTotal });
-        }
-    });
-}
-//
-    
-    
     if (!nomeCliente || (tipoPedido === 'mesa' && !numeroMesa)) {
         alert('Por favor, preencha todas as informações necessárias antes de imprimir o pedido.');
         return;
     }
-    
-    let detalhesPedido = `
-        <div style="text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
-        <table style="width: 100%; font-size: 22px;">
-            <tr>
-                <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
-                <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Norte do Paraná, 735 esquina com a Goioerê Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
-            </tr>`;
-            
-            detalhesPedido += `<tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
-            </tr>
-            <tr >
-                <td colspan="4" style="width: auto; text-align: left; width: 100%;font-size: 15px;">Data/hora: ${data}</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-            </tr>
-            <tr>
-                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-            </tr>
-        </table>  
-        <table style="width: 100%; ">
-            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
-                <td colspan="2" style="text-align: left;">Produto</td>
-                <td style="text-align: right;">Unit</td>
-                <td style="text-align: right;">Total</td>
-            </tr>
-            <tbody>`;
-    //
-    } else { /// checadoaqui
+    var data = getDataAtual(); 
+//
     if (produtosSelecionados.length > 0) {
-        produtosSelecionados.forEach(item => {
-            const produto = item.nome;
-            const quantidade = item.qtd;
-            const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
-            const valorTotal = item.valor.toFixed(2); // Valor total do item
-            const tipo_produto = item.tipo;
-            detalhesPedido += `
-                <tr font-size: 22px;>
-                    <td colspan="2">${produto}</td>
-                    <td style="text-align: center;">${quantidade}</td>
-                    <td style="text-align: right;">${valorTotal}</td>
-                </tr>
-                <tr style="width: auto;">
-                    <td colspan="4">.......................................................</td>
-                </tr>`;
-        });
-        // imprimi por categoria
-        detalhesPedido += `           
-        </tbody>
-        </table>
-        <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
-        `;
-// se não for fechamento imprime individualif (checkbox.checked) {
-         
-        
-            if (divers.length > 0 ) {
-                detalhesPedido += `
-                <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------DIVERSOS----------<</strong></p>
-                <table style="width: 100%; font-size: 15px;">
-                    <tbody>
-                        <tr >
-                        <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-                        </tr>
-                        <tr>
-                        <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-                        </tr>
-                        <tr>
-                        <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-                        </tr>
-                    </tbody>
-                </table>  
-                <table style="width: 100%; ">`;
-                divers.forEach(item => {
+            produtosSelecionados.forEach(item => {
+                const produto = item.nome;
+                const quantidade = item.qtd;
+                const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
+                const valorTotal = item.valor.toFixed(2); // Valor total do item
+                const tipo_produto = item.tipo;
+                if (tipo_produto === "bebida") {
+                    bebid.push({ produto, quantidade, valorUnitario, valorTotal });
+                } 
+                if (tipo_produto === "porcao") {
+                    porco.push({ produto, quantidade, valorUnitario, valorTotal });
+                } 
+                if (tipo_produto === "diversos") {
+                    divers.push({ produto, quantidade, valorUnitario, valorTotal });
+                }
+            });
+            if (checkbox.checked) {
+                let detalhesPedido = `
+                <div style="text-align: center; font-size: 12px; font-family: Arial, sans-serif; border-style:solid dashed;">
+                <table style="width: 100%; font-size: 22px;">
+                    <tr>
+                        <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
+                        <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Norte do Paraná, 735 esquina com a Goioerê Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
+                    </tr>`;
+                    
                 detalhesPedido += `<tr>
-                <td colspan="3" style="text-align: left;">${item.produto}</td>
-                <td style="text-align: right;">${item.quantidade}</td>
-                </tr>`;
-                });
-                detalhesPedido+=`</table>
-                <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
-`;
-            }
-            if (bebid.length > 0 ) {
+                    <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
+                </tr>
+                <tr >
+                    <td colspan="4" style="width: auto; text-align: left; width: 100%;font-size: 15px;">Data/hora: ${data}</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                </tr>
+            </table>  
+            <table style="width: 100%; ">
+                <tr font-size: 22px; style="background-color: black; color: white;width: auto">
+                    <td colspan="2" style="text-align: left;">Produto</td>
+                    <td style="text-align: right;">Unit</td>
+                    <td style="text-align: right;">Total</td>
+                </tr>
+                <tbody>`;
+        //
+            produtosSelecionados.forEach(item => {
+                const produto = item.nome;
+                const quantidade = item.qtd;
+                const valorUnitario = item.valor / item.qtd; // Calcula o valor unitário
+                const valorTotal = item.valor.toFixed(2); // Valor total do item
+                const tipo_produto = item.tipo;
                 detalhesPedido += `
-                    <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------VIA BAR----------<</strong></p>
+                    <tr font-size: 22px;>
+                        <td colspan="2">${produto}</td>
+                        <td style="text-align: center;">${quantidade}</td>
+                        <td style="text-align: right;">${valorTotal}</td>
+                    </tr>
+                    <tr style="width: auto;">
+                        <td colspan="4">.......................................................</td>
+                    </tr>`;
+            });
+            // imprimi por categoria
+            detalhesPedido += `           
+            </tbody>
+            </table>
+            <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
+            `;
+            } else { 
+                // se não for fechamento imprime individualif (checkbox.checked) {
+                if (divers.length > 0 ) {
+                    detalhesPedido += `
+                    <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------DIVERSOS----------<</strong></p>
                     <table style="width: 100%; font-size: 15px;">
-                    <tbody>                    
-                        <tr >
+                        <tbody>
+                            <tr >
                             <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
-                        </tr>
-                        <tr>
+                            </tr>
+                            <tr>
                             <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
-                        </tr>
-                        <tr>
+                            </tr>
+                            <tr>
                             <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
-                        </tr>
-                    </body>
+                            </tr>
+                        </tbody>
                     </table>  
                     <table style="width: 100%; ">`;
-
-                bebid.forEach(item => {
+                    divers.forEach(item => {
                     detalhesPedido += `<tr>
                     <td colspan="3" style="text-align: left;">${item.produto}</td>
                     <td style="text-align: right;">${item.quantidade}</td>
                     </tr>`;
-                });
-                detalhesPedido+=`</table>
-                                <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
-`;
-            }
-            if (porco.length > 0 ) {
-                detalhesPedido += `
-                        <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>--------VIA COZINHA-------<</strong></p> 
+                    });
+                    detalhesPedido+=`</table>
+                    <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>`;
+                }
+                if (bebid.length > 0 ) {
+                    detalhesPedido += `
+                        <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------VIA BAR----------<</strong></p>
                         <table style="width: 100%; font-size: 15px;">
-                        <tbody>    
+                        <tbody>                    
                             <tr >
                                 <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
                             </tr>
@@ -363,22 +325,48 @@ if (produtosSelecionados.length > 0) {
                                 <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
                             </tr>
                             <tr>
-                                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                                <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong> ${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
                             </tr>
-                            </tbody>
-                    </table>  
-                    <table style="width: 100%; ">`;
-                        porco.forEach(item => {
-                            detalhesPedido += `<tr>
-                                <td colspan="3" style="text-align: left;">${item.produto}</td>
-                    <td style="text-align: right;">${item.quantidade}</td>
-                    </tr>`;
-                        })
+                        </body>
+                        </table>  
+                        <table style="width: 100%; ">`;
 
-                    
-                    detalhesPedido +=`</table>
-                                    <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>
-`;
+                    bebid.forEach(item => {
+                        detalhesPedido += `<tr>
+                        <td colspan="3" style="text-align: left;">${item.produto}</td>
+                        <td style="text-align: right;">${item.quantidade}</td>
+                        </tr>`;
+                    });
+                    detalhesPedido+=`</table>
+                                    <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>`;
+                }
+                if (porco.length > 0 ) {
+                    detalhesPedido += `
+                            <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>--------VIA COZINHA-------<</strong></p> 
+                            <table style="width: 100%; font-size: 15px;">
+                            <tbody>    
+                                <tr >
+                                    <td colspan="4" style="width: auto; text-align: left; width: 100%;">Data/hora: ${data}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="text-align: left;font-size: 18px;">Cliente: <strong>${nomeCliente}</strong> </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="width: 20%; text-align: center;font-size: 18px;"><strong>${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</strong></td>
+                                </tr>
+                                </tbody>
+                        </table>  
+                        <table style="width: 100%; ">`;
+                            porco.forEach(item => {
+                                detalhesPedido += `<tr>
+                                    <td colspan="3" style="text-align: left;">${item.produto}</td>
+                        <td style="text-align: right;">${item.quantidade}</td>
+                        </tr>`;
+                            })
+
+                        
+                        detalhesPedido +=`</table>
+                                        <p style="text-align: center;font-size: 14px;">----------------- corte aqui ------------------</p>`;
             }
     // vai imprimir
        // aqui } else{
@@ -410,8 +398,9 @@ if (produtosSelecionados.length > 0) {
             // vai imprimir
             }}); */
             // gera qr        
-        } // fechar pedido e gera qr  
+         // fechar pedido e gera qr  
     // Após garantir que o QR Code foi gerado, abrir nova janela
+        }
     const novaJanela = window.open('', '_blank');
     novaJanela.document.write(`
         <html>
@@ -434,8 +423,7 @@ if (produtosSelecionados.length > 0) {
     novaJanela.document.close();
     novaJanela.print();
     novaJanela.close();  //fim por categoria
-        }  // tiver itens
-    } else {
+    }  else {
         
            detalhesPedido += `
             <tr>
