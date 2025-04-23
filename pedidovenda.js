@@ -319,7 +319,9 @@ function imprimirPedido2() {
             </table>
             <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
             `;
-        } else { 
+        } else {
+            detalhesPedido += `</table>`;
+                 
                 // se não for fechamento imprime individualif (checkbox.checked) {
             if (divers.length > 0 ) {
                 detalhesPedido += `
