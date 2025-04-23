@@ -214,6 +214,7 @@ function imprimirPedido2() {
     var data = getDataAtual(); 
 //
 if (produtosSelecionados.length > 0) {
+    if (checkbox.checked){
     produtosSelecionados.forEach(item => {
         const produto = item.nome;
         const quantidade = item.qtd;
@@ -246,7 +247,7 @@ if (produtosSelecionados.length > 0) {
                 <td style="text-align: right; width: 30%;"><img src="Logo.png" style="width: 100%; height: auto;"></td>
                 <td colspan="3" style="font-size: 6px; text-align: justify; padding: 15px""><strong>Skina 735 Bar - Rua Norte do Paraná, 735 esquina com a Goioerê Bairro Jd. Curitiba - Goioerê-Pr CEP 87.360-000 CNPJ: 14.451.465/0001-73 Contato: (44) 99865-5735</strong></td>
             </tr>`;
-            if (checkbox.checked) {
+            
             detalhesPedido += `<tr>
                 <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>PEDIDO</strong></td>
             </tr>
@@ -268,6 +269,7 @@ if (produtosSelecionados.length > 0) {
             </tr>
             <tbody>`;
     //
+    } else { /// checadoaqui
     if (produtosSelecionados.length > 0) {
         produtosSelecionados.forEach(item => {
             const produto = item.nome;
@@ -291,9 +293,9 @@ if (produtosSelecionados.length > 0) {
         </table>
         <p style="background-color: black; color: white;text-align: right; font-size: 22px;"><strong>Valor Total:  ${totalCompra}</strong></p>
         `;
-// se não for fechamento imprime individual
-        } 
-        else { /// checado
+// se não for fechamento imprime individualif (checkbox.checked) {
+         
+        
             if (divers.length > 0 ) {
                 detalhesPedido += `
                 <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------DIVERSOS----------<</strong></p>
@@ -432,6 +434,7 @@ if (produtosSelecionados.length > 0) {
     novaJanela.document.close();
     novaJanela.print();
     novaJanela.close();  //fim por categoria
+        }  // tiver itens
     } else {
         
            detalhesPedido += `
