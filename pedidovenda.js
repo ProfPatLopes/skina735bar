@@ -293,7 +293,7 @@ if (produtosSelecionados.length > 0) {
         `;
 // se não for fechamento imprime individual
         } 
-        if (!checkbox.checked) {
+        else { /// checado
             if (divers.length > 0 ) {
                 detalhesPedido += `
                 <p style="background-color: black; color: white;text-align: center; font-size: 16px;"><strong>>----------DIVERSOS----------<</strong></p>
@@ -379,7 +379,7 @@ if (produtosSelecionados.length > 0) {
 `;
             }
     // vai imprimir
-        } else{
+       // aqui } else{
             /*
             let totalCompra = parseFloat(document.getElementById("totalCompra").innerText); // Obter o valor do DOM
             const txid = "Clientedodia";
