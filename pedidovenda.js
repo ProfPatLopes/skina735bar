@@ -80,10 +80,10 @@ const produtosPorCategoria = {
                 { nome:'Heineken lt 350ml',preco: 6.00,tipo:'bebida'}
             ],
             refri:[
-                { nome:'Coca-cola     350ml ',   preco: 6.00,tipo:'bebida'},
-                { nome:'Fanta laranja 350ml',preco: 6.00,tipo:'bebida'},
-                { nome:'Fanta uva     350ml ',   preco: 6.00,tipo:'bebida'},
-                { nome:'Guarana       350ml ',     preco: 6.00,tipo:'bebida'},
+                { nome:'Coca-cola lata 350ml ',   preco: 6.00,tipo:'bebida'},
+                { nome:'Fanta laranja lata350ml',preco: 6.00,tipo:'bebida'},
+                { nome:'Fanta uva lata 350ml ',   preco: 6.00,tipo:'bebida'},
+                { nome:'Guarana lata 350ml ',     preco: 6.00,tipo:'bebida'},
                 { nome:'Coca-Cola    1L',  preco: 8.00,tipo:'bebida'},
                 { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'bebida'},
                 { nome:'Sodinha   200ml',      preco: 3.00,tipo:'bebida'},
@@ -100,6 +100,7 @@ const produtosPorCategoria = {
                 { nome:'Vodka',              preco:  8.00,tipo:'bebida'},
                 { nome:'Ypioca',              preco:  5.00,tipo:'bebida'},
                 { nome:'Campari',            preco:  8.00,tipo:'bebida'},
+                { nome:'Ice',            preco:  12.00,tipo:'bebida'},
                 { nome:'Caipirinha (vodka)', preco:  15.00,tipo:'bebida'}
             ],
             outras:[
@@ -123,7 +124,14 @@ const produtosPorCategoria = {
                 
             ],
             diversos: [
-                { nome: 'Sinuca ficha', preco: 2 , tipo:'diversos'}
+                { nome: 'Sinuca ficha', preco: 2.00 ,       tipo:'diversos'},
+                { nome: 'Bala', preco: 0.20 ,               tipo:'diversos'},
+                { nome: 'Halls', preco: 3.50 ,              tipo:'diversos'},
+                { nome: 'Trident', preco: 2.00 ,            tipo:'diversos'},
+                { nome: 'Chocolate', preco: 2.00 ,          tipo:'diversos'},
+                { nome: 'Bombom Ouro Branco', preco: 2.00 , tipo:'diversos'},
+                { nome: 'Amendoim', preco: 3.00 ,           tipo:'diversos'},
+                { nome: 'Doces de buteco', preco: 2.00 ,    tipo:'diversos'}
             ]
 };
 function exibirProdutos() {
