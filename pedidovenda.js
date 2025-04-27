@@ -66,18 +66,22 @@ function atualizarPainel() {
 const produtosPorCategoria = {
             cerveja: [
                 { nome:'Heineken 600ml',   preco:14.00,tipo:'bebida'},
+                { nome:'Eisenbah 600ml',   preco:10.00,tipo:'bebida'},
                 { nome:'Skol     600ml',       preco:10.00,tipo:'bebida'},
                 { nome:'Amistel  600ml',    preco:10.00,tipo:'bebida'},
                 { nome:'Original 600ml',   preco:14.00,tipo:'bebida'},
                 { nome:'Brahma   600ml',     preco:12.00,tipo:'bebida'},
                 { nome:'Skol     300ml',       preco: 5.00,tipo:'bebida'},
+                { nome:'Antartica 300ml',       preco: 5.00,tipo:'bebida'},
                 { nome:'Brahma   300ml',     preco: 5.00,tipo:'bebida'},
                 { nome:'Original 300ml',   preco: 6.00,tipo:'bebida'},
                 { nome:'Conti    300ml',      preco: 4.00,tipo:'bebida'},
                 { nome:'Skol lt     350ml',    preco: 5.00,tipo:'bebida'},
                 { nome:'Brahma lt   350ml',  preco: 5.00,tipo:'bebida'},
                 { nome:'Amistel lt  350ml', preco: 5.00,tipo:'bebida'},
-                { nome:'Heineken lt 350ml',preco: 6.00,tipo:'bebida'}
+                { nome:'Sol lt  330ml', preco: 10.00,tipo:'bebida'},
+                { nome:'Caracu',            preco:  8.00,tipo:'bebida'},
+                { nome:'Heineken lt 330ml',preco: 10.00,tipo:'bebida'}
             ],
             refri:[
                 { nome:'Coca-cola lata 350ml ',   preco: 6.00,tipo:'bebida'},
@@ -87,10 +91,12 @@ const produtosPorCategoria = {
                 { nome:'Coca-Cola    1L',  preco: 8.00,tipo:'bebida'},
                 { nome:'Coca-cola 290ml',    preco: 5.00,tipo:'bebida'},
                 { nome:'Sodinha   200ml',      preco: 3.00,tipo:'bebida'},
+                { nome:'Sprite' ,preco: 7.00, tipo:'bebida'},
                 { nome:'Tubaina   600ml',      preco: 5.00,tipo:'bebida'}
             ],
             suco:[
-                { nome:'Dell Vale uva',      preco: 5.00,tipo:'bebida'}, 
+                { nome:'Dell Vale uva',      preco: 5.00,tipo:'bebida'},
+                { nome:'Dell Vale uvaTampico',      preco: 6.00,tipo:'bebida'}, 
                 { nome:'Dell Vale laranja',  preco: 5.00,tipo:'bebida'}
             ],
             dose:[
@@ -100,12 +106,13 @@ const produtosPorCategoria = {
                 { nome:'Vodka',              preco:  8.00,tipo:'bebida'},
                 { nome:'Ypioca',              preco:  5.00,tipo:'bebida'},
                 { nome:'Campari',            preco:  8.00,tipo:'bebida'},
-                { nome:'Ice',            preco:  12.00,tipo:'bebida'},
+                { nome:'Ice',            preco:  10.00,tipo:'bebida'},
                 { nome:'Caipirinha (vodka)', preco:  15.00,tipo:'bebida'}
             ],
             outras:[
                 { nome:'Redbull',            preco: 10.00,tipo:'bebida'},
                 { nome:'Monster',            preco: 10.00,tipo:'bebida'},
+                { nome:'Tonica',   preco:  6.00,tipo:'bebida'},
                 { nome:'Agua s/gas 500ml',   preco:  4.00,tipo:'bebida'},
                 { nome:'Agua c/gas 500ml',   preco:  4.00,tipo:'bebida'}
             ],
