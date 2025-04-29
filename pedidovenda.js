@@ -131,15 +131,15 @@ const produtosPorCategoria = {
                 
             ],
             diversos: [
-                { nome: 'Sinuca ficha', preco: 2.00 ,       tipo:'diversos'},
+                { nome: 'Amendoim', preco: 3.00 ,           tipo:'diversos'},
                 { nome: 'Bala', preco: 0.20 ,               tipo:'diversos'},
                 { nome: 'Bubbaloo', preco: 0.60 ,           tipo:'diversos'},
-                { nome: 'Halls', preco: 2.50 ,              tipo:'diversos'},
-                { nome: 'Trident', preco: 3.00 ,            tipo:'diversos'},
-                { nome: 'Chocolate', preco: 2.00 ,          tipo:'diversos'},
                 { nome: 'Bombom Ouro Branco', preco: 2.00 , tipo:'diversos'},
-                { nome: 'Amendoim', preco: 3.00 ,           tipo:'diversos'},
-                { nome: 'Doces de buteco', preco: 2.00 ,    tipo:'diversos'}
+                { nome: 'Chocolate', preco: 2.00 ,          tipo:'diversos'},
+                { nome: 'Doces de buteco', preco: 2.00 ,    tipo:'diversos'},
+                { nome: 'Halls', preco: 2.50 ,              tipo:'diversos'},
+                { nome: 'Sinuca ficha', preco: 2.00 ,       tipo:'diversos'},
+                { nome: 'Trident', preco: 3.00 ,            tipo:'diversos'}                
             ]
 };
 function exibirProdutos() {
