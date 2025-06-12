@@ -58,6 +58,10 @@ function atualizarPainel() {
 
     
 const produtosPorCategoria = {
+            elma:[
+                { nome:'Lays 70g',     preco:14.00,tipo:'elma'},
+                { nome:'Cebolitos 36g',  preco: 7.00,tipo:'elma'}
+            ],
             hei:[
                 { nome:'Heiniken 600ml',     preco:14.00,tipo:'hei'},
                 { nome:'Heineken lt 350ml',  preco: 7.00,tipo:'hei'},
