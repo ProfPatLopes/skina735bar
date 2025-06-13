@@ -62,6 +62,15 @@ const produtosPorCategoria = {
                 { nome:'Lays 70g',     preco:14.00,tipo:'elma'},
                 { nome:'Cebolitos 36g',  preco: 7.00,tipo:'elma'}
             ],
+            bodega:[
+                { nome:'Espanhola',     preco:0.00,tipo:'bodega'},
+                { nome:'Mousse Maracuja',     preco:0.00,tipo:'bodega'},
+                { nome:'Mousse Morango',     preco:0.00,tipo:'bodega'},
+                { nome:'Caipirinha Maracuja',     preco:0.00,tipo:'bodega'},
+                { nome:'Caipirinha Limao',     preco:0.00,tipo:'bodega'},
+                { nome:'Caipirinha Morango',     preco:0.00,tipo:'bodega'},
+                { nome:'Pina Colada',  preco: 0.00,tipo:'bodega'}
+            ],
             hei:[
                 { nome:'Heiniken 600ml',     preco:14.00,tipo:'hei'},
                 { nome:'Heineken lt 350ml',  preco: 7.00,tipo:'hei'},
