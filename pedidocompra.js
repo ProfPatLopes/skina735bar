@@ -198,7 +198,7 @@ function imprimirPedidoCompra() {
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
     //var cabcoca = true;
-    var cabamis = true;
+    //var cabamis = true;
     //var cabbhra = true;
     //var cabhei  = true;
     //var cabconti= true;
@@ -225,7 +225,7 @@ function imprimirPedidoCompra() {
             <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
-                <td style="text-align: right;">Total</td>
+                
             </tr>
             <tbody>`;
 
@@ -238,7 +238,7 @@ function imprimirPedidoCompra() {
             const tipo_produto  = item.tipo;
          
             
-            if (cabamis=== true && tipo_produto === 'amistel') {
+            //if (cabamis=== true && tipo_produto === 'amistel') {
                 detalhesPedido += `
         <table style="width: 100%; ">
             <tr>
@@ -260,29 +260,27 @@ function imprimirPedidoCompra() {
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
             </tr>
              <tr>
-                <td colspan="4" style="text-align: center;"><strong>${nomeCliente}</strong> </td>
+                <td colspan="4" style="text-align: center;"><strong>${tipo_produto}</strong> </td>
             </tr>
-            <tr>
-                <td colspan="4" style="width: 20%; text-align: center;">${tipoPedido === 'mesa' ? `Mesa ${numeroMesa}` : 'Balcão'}</td>
-            </tr>
+            
         </table>  
         <table style="width: 100%; ">
             <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
-                <td style="text-align: right;">Total</td>
+                
             </tr>
             <tbody>
             
     `;
-                cabamis=false;
-            }
+                //cabamis=false;
+            //}
             
             detalhesPedido += `                
                 <tr font-size: 22px;>
                     <td colspan="2">${produto}</td>
-                    <td style="text-align: center;">${quantidade}</td>
-                    <td style="text-align: right;">${valorTotal}</td>
+                    <td style="text-align: right;">${quantidade}</td>
+                    
                 </tr>
                 <tr style="width: auto;">
                     <td colspan="4">..................................................</td>
