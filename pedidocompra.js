@@ -228,14 +228,7 @@ function imprimirPedidoCompra() {
             </tr>
              
             
-        </table>  
-        <table style="width: 100%; ">
-            <tr font-size: 22px; style="background-color: black; color: white;width: auto">
-                <td colspan="2" style="text-align: left;">Produto</td>
-                <td style="text-align: right;">Unit</td>
-                
-            </tr>
-            <tbody>`;
+        `;
 
     if (produtosSelecionados.length > 0) {
         produtosSelecionados.forEach(item => {
@@ -247,15 +240,12 @@ function imprimirPedidoCompra() {
          
             
             if (cabcalho=== true ) {
-                detalhesPedido += `
-        <table style="width: auto; font-size: 22px;">
-            
-            <tr >
-                <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
-            </tr>
+                detalhesPedido += `            
              <tr>
                 <td colspan="4" style="text-align: center;"><strong>${tipo_produto}</strong> </td>
             </tr>
+            </table>  
+        <table style="width: 100%; ">
             <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
