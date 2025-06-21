@@ -205,7 +205,7 @@ function imprimirPedidoCompra() {
     const painel      = document.getElementById('itensPedido');
     const totalCompra = document.getElementById('totalCompra').textContent;
     var data = getDataAtual(); 
-    //var cabcoca = true;
+    var cabcalho = true;
     //var cabamis = true;
     //var cabbhra = true;
     //var cabhei  = true;
@@ -246,33 +246,16 @@ function imprimirPedidoCompra() {
             const tipo_produto  = item.tipo;
          
             
-            //if (cabamis=== true && tipo_produto === 'amistel') {
+            if (cabcalho=== true ) {
                 detalhesPedido += `
-        <table style="width: 100%; ">
-            <tr>
-                <td colspan="4" style="width: auto;font-size: 14px;">--------------------- corte aqui ------------------</td>
-
-            </tr>
+        <table style="width: auto; font-size: 22px;">
             
-            <tbody>
-            
-    `;
-                detalhesPedido += `
-                <table style="width: auto; font-size: 22px;">
-                
-            <tr>
-                <td colspan='4' style="background-color: black; color: white;text-align: center; font-size: 16px;width:100%"><strong>>----AMISTEL----<</strong></td>
-                
-            </tr>
             <tr >
                 <td colspan="4" style="width: auto;font-size: 18px; text-align: center; width: 100%;">${data}</td>
             </tr>
              <tr>
                 <td colspan="4" style="text-align: center;"><strong>${tipo_produto}</strong> </td>
             </tr>
-            
-        </table>  
-        <table style="width: 100%; ">
             <tr font-size: 22px; style="background-color: black; color: white;width: auto">
                 <td colspan="2" style="text-align: left;">Produto</td>
                 <td style="text-align: right;">Unit</td>
@@ -281,8 +264,9 @@ function imprimirPedidoCompra() {
             <tbody>
             
     `;
-                //cabamis=false;
-            //}
+                
+                
+                cabcalho=false}
             
             detalhesPedido += `                
                 <tr font-size: 22px;>
