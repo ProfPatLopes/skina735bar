@@ -59,7 +59,15 @@ function atualizarPainel() {
     
 const produtosPorCategoria = {
             elma:[
+                { nome:'Ruffles 68g',    preco:9.00,tipo:'elma'},
                 { nome:'Lays 70g',     preco:14.00,tipo:'elma'},
+                { nome:'Doritos Vermelho 75g',     preco:10.00,tipo:'elma'},
+                { nome:'Pingo Douro 1200g',     preco:15.00,tipo:'elma'},
+                { nome:'Amendoin Japanês 45g',     preco:3.50,tipo:'elma'},
+                { nome:'Cheetos MIX 68g',     preco:14.00,tipo:'elma'},
+                { nome:'Lays 70g',     preco:14.00,tipo:'elma'},
+                { nome:'Fandangos 160g',     preco:14.00,tipo:'elma'},
+                { nome:'Cebolitos 91g',     preco:14.00,tipo:'elma'},
                 { nome:'Cebolitos 36g',  preco: 7.00,tipo:'elma'}
             ],
             bodega:[
