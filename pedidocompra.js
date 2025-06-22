@@ -114,7 +114,7 @@ const produtosPorCategoria = {
                 { nome:'Skol 300ml',       preco: 5.00,tipo:'skol'},
                 { nome:'Skol lt 350ml',    preco: 5.00,tipo:'skol'}],
             bhrama: [
-                    { nome:'Brahma 600ml', n    preco:12.00,tipo:'bhrama'},
+                    { nome:'Brahma 600ml',     preco:12.00,tipo:'bhrama'},
                     { nome:'Brahma 300ml',     preco: 5.00,tipo:'bhrama'},
                     { nome:'Brahma lt 350ml',  preco: 5.00,tipo:'bhrama'}],
             amistel: [
