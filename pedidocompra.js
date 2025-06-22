@@ -59,35 +59,35 @@ function atualizarPainel() {
     
 const produtosPorCategoria = {
             elma:[
-                { nome:'Ruffles 68g',    preco:9.00,tipo:'Elma Chips'},
-                { nome:'Lays 70g',     preco:14.00,tipo:'Elma Chips'},
-                { nome:'Doritos Vermelho 75g',     preco:10.00,tipo:'Elma Chips'},
+                { nome:'Ruffles 68g',           preco:9.00,tipo:'Elma Chips'},
+                { nome:'Lays 70g',              preco:14.00,tipo:'Elma Chips'},
+                { nome:'Doritos Vermelho 75g',  preco:10.00,tipo:'Elma Chips'},
                 { nome:'Pingo Douro 1200g',     preco:15.00,tipo:'Elma Chips'},
-                { nome:'Amendoin Japanês 45g',     preco:3.50,tipo:'Elma Chips'},
-                { nome:'Cheetos MIX 68g',     preco:14.00,tipo:'Elma Chips'},
-                { nome:'Lays 70g',     preco:14.00,tipo:'Elma Chips'},
-                { nome:'Fandangos 160g',     preco:14.00,tipo:'Elma Chips'},
-                { nome:'Cebolitos 91g',     preco:14.00,tipo:'Elma Chips'},
-                { nome:'Cebolitos 36g',  preco: 7.00,tipo:'Elma Chips'}
+                { nome:'Amendoin Japanês 45g',  preco:3.50,tipo:'Elma Chips'},
+                { nome:'Cheetos MIX 68g',       preco:14.00,tipo:'Elma Chips'},
+                { nome:'Lays 70g',              preco:14.00,tipo:'Elma Chips'},
+                { nome:'Fandangos 160g',        preco:14.00,tipo:'Elma Chips'},
+                { nome:'Cebolitos 91g',         preco:14.00,tipo:'Elma Chips'},
+                { nome:'Cebolitos 36g',         preco: 7.00,tipo:'Elma Chips'}
             ],
              Papelaria:[
-                { nome:'Durex pequeno',     preco:0.00,tipo:'Papelaria'},
-                { nome:'bloco pedido',     preco:0.00,tipo:'Papelaria'},
-                { nome:'caneta',     preco:0.00,tipo:'Papelaria'}
+                { nome:'Durex pequeno', preco:0.00,tipo:'Papelaria'},
+                { nome:'bloco pedido',  preco:0.00,tipo:'Papelaria'},
+                { nome:'caneta',        preco:0.00,tipo:'Papelaria'}
             ],
              mercado:[
-                { nome:'Coloral',     preco:0.00,tipo:'Mercado'},
-                { nome:'Helmas',     preco:0.00,tipo:'Mercado'},
-                { nome:'Sazon limão',     preco:0.00,tipo:'Mercado'}
+                { nome:'Coloral',       preco:0.00,tipo:'Mercado'},
+                { nome:'Helmas',        preco:0.00,tipo:'Mercado'},
+                { nome:'Sazon limão',   preco:0.00,tipo:'Mercado'}
             ],   
             bodega:[
-                { nome:'Espanhola',     preco:0.00,tipo:'Da Bodega'},
-                { nome:'Mousse Maracuja',     preco:0.00,tipo:'Da Bodega'},
-                { nome:'Mousse Morango',     preco:0.00,tipo:'Da Bodega'},
-                { nome:'Caipirinha Maracuja',     preco:0.00,tipo:'Da Bodega'},
-                { nome:'Caipirinha Limao',     preco:0.00,tipo:'Da Bodega'},
-                { nome:'Caipirinha Morango',     preco:0.00,tipo:'Da Bodega'},
-                { nome:'Pina Colada',  preco: 0.00,tipo:'Da Bodega'}
+                { nome:'Espanhola',             preco:0.00,tipo:'Da Bodega'},
+                { nome:'Mousse Maracuja',       preco:0.00,tipo:'Da Bodega'},
+                { nome:'Mousse Morango',        preco:0.00,tipo:'Da Bodega'},
+                { nome:'Caipirinha Maracuja',   preco:0.00,tipo:'Da Bodega'},
+                { nome:'Caipirinha Limao',      preco:0.00,tipo:'Da Bodega'},
+                { nome:'Caipirinha Morango',    preco:0.00,tipo:'Da Bodega'},
+                { nome:'Pina Colada',           preco: 0.00,tipo:'Da Bodega'}
             ],
             hei:[
                 { nome:'Heiniken 600ml',     preco:14.00,tipo:'hei'},
@@ -110,12 +110,12 @@ const produtosPorCategoria = {
                 
             ],
             skol: [
-                { nome:'Skol 600ml',         preco:10.00,tipo:'skol'},
-                { nome:'Skol 300ml',         preco: 5.00,tipo:'skol'},
+                { nome:'Skol 600ml',       preco:10.00,tipo:'skol'},
+                { nome:'Skol 300ml',       preco: 5.00,tipo:'skol'},
                 { nome:'Skol lt 350ml',    preco: 5.00,tipo:'skol'}],
             bhrama: [
-                    { nome:'Brahma 600ml',       preco:12.00,tipo:'bhrama'},
-                    { nome:'Brahma 300ml',       preco: 5.00,tipo:'bhrama'},
+                    { nome:'Brahma 600ml', n    preco:12.00,tipo:'bhrama'},
+                    { nome:'Brahma 300ml',     preco: 5.00,tipo:'bhrama'},
                     { nome:'Brahma lt 350ml',  preco: 5.00,tipo:'bhrama'}],
             amistel: [
                 { nome:'Heiniken 600ml',     preco:14.00,tipo:'amistel'},
