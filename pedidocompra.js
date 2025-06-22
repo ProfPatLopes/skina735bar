@@ -59,25 +59,35 @@ function atualizarPainel() {
     
 const produtosPorCategoria = {
             elma:[
-                { nome:'Ruffles 68g',    preco:9.00,tipo:'elma'},
-                { nome:'Lays 70g',     preco:14.00,tipo:'elma'},
-                { nome:'Doritos Vermelho 75g',     preco:10.00,tipo:'elma'},
-                { nome:'Pingo Douro 1200g',     preco:15.00,tipo:'elma'},
-                { nome:'Amendoin Japanês 45g',     preco:3.50,tipo:'elma'},
-                { nome:'Cheetos MIX 68g',     preco:14.00,tipo:'elma'},
-                { nome:'Lays 70g',     preco:14.00,tipo:'elma'},
-                { nome:'Fandangos 160g',     preco:14.00,tipo:'elma'},
-                { nome:'Cebolitos 91g',     preco:14.00,tipo:'elma'},
-                { nome:'Cebolitos 36g',  preco: 7.00,tipo:'elma'}
+                { nome:'Ruffles 68g',    preco:9.00,tipo:'Elma Chips'},
+                { nome:'Lays 70g',     preco:14.00,tipo:'Elma Chips'},
+                { nome:'Doritos Vermelho 75g',     preco:10.00,tipo:'Elma Chips'},
+                { nome:'Pingo Douro 1200g',     preco:15.00,tipo:'Elma Chips'},
+                { nome:'Amendoin Japanês 45g',     preco:3.50,tipo:'Elma Chips'},
+                { nome:'Cheetos MIX 68g',     preco:14.00,tipo:'Elma Chips'},
+                { nome:'Lays 70g',     preco:14.00,tipo:'Elma Chips'},
+                { nome:'Fandangos 160g',     preco:14.00,tipo:'Elma Chips'},
+                { nome:'Cebolitos 91g',     preco:14.00,tipo:'Elma Chips'},
+                { nome:'Cebolitos 36g',  preco: 7.00,tipo:'Elma Chips'}
             ],
+             Papelaria:[
+                { nome:'Durex pequeno',     preco:0.00,tipo:'Papelaria'},
+                { nome:'bloco pedido',     preco:0.00,tipo:'Papelaria'},
+                { nome:'caneta',     preco:0.00,tipo:'Papelaria'}
+            ],
+             mercado:[
+                { nome:'Coloral',     preco:0.00,tipo:'Mercado'},
+                { nome:'Helmas',     preco:0.00,tipo:'Mercado'},
+                { nome:'Sazon limão',     preco:0.00,tipo:'Mercado'}
+            ],   
             bodega:[
-                { nome:'Espanhola',     preco:0.00,tipo:'bodega'},
-                { nome:'Mousse Maracuja',     preco:0.00,tipo:'bodega'},
-                { nome:'Mousse Morango',     preco:0.00,tipo:'bodega'},
-                { nome:'Caipirinha Maracuja',     preco:0.00,tipo:'bodega'},
-                { nome:'Caipirinha Limao',     preco:0.00,tipo:'bodega'},
-                { nome:'Caipirinha Morango',     preco:0.00,tipo:'bodega'},
-                { nome:'Pina Colada',  preco: 0.00,tipo:'bodega'}
+                { nome:'Espanhola',     preco:0.00,tipo:'Da Bodega'},
+                { nome:'Mousse Maracuja',     preco:0.00,tipo:'Da Bodega'},
+                { nome:'Mousse Morango',     preco:0.00,tipo:'Da Bodega'},
+                { nome:'Caipirinha Maracuja',     preco:0.00,tipo:'Da Bodega'},
+                { nome:'Caipirinha Limao',     preco:0.00,tipo:'Da Bodega'},
+                { nome:'Caipirinha Morango',     preco:0.00,tipo:'Da Bodega'},
+                { nome:'Pina Colada',  preco: 0.00,tipo:'Da Bodega'}
             ],
             hei:[
                 { nome:'Heiniken 600ml',     preco:14.00,tipo:'hei'},
