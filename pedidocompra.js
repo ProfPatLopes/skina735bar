@@ -68,6 +68,7 @@ const produtosPorCategoria = {
                 { nome:'Lays 70g',              preco:14.00,tipo:'Elma Chips'},
                 { nome:'Fandangos 160g',        preco:14.00,tipo:'Elma Chips'},
                 { nome:'Cebolitos 91g',         preco:14.00,tipo:'Elma Chips'},
+                 { nome:'Torcida 100g',         preco:14.00,tipo:'Elma Chips'},
                 { nome:'Cebolitos 36g',         preco: 7.00,tipo:'Elma Chips'}
             ],
              Papelaria:[
